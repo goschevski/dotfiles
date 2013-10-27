@@ -1,0 +1,52 @@
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias ls='ls -G' #I like color
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+
+# cd, because typing the backslash is ALOT of work!!
+alias .='cd ../'
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+
+# Folders
+alias sites="cd ~/Sites"
+alias downloads="cd ~/Downloads"
+alias desktop="cd ~/Desktop"
+
+# Files
+alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+
+# Server
+alias restartApache='sudo apachectl restart'
+alias editApacheConf='sudo vim /etc/apache2/httpd.conf'
+alias editHosts='sudo vim /etc/hosts'
+alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
+
+# Workflow
+
+function bp () {
+	curl -OL https://github.com/salencebg/boilerplate/archive/master.zip
+	unzip master.zip
+	mv boilerplate-master/* ./ && mv boilerplate-master/.* ./
+	rm -rf boilerplate-master/ master.zip
+	chmod +x ./install.sh
+	./install.sh
+	subl .
+	compass watch
+}
+
+# SSH aliases - short cuts to ssh to a host
+alias vps="ssh root@188.40.242.169 -t"
+
+# Count lines of code
+alias htmllines='wc -l `find . -iname "*.html"` | sort -n'
+alias phplines='wc -l `find . -iname "*.php"` | sort -n'
+alias jslines='wc -l `find . -iname "*.js"` | sort -n'
+alias sasslines='wc -l `find . -iname "*.scss"` | sort -n'
+
+# Path
+export PATH=/usr/local/share/python:$PATH
