@@ -10,6 +10,10 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
+Bundle 'scrooloose/syntastic'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'mattn/emmet-vim'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -100,5 +104,8 @@ let g:airline#extensions#whitespace#enabled = 0                                 
 let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
 let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
 
+let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
+let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
+
 " ================ Key mapping ========================
-map <C-n> :NERDTreeToggle<CR>
+map <C-]> :NERDTreeToggle<CR>                       " Toggle NERDTree with Ctrl+]
