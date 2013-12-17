@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 " ================ End Vundle ====================
