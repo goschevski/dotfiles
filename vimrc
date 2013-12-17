@@ -67,3 +67,6 @@ colorscheme tomorrow-night      "Color scheme
 " ================ Plugins setups ========================
 let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
 let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
+
+" ================ Key mapping ========================
+map <C-n> :NERDTreeToggle<CR>
