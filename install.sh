@@ -7,7 +7,7 @@ dotfiles_dir=$home_dir/dotfiles
 for file in vimrc zshrc aliases osx vim
 do
      echo "Removing old $file."
-    rm -rf $dotfiles_dir/$file $home_dir/.$file
+    rm -rf $home_dir/.$file
 done
 
 echo "Finished deleting."
