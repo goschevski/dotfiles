@@ -37,6 +37,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Custom aliases and settings
+export LC_ALL=en_US.utf-8
+export LANG="$LC_ALL"
 source ~/.osx
 source ~/.aliases
 
