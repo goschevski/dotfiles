@@ -9,12 +9,12 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
+Bundle 'itchyny/lightline.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/emmet-vim'
-Bundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -43,6 +43,7 @@ let g:solarized_visibility="none"       "Disable specialkey highlight in solariz
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
+set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -68,12 +69,15 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-colorscheme monokai             "Color scheme
+colorscheme tomorrow-night      "Color scheme
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
+
+" ================ Key mapping ========================
+map <C-]> :NERDTreeToggle<CR>                       " Toggle NERDTree with Ctrl+]
 
 " ================ Indentation ======================
 set smarttab
@@ -95,12 +99,6 @@ set sidescrolloff=15
 set sidescroll=1
 
 " ================ Plugins setups ========================
-let g:airline_powerline_fonts = 1                                               "Enable powerline fonts
-let g:airline_theme="powerlineish"                                              "Set theme to powerline default theme
-let g:airline_section_y='%{(&fenc == "" ? &enc : &fenc)}'                       "set encoding type info
-let g:airline_section_z='%{substitute(getcwd(), expand("$HOME"), "~", "g")}'    "Set relative path
-let g:airline_section_c = '%<%f %#__accent_red#%m%#__restore__# %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'                                     "Adds red modified
-let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
 
 let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
 let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
@@ -108,5 +106,20 @@ let NERDTreeShowHidden=1                            "Show hidden files in NERDTr
 let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
 let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
 
-" ================ Key mapping ========================
-map <C-]> :NERDTreeToggle<CR>                       " Toggle NERDTree with Ctrl+]
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
