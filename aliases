@@ -28,12 +28,8 @@ alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
 
 # Workflow
 function bp () {
-	curl -OL https://github.com/salencebg/boilerplate/archive/master.zip
-	unzip master.zip
-	mv boilerplate-master/* ./ && mv boilerplate-master/.* ./
-	rm -rf boilerplate-master/ master.zip
-	volo add
-	subl .
+    volo create $1 https://github.com/salencebg/boilerplate/archive/master.zip
+	cd $1 && subl .
 	compass watch
 }
 
