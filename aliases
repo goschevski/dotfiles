@@ -32,8 +32,7 @@ function bp () {
 	unzip master.zip
 	mv boilerplate-master/* ./ && mv boilerplate-master/.* ./
 	rm -rf boilerplate-master/ master.zip
-	chmod +x ./install.sh
-	./install.sh
+	volo add
 	subl .
 	compass watch
 }
