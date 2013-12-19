@@ -20,6 +20,9 @@ alias desktop="cd ~/Desktop"
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
+# Git
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # Server
 alias restartApache='sudo apachectl restart'
 alias editApacheConf='sudo vim /etc/apache2/httpd.conf'
