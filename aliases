@@ -31,7 +31,7 @@ alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
 
 # Workflow
 function bp () {
-    volo create $1 https://github.com/salencebg/boilerplate/archive/master.zip
+    volo create $1 https://github.com/goschevski/fronty/archive/master.zip
 	cd $1 && subl .
 	compass watch
 }
