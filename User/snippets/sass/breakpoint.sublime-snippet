@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+@include breakpoint('${1:tablet}') {
+    $2
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>breakpoint</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.scss</scope>
+</snippet>

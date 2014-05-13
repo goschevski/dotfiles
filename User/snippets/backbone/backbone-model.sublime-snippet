@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+define(['backbone'], function (BB) {
+    return BB.Model.extend({
+        ${1}
+    });
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
