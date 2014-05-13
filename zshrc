@@ -47,3 +47,23 @@ source ~/.nvm/nvm.sh
 
 # MySQL
 export PATH="/opt/local/bin:/usr/local/mysql/bin:$PATH"
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Setup zsh-autosuggestions
+source ~/.zsh-autosuggestions/autosuggestions.zsh
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
+AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
