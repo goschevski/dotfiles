@@ -26,6 +26,7 @@
 	"line_padding_top": 5,
 	"show_encoding": true,
 	"tab_size": 4,
+	"tabs_small": true,
 	"theme": "Afterglow.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
