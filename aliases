@@ -21,6 +21,7 @@ alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Fi
 alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
 # Git
+alias st='open -a SourceTree'
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Server
@@ -34,6 +35,13 @@ function bp () {
     volo create $1 https://github.com/goschevski/fronty/archive/master.zip
 	cd $1 && subl .
 	compass watch
+}
+
+# Clean install of node modules
+function cleaninstall () {
+    rm -rf node_modules/
+    npm cache clean
+    npm i
 }
 
 # SSH aliases - short cuts to ssh to a host
