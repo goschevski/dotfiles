@@ -15,6 +15,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/emmet-vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -32,6 +33,8 @@ endif
 
 " If no file is selected, execute Nerdtree plugin
 autocmd vimenter * if !argc() | NERDTree | endif
+let NERDTreeMapOpenInTab='<ENTER>'
+au VimEnter *  NERDTree
 
 " ================ Some guioptions ====================
 set guioptions-=m                       "remove menu bar
@@ -78,6 +81,8 @@ set ttimeoutlen=200
 
 " ================ Key mapping ========================
 map <C-]> :NERDTreeToggle<CR>                       " Toggle NERDTree with Ctrl+]
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " ================ Indentation ======================
 set smarttab
