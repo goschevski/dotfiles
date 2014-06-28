@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
@@ -33,8 +34,6 @@ endif
 
 " If no file is selected, execute Nerdtree plugin
 autocmd vimenter * if !argc() | NERDTree | endif
-let NERDTreeMapOpenInTab='<ENTER>'
-au VimEnter *  NERDTree
 
 " ================ Some guioptions ====================
 set guioptions-=m                       "remove menu bar
@@ -80,7 +79,8 @@ set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
 
 " ================ Key mapping ========================
-map <C-]> :NERDTreeToggle<CR>                       " Toggle NERDTree with Ctrl+]
+
+map <C-]> :NERDTreeTabsToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -110,6 +110,10 @@ let NERDTreeShowHidden=1                            "Show hidden files in NERDTr
 
 let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
 let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
+
+let NERDTreeIgnore=['\.git$', '\.sass-cache$']
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
