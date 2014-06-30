@@ -22,8 +22,5 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
-
 # Enables text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
