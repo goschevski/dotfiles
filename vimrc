@@ -19,9 +19,15 @@ Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'jeetsukumaran/vim-filesearch'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 filetype plugin indent on
 " ================ End Vundle ====================
+
+let mapleader = ","
 
 " ================ Initial folder ====================
 if !argc()
@@ -58,6 +64,8 @@ set gdefault                    "Set global flag for search and replace
 set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set visualbell                  "No sounds
 set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
@@ -74,13 +82,38 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-colorscheme tomorrow-night      "Color scheme
+"colorscheme Tomorrow-Night      "Color scheme
+let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
 
+" ================ Functions ================
+
+" Remove trailing spaces on save
+function! StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+" ================ Completion =======================
+
+set wildmode=list:full
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*vendor/**
+set wildignore+=*node_modules/**
+set wildignore+=*DS_Store*
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Turn Off Swap Files ==============
 
@@ -95,9 +128,12 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
 " ================ Key mapping ========================
 
-map <C-]> :NERDTreeTabsToggle<CR>
+map <Leader>s :NERDTreeTabsToggle<CR>
+map <Leader>t :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+inoremap jj <Esc>
+nnoremap <Leader>f :Fsgrep /
 
 " ================ Indentation ======================
 set smarttab
@@ -125,6 +161,9 @@ let NERDTreeShowHidden=1                            "Show hidden files in NERDTr
 
 let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
 let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
+
+let g:gitgutter_realtime = 0                        "Disable gitgutter in realtime
+let g:gitgutter_eager = 0                           "Disable gitgutter to eager load on tab or buffer switch
 
 let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 
