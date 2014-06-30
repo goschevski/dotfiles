@@ -17,6 +17,8 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -40,7 +42,7 @@ set guioptions-=m                       "remove menu bar
 set guioptions-=T                       "remove toolbar
 set guioptions-=L                       "remove left scrollbar when vertical split
 set guioptions-=l                       "remove left scrollbar
-set linespace=2                         "Set lineheight in gvim
+set linespace=4                         "Set lineheight in gvim
 let g:solarized_visibility="none"       "Disable specialkey highlight in solarized
 
 " ================ General Config ====================
@@ -57,6 +59,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
 set visualbell                  "No sounds
+set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
 set ignorecase                  "case insensitive search
@@ -77,6 +80,18 @@ set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
+
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Auto commands ======================
+
+" Auto-remove trailing spaces
+autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
 " ================ Key mapping ========================
 
