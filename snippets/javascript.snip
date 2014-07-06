@@ -1,0 +1,49 @@
+snippet method
+      ${1}: function(${2}) {
+          ${3}
+      },
+
+snippet class
+    var ${1} = function (${2:options}) {
+
+     };
+
+    $1.prototype = {
+        ${3}
+     };
+
+snippet iife
+    ;(function () {
+        ${1}
+     })();
+
+snippet f
+    function (${1}) {
+        ${2}
+     }
+
+snippet cl
+abbr console.log
+alias log
+    console.log(${1});
+
+snippet it
+alias should
+    it('should ${1}', function (${2}) {
+        ${3}
+     });
+
+snippet desc
+abbr describe
+    describe('${1}', function (${2}) {
+       ${3}
+    });
+
+snippet heading
+    /*
+    |------------------------------------------------------------
+    | ${1}
+    |------------------------------------------------------------
+    */
+
+

@@ -17,12 +17,14 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jeetsukumaran/vim-filesearch'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'Shougo/neocomplete'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -48,7 +50,7 @@ set guioptions-=m                       "remove menu bar
 set guioptions-=T                       "remove toolbar
 set guioptions-=L                       "remove left scrollbar when vertical split
 set guioptions-=l                       "remove left scrollbar
-set linespace=4                         "Set lineheight in gvim
+set linespace=6                         "Set lineheight in gvim
 let g:solarized_visibility="none"       "Disable specialkey highlight in solarized
 
 " ================ General Config ====================
@@ -64,8 +66,7 @@ set gdefault                    "Set global flag for search and replace
 set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorLine cterm=NONE
 set visualbell                  "No sounds
 set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
@@ -82,7 +83,7 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-"colorscheme Tomorrow-Night      "Color scheme
+colorscheme Tomorrow-Night      "Color scheme
 let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
@@ -126,6 +127,9 @@ set nowb
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
+" Remove unused markers for snippets
+autocmd InsertLeave * NeoSnippetClearMarkers
+
 " ================ Key mapping ========================
 
 map <Leader>s :NERDTreeTabsToggle<CR>
@@ -168,6 +172,20 @@ let g:gitgutter_eager = 0                           "Disable gitgutter to eager 
 let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
+"Tell Neosnippet about the snippets folder"
+let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
+" Expand snippets on tab if snippets exists, otherwise do autocompletion
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+" If popup window is visible do autocompletion from back
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"Fix for jumping over placeholders for neosnippet
+smap <expr><TAB> neosnippet#jumpable() ?
+\ "\<Plug>(neosnippet_jump)"
+\: "\<TAB>"
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
