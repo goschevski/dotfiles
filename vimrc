@@ -25,6 +25,7 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+Bundle 'tpope/vim-commentary'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -137,6 +138,7 @@ map <Leader>t :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 inoremap jj <Esc>
+nmap <Leader>\ gcc
 nnoremap <Leader>f :Fsgrep /
 
 " ================ Indentation ======================
