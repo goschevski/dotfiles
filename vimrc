@@ -133,14 +133,42 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 
 " ================ Key mapping ========================
 
+" Fast exit to normal mode
+inoremap jj <Esc>
+" Fast save
+nnoremap <Leader>w :w<CR>
+" Fast quit
+nnoremap <Leader>q :q<CR>
+" Shorthand for making window smaller
+nnoremap <Leader>< <C-w>5<
+" Shorthand for making window bigger
+nnoremap <Leader>> <C-w>5>
+" Copy to system clipboard
+vnoremap <Leader>y "+y"
+" Paste from system clipboard with Ctrl + v
+inoremap <Leader>p <Esc>"+p
+nnoremap <Leader>h :noh<CR>
+" Indenting in visual mode
+xnoremap <s-tab> <gv
+xnoremap <tab> >gv
+" Maps for indentation in normal mode
+nnoremap <tab> >>
+nnoremap <s-tab> <<
+" Toogle NERDTree
 map <Leader>s :NERDTreeTabsToggle<CR>
-map <Leader>t :CtrlPBuffer<CR>
+" Fugitive commands
+nnoremap <Leader>gs :Gstatus<CR>
+" Go to Symbol
 map <Leader>r :CtrlPBufTag<CR>
+" List opened files in buffer
+map <Leader>t :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-inoremap jj <Esc>
-nmap <Leader>\ gcc
+" Comment code
+nnoremap <Leader>\ gcc
+" Search trough files
 nnoremap <Leader>f :Fsgrep /
+" Use jsctags for better javascript tags
 let g:ctrlp_buftag_types = {
       \ 'javascript' : {
           \ 'bin': 'jsctags',
