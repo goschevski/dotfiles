@@ -1,5 +1,5 @@
 .DS_Store
-vim
+vim/bundle
 Package Control.last-run
 Package Control.ca-list
 Package Control.ca-bundle
