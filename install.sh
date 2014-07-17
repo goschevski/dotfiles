@@ -6,6 +6,9 @@ sublime_dir="$home_dir/Library/Application Support/Sublime Text 3/Packages/"
 
 FILES="vimrs zshrc aliases osx vim"
 
+echo "Cloning vundle package manager for vim"
+git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
+
 # loop through old files and delete them
 for file in $FILES
 do
@@ -26,5 +29,10 @@ echo "Finished linking of $FILES"
 rm -rf "$sublime_dir/User"
 ln -s "$dotfiles_dir/User" "$sublime_dir/User"
 echo "Linked sublime settings"
+
+# Install doctorjs (jsctags)
+echo "Clone and install doctorjs (jsctags)"
+git clone https://github.com/mozilla/doctorjs ~/doctorjs
+cd ~/doctorjs && git submodule init && git submodule update && sudo make install
 
 echo "To update files, just pull changes."
