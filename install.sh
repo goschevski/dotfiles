@@ -4,7 +4,7 @@ home_dir=/Users/aleksandargosevski
 dotfiles_dir=$home_dir/dotfiles
 sublime_dir="$home_dir/Library/Application Support/Sublime Text 3/Packages/"
 
-FILES="vimrs zshrc aliases osx vim"
+FILES="vimrc zshrc aliases osx vim"
 
 echo "Cloning vundle package manager for vim"
 git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
