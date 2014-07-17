@@ -37,6 +37,9 @@ function bp () {
 	compass watch
 }
 
+# Create ctags
+alias makectags='`brew --prefix`/bin/ctags -R --exclude=node_modules'
+
 # Clean install of node modules
 function cleaninstall () {
     rm -rf node_modules/
