@@ -182,6 +182,8 @@ let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
+let g:neocomplete#enable_at_startup = 1                     "Enable autocomplete
+let g:neocomplete#enable_smart_case = 1                     "Use smartcase.
 "Tell Neosnippet about the snippets folder"
 let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 " Expand snippets on tab if snippets exists, otherwise do autocompletion
