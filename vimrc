@@ -135,11 +135,18 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 
 map <Leader>s :NERDTreeTabsToggle<CR>
 map <Leader>t :CtrlPBuffer<CR>
+map <Leader>r :CtrlPBufTag<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 inoremap jj <Esc>
 nmap <Leader>\ gcc
 nnoremap <Leader>f :Fsgrep /
+let g:ctrlp_buftag_types = {
+      \ 'javascript' : {
+          \ 'bin': 'jsctags',
+          \ 'args': '-f -',
+    \ },
+    \ }
 
 " ================ Indentation ======================
 set smarttab
