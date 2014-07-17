@@ -26,6 +26,7 @@ Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'tpope/vim-commentary'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -209,6 +210,7 @@ let g:gitgutter_eager = 0                           "Disable gitgutter to eager 
 let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+nmap <Leader>a :TagbarToggle<CR>
 
 let g:neocomplete#enable_at_startup = 1                     "Enable autocomplete
 let g:neocomplete#enable_smart_case = 1                     "Use smartcase.
