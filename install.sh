@@ -56,4 +56,4 @@ coloredEcho "5. Clone and install doctorjs (jsctags)" green
 git clone https://github.com/mozilla/doctorjs ~/doctorjs
 cd ~/doctorjs && git submodule init && git submodule update && sudo make install
 
-echo "To update files, just pull changes." cyan
+coloredEcho "To update files, just pull changes." cyan
