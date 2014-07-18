@@ -37,15 +37,8 @@ let mapleader = ","
 if !argc()
      if isdirectory("/Users/aleksandargosevski/Sites/")
         cd ~/Sites
-    elseif isdirectory("/var/www")
-        cd /var/www
-    elseif isdirectory("c:/xampp/htdocs")
-        cd c:/xampp/htdocs
     endif
 endif
-
-" If no file is selected, execute Nerdtree plugin
-autocmd vimenter * if !argc() | NERDTree | endif
 
 " ================ Some guioptions ====================
 set guioptions-=m                       "remove menu bar
@@ -53,7 +46,6 @@ set guioptions-=T                       "remove toolbar
 set guioptions-=L                       "remove left scrollbar when vertical split
 set guioptions-=l                       "remove left scrollbar
 set linespace=6                         "Set lineheight in gvim
-let g:solarized_visibility="none"       "Disable specialkey highlight in solarized
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
