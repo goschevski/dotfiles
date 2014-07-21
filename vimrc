@@ -28,6 +28,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'tpope/vim-commentary'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'wookiehangover/jshint.vim'
 
 filetype plugin indent on
 " ================ End Vundle ====================
@@ -197,6 +198,8 @@ let g:ctrlp_buftag_types = {
           \ 'args': '-f -',
     \ },
     \ }
+
+map <Leader>m :JSHintToggle<CR>
 
 let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
 let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
