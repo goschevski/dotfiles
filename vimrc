@@ -154,27 +154,6 @@ xnoremap <tab> >gv
 " Maps for indentation in normal mode
 nnoremap <tab> >>
 nnoremap <s-tab> <<
-" Toogle NERDTree
-map <Leader>s :NERDTreeTabsToggle<CR>
-" Fugitive commands
-nnoremap <Leader>gs :Gstatus<CR>
-" Go to Symbol
-map <Leader>r :CtrlPBufTag<CR>
-" List opened files in buffer
-map <Leader>t :CtrlPBuffer<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" Comment code
-nmap <Leader>\ gcc
-" Search trough files
-nnoremap <Leader>f :Fsgrep /
-" Use jsctags for better javascript tags
-let g:ctrlp_buftag_types = {
-      \ 'javascript' : {
-          \ 'bin': 'jsctags',
-          \ 'args': '-f -',
-    \ },
-    \ }
 
 " ================ Indentation ======================
 set smarttab
@@ -196,6 +175,28 @@ set sidescrolloff=15
 set sidescroll=1
 
 " ================ Plugins setups ========================
+
+" Toogle NERDTree
+map <Leader>s :NERDTreeTabsToggle<CR>
+" Fugitive commands
+nnoremap <Leader>gs :Gstatus<CR>
+" Go to Symbol
+map <Leader>r :CtrlPBufTag<CR>
+" List opened files in buffer
+map <Leader>t :CtrlPBuffer<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Comment code
+nmap <Leader>\ gcc
+" Search trough files
+nnoremap <Leader>f :Fsgrep /
+" Use jsctags for better javascript tags
+let g:ctrlp_buftag_types = {
+      \ 'javascript' : {
+          \ 'bin': 'jsctags',
+          \ 'args': '-f -',
+    \ },
+    \ }
 
 let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
 let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
@@ -241,6 +242,9 @@ nmap s <Plug>(easymotion-s2)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
