@@ -55,6 +55,12 @@ git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
 coloredEcho "5. Clone and install doctorjs (jsctags)" green
 git clone https://github.com/mozilla/doctorjs ~/doctorjs
 cd ~/doctorjs && git submodule init && git submodule update && sudo make install
-sudo sed -i "51i tags: []," /usr/local/lib/jsctags/ctags/index.js
+sudo ed /usr/local/lib/jsctags/ctags/index.js << END
+51i
+tags: [],
+.
+w
+q
+END
 
 coloredEcho "To update files, just pull changes." cyan

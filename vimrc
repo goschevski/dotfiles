@@ -38,15 +38,8 @@ let mapleader = ","
 if !argc()
      if isdirectory("/Users/aleksandargosevski/Sites/")
         cd ~/Sites
-    elseif isdirectory("/var/www")
-        cd /var/www
-    elseif isdirectory("c:/xampp/htdocs")
-        cd c:/xampp/htdocs
     endif
 endif
-
-" If no file is selected, execute Nerdtree plugin
-autocmd vimenter * if !argc() | NERDTree | endif
 
 " ================ Some guioptions ====================
 set guioptions-=m                       "remove menu bar
@@ -54,7 +47,6 @@ set guioptions-=T                       "remove toolbar
 set guioptions-=L                       "remove left scrollbar when vertical split
 set guioptions-=l                       "remove left scrollbar
 set linespace=6                         "Set lineheight in gvim
-let g:solarized_visibility="none"       "Disable specialkey highlight in solarized
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
@@ -135,6 +127,12 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 
 " ================ Key mapping ========================
 
+" Easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
 " Fast exit to normal mode
 inoremap jj <Esc>
 " Fast save
@@ -167,7 +165,7 @@ map <Leader>t :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Comment code
-nnoremap <Leader>\ gcc
+nmap <Leader>\ gcc
 " Search trough files
 nnoremap <Leader>f :Fsgrep /
 " Use jsctags for better javascript tags
