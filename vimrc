@@ -184,7 +184,7 @@ nnoremap <Leader>gs :Gstatus<CR>
 " Go to Symbol
 map <Leader>r :CtrlPBufTag<CR>
 " List opened files in buffer
-map <Leader>t :CtrlPBuffer<CR>
+map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Comment code
