@@ -87,16 +87,6 @@ set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
 
-" ================ Functions ================
-
-" Remove trailing spaces on save
-function! StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfunction
-
 " ================ Completion =======================
 
 set wildmode=list:full
@@ -118,10 +108,31 @@ set noswapfile
 set nobackup
 set nowb
 
+" ================ Functions ================
+
+" Remove trailing spaces on save
+function! StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+function! ToggleTagBar()
+    if &filetype == 'javascript'
+        :TagbarOpen
+    else
+        :TagbarClose
+    endif
+endfunction
+
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
+
+" Open Tagbar for javascript files
+autocmd BufEnter * :call ToggleTagBar()"
 
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
