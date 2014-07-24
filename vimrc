@@ -118,21 +118,10 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-function! ToggleTagBar()
-    if &filetype == 'javascript'
-        :TagbarOpen
-    else
-        :TagbarClose
-    endif
-endfunction
-
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
-
-" Open Tagbar for javascript files
-autocmd BufEnter * :call ToggleTagBar()"
 
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
