@@ -7,6 +7,9 @@ alias sites="cd ~/Sites"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 
+# Trash
+alias emptytrash="sudo rm -rf ~/.Trash/*"
+
 # Git
 alias st='open -a SourceTree'
 
