@@ -9,12 +9,10 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'terryma/vim-multiple-cursors'
 Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
@@ -178,7 +176,7 @@ set sidescroll=1
 " ================ Plugins setups ========================
 
 " Toogle NERDTree
-map <Leader>s :NERDTreeTabsToggle<CR>
+map <Leader>s :NERDTreeToggle<CR>
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
 " Go to Symbol
