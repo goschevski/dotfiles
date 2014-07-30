@@ -1,28 +1,14 @@
-# ls, the common ones I use a lot shortened for rapid fire usage
-alias ls='ls -G' #I like color
-alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-
-# cd, because typing the backslash is ALOT of work!!
-alias .='cd ../'
-alias ..='cd ../../'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
+# List files
+alias ls='ls -G'
+alias la='ls -lAFh'
 
 # Folders
 alias sites="cd ~/Sites"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 
-# Files
-alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-
 # Git
 alias st='open -a SourceTree'
-alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Server
 alias restartApache='sudo apachectl restart'
@@ -30,15 +16,17 @@ alias editApacheConf='sudo vim /etc/apache2/httpd.conf'
 alias editHosts='sudo vim /etc/hosts'
 alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
 
-# Workflow
-function bp () {
-    volo create $1 https://github.com/goschevski/fronty/archive/master.zip
-	cd $1 && subl .
-	compass watch
-}
-
 # Create ctags
 alias makectags='`brew --prefix`/bin/ctags -R --exclude=node_modules'
+
+# Pull and prepare boilerplate
+function bp () {
+    volo create $1 https://github.com/goschevski/fronty/archive/master.zip
+	cd $1
+    npm i
+    gvim .
+	gulp watch
+}
 
 # Clean install of node modules
 function cleaninstall () {
@@ -47,14 +35,8 @@ function cleaninstall () {
     npm i
 }
 
-# SSH aliases - short cuts to ssh to a host
+# SSH
 alias vps="ssh root@188.40.242.169 -t"
-
-# Count lines of code
-alias htmllines='wc -l `find . -iname "*.html"` | sort -n'
-alias phplines='wc -l `find . -iname "*.php"` | sort -n'
-alias jslines='wc -l `find . -iname "*.js"` | sort -n'
-alias sasslines='wc -l `find . -iname "*.scss"` | sort -n'
 
 # Path
 export PATH=/usr/local/share/python:/user/bin/php:$PATH
