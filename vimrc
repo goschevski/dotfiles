@@ -132,6 +132,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+" Add empty line and stay in command mode
+nmap <Leader>j o<Esc>
+nmap <Leader>k O<Esc>
+
 " Fast exit to normal mode
 inoremap jj <Esc>
 " Fast save
