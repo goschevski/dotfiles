@@ -9,6 +9,8 @@
 		"Jade",
 		"Nettuts+ Fetch",
 		"SCSS",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
 		"Theme - Afterglow"
 	]
 }
