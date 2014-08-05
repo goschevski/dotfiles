@@ -28,6 +28,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'wookiehangover/jshint.vim'
+Bundle 'moll/vim-node'
 
 filetype plugin indent on
 " ================ End Vundle ====================
