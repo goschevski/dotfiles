@@ -32,7 +32,7 @@ Bundle 'wookiehangover/jshint.vim'
 filetype plugin indent on
 " ================ End Vundle ====================
 
-let mapleader = ","
+let mapleader = "\<Space>"
 
 " ================ Initial folder ====================
 if !argc()
