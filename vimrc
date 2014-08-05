@@ -133,6 +133,8 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+nnoremap <Leader>t :!npm test<CR>
+
 " Down is really the next line
 nnoremap j gj
 nnoremap k gk
