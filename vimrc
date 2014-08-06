@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
+Bundle 'chrismccord/bclose.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mhinz/vim-startify'
 Bundle 'itchyny/lightline.vim'
@@ -182,6 +183,9 @@ nnoremap <Leader>t :!npm test<CR>
 
 " ================ Plugins setups ========================
 
+" Bclose
+nnoremap <Leader>x :Bclose<CR>
+
 " Startify
 let g:startify_custom_header = [
 \ '       ____                _                    _    _ ',
@@ -194,7 +198,7 @@ let g:startify_custom_header = [
 \ ]
 let g:startify_relative_path = 1
 let g:startify_list_order = ['dir']
- let g:startify_list_order = [['    My last recently modified files in the current directory:'], 'dir']
+let g:startify_list_order = [['    My last recently modified files in the current directory:'], 'dir']
 
 " NERDTree
 map <Leader>s :NERDTreeToggle<CR>
