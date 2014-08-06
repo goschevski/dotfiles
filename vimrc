@@ -123,6 +123,7 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
 " Startify CtrlP NERDTree Sync
 autocmd FileType startify setlocal buftype=
+autocmd VimEnter * if !argc() | Startify | NERDTree | execute "normal \<c-w>w" | endif
 
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
