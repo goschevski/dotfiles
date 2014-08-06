@@ -227,7 +227,7 @@ let g:gitgutter_eager = 0                           "Disable gitgutter to eager 
 
 " NeoSnippet
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1.
+let g:neocomplete#enable_smart_case = 1
 let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
