@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'scrooloose/nerdtree'
+Bundle 'mhinz/vim-startify'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jiangmiao/auto-pairs'
@@ -26,15 +27,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'wookiehangover/jshint.vim'
 
 filetype plugin indent on
-" ================ End Vundle ====================
-
-
-" ================ Initial folder ====================
-if !argc()
-     if isdirectory("/Users/aleksandargosevski/Sites/")
-        cd ~/Sites
-    endif
-endif
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
