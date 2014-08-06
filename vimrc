@@ -121,6 +121,9 @@ endfunction
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
+" Startify CtrlP NERDTree Sync
+autocmd FileType startify setlocal buftype=
+
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
 
@@ -177,6 +180,20 @@ nnoremap <s-tab> <<
 nnoremap <Leader>t :!npm test<CR>
 
 " ================ Plugins setups ========================
+
+" Startify
+let g:startify_custom_header = [
+\ '       ____                _                    _    _ ',
+\ '      / ___| ___  ___  ___| |__   _____   _____| | _(_)',
+\ '     | |  _ / _ \/ __|/ __|  _ \ / _ \ \ / / __| |/ / |',
+\ '     | |_| | (_) \__ \ (__| | | |  __/\ V /\__ \   <| |',
+\ '      \____|\___/|___/\___|_| |_|\___| \_/ |___/_|\_\_|',
+\ '',
+\ ''
+\ ]
+let g:startify_relative_path = 1
+let g:startify_list_order = ['dir']
+ let g:startify_list_order = [['    My last recently modified files in the current directory:'], 'dir']
 
 " NERDTree
 map <Leader>s :NERDTreeToggle<CR>
