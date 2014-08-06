@@ -208,6 +208,8 @@ let NERDTreeShowHidden=1
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
 
 " CtrlP
 map <Leader>r :CtrlPBufTag<CR>
