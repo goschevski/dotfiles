@@ -11,10 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/emmet-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'airblade/vim-gitgutter'
@@ -25,15 +22,12 @@ Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'tpope/vim-commentary'
-Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'wookiehangover/jshint.vim'
-Bundle 'moll/vim-node'
 
 filetype plugin indent on
 " ================ End Vundle ====================
 
-let mapleader = "\<Space>"
 
 " ================ Initial folder ====================
 if !argc()
@@ -41,13 +35,6 @@ if !argc()
         cd ~/Sites
     endif
 endif
-
-" ================ Some guioptions ====================
-set guioptions-=m                       "remove menu bar
-set guioptions-=T                       "remove toolbar
-set guioptions-=L                       "remove left scrollbar when vertical split
-set guioptions-=l                       "remove left scrollbar
-set linespace=6                         "Set lineheight in gvim
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
@@ -87,11 +74,30 @@ set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
 
+" ================ Indentation ======================
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+set smartindent
+set autoindent
+
+" ================ Folds ============================
+set foldmethod=marker
+set foldmarker={{{,}}}
+set nofoldenable
+
+" ================ Scrolling ========================
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
+
 " ================ Completion =======================
 
 set wildmode=list:full
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildmenu
+set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*vendor/**
@@ -128,6 +134,9 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 
 " ================ Key mapping ========================
 
+" Map leader
+let mapleader = "\<Space>"
+
 " Easier window navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
@@ -147,64 +156,51 @@ nmap <Leader>k O<Esc>
 
 " Fast exit to normal mode
 inoremap jj <Esc>
+inoremap jk <Esc>
+
 " Fast save
 nnoremap <Leader>w :w<CR>
+
 " Fast quit
 nnoremap <Leader>q :q<CR>
-" Shorthand for making window smaller
+
+" Shorthand for making window smaller and bigger
 nnoremap <Leader>< <C-w>5<
-" Shorthand for making window bigger
 nnoremap <Leader>> <C-w>5>
-" Copy to system clipboard
+
+" Copy and paste to system clipboard
 vnoremap <Leader>y "+y"
-" Paste from system clipboard with Ctrl + v
-inoremap <Leader>p <Esc>"+p
+nnoremap <Leader>p <Esc>"+p
+
+" Hide highlight
 nnoremap <Leader>h :noh<CR>
-" Indenting in visual mode
+
+" Indenting in visual and normal mode
 xnoremap <s-tab> <gv
 xnoremap <tab> >gv
-" Maps for indentation in normal mode
 nnoremap <tab> >>
 nnoremap <s-tab> <<
+
 " Run npm test
 nnoremap <Leader>t :!npm test<CR>
 
-" ================ Indentation ======================
-set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
-set smartindent
-set autoindent
-
-" ================ Folds ============================
-set foldmethod=marker
-set foldmarker={{{,}}}
-set nofoldenable        "dont fold by default
-
-" ================ Scrolling ========================
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
-
 " ================ Plugins setups ========================
 
-" Toogle NERDTree
+" NERDTree
 map <Leader>s :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.git$', '\.sass-cache$']
+let g:NERDTreeChDirMode=2
+let NERDTreeShowHidden=1
+
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
-" Go to Symbol
+
+" CtrlP
 map <Leader>r :CtrlPBufTag<CR>
-" List opened files in buffer
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-" Comment code
-nmap <Leader>\ gcc
-" Search trough files
-nnoremap <Leader>f :Fsgrep /
-" Use jsctags for better javascript tags
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_buftag_types = {
       \ 'javascript' : {
           \ 'bin': 'jsctags',
@@ -212,39 +208,32 @@ let g:ctrlp_buftag_types = {
     \ },
     \ }
 
+" Commentary
+nmap <Leader>\ gcc
+
+" File Search
+nnoremap <Leader>f :Fsgrep /
+
+" JSHint
 map <Leader>m :JSHintToggle<CR>
 
-let g:NERDTreeChDirMode=2                           "NERDTree change directory only on root change
-let NERDTreeShowHidden=1                            "Show hidden files in NERDTree
-
+" Emmet
 let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
 let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
 
+" GitGutter
 let g:gitgutter_realtime = 0                        "Disable gitgutter in realtime
 let g:gitgutter_eager = 0                           "Disable gitgutter to eager load on tab or buffer switch
 
-let NERDTreeIgnore=['\.git$', '\.sass-cache$']
-
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-nmap <Leader>a :TagbarToggle<CR>
-
-let g:neocomplete#enable_at_startup = 1                     "Enable autocomplete
-let g:neocomplete#enable_smart_case = 1                     "Use smartcase.
-"Tell Neosnippet about the snippets folder"
+" NeoSnippet
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1.
 let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
-" Expand snippets on tab if snippets exists, otherwise do autocompletion
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-" If popup window is visible do autocompletion from back
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
 
-"Fix for jumping over placeholders for neosnippet
-smap <expr><TAB> neosnippet#jumpable() ?
-\ "\<Plug>(neosnippet_jump)"
-\: "\<TAB>"
-
-
+" EasyMotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-s2)
