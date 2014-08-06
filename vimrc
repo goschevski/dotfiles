@@ -134,7 +134,8 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-nnoremap <Leader>t :!npm test<CR>
+" Switch window quickly
+map <Leader><Tab> <C-w>w
 
 " Down is really the next line
 nnoremap j gj
@@ -165,6 +166,8 @@ xnoremap <tab> >gv
 " Maps for indentation in normal mode
 nnoremap <tab> >>
 nnoremap <s-tab> <<
+" Run npm test
+nnoremap <Leader>t :!npm test<CR>
 
 " ================ Indentation ======================
 set smarttab
