@@ -213,6 +213,13 @@ nnoremap <Leader>gc :Gcommit<CR>
 
 " CtrlP
 map <Leader>r :CtrlPBufTag<CR>
+let g:ctrlp_buffer_func = { 'enter': 'HideStatusLine', 'exit':  'ShowStatusLine' }
+func! HideStatusLine()
+    set laststatus=0
+endfunc
+func! ShowStatusLine()
+    set laststatus=2
+endfunc
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
