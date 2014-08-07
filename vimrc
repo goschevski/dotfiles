@@ -8,36 +8,36 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'chrismccord/bclose.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mhinz/vim-startify'
+Bundle 'kien/ctrlp.vim'
+Bundle 'szw/vim-ctrlspace'
 Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jelera/vim-javascript-syntax'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'jeetsukumaran/vim-filesearch'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'jeetsukumaran/vim-filesearch'
 Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'wookiehangover/jshint.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 filetype plugin indent on
 
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
+set showtabline=0               "Hide tabs
 set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
-set noshowmode                  "Hide showmode because of the powerline plugin
 set gdefault                    "Set global flag for search and replace
 set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
@@ -183,9 +183,6 @@ nnoremap <Leader>t :!npm test<CR>
 
 " ================ Plugins setups ========================
 
-" Bclose
-nnoremap <Leader>x :Bclose<CR>
-
 " Startify
 let g:startify_custom_header = [
 \ '       ____                _                    _    _ ',
@@ -214,7 +211,6 @@ nnoremap <Leader>gc :Gcommit<CR>
 
 " CtrlP
 map <Leader>r :CtrlPBufTag<CR>
-map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
@@ -224,6 +220,21 @@ let g:ctrlp_buftag_types = {
           \ 'args': '-f -',
     \ },
     \ }
+
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste', 'fugitive' ], [ 'filename', 'modified' ] ],
+  \   'right': [ [ 'filetype' ], [ 'percent' ] ]
+  \ },
+  \ 'component': {
+  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \ },
+  \ 'component_visible_condition': {
+  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \ },
+\ }
 
 " Commentary
 nmap <Leader>\ gcc
