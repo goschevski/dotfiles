@@ -167,9 +167,10 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>< <C-w>5<
 nnoremap <Leader>> <C-w>5>
 
-" Copy and paste to system clipboard
+" Copy and paste
 vnoremap <Leader>y "+y"
 nnoremap <Leader>p <Esc>"+p
+nnoremap <Leader>op o<Esc>p
 
 " Hide highlight
 nnoremap <Leader>h :noh<CR>
