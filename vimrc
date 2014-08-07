@@ -26,6 +26,8 @@ Bundle 'wookiehangover/jshint.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
 
@@ -267,3 +269,11 @@ let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-s2)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+
+" Gist
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_clip_command = 'pbcopy'
+xnoremap <Leader>gist :Gist -a<CR>
+nnoremap <Leader>gist :Gist -a<CR>
+nnoremap <Leader>agist :Gist -a -m<CR>
