@@ -236,6 +236,9 @@ let g:lightline = {
   \   'left': [ [ 'mode', 'paste', 'fugitive' ], [ 'filename', 'modified' ] ],
   \   'right': [ [ 'filetype' ], [ 'percent' ] ]
   \ },
+  \ 'component_function': {
+  \     'mode': 'MyMode'
+  \ },
   \ 'component': {
   \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
@@ -245,6 +248,11 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
 \ }
+function! MyMode()
+  let fname = expand('%:t')
+  return fname == '__CS__' ? ctrlspace#statusline_mode_segment() :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 " Commentary
 nmap <Leader>\ gcc
