@@ -13,6 +13,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'szw/vim-ctrlspace'
 Bundle 'itchyny/lightline.vim'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Shougo/neocomplete'
@@ -22,7 +23,6 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'jeetsukumaran/vim-filesearch'
 Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'wookiehangover/jshint.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -254,14 +254,22 @@ function! MyMode()
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+" Syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
+nnoremap <Leader>c :SyntasticCheck<CR>
+nnoremap <Leader>x :lclose<CR>
+
 " Commentary
 nmap <Leader>\ gcc
 
 " File Search
 nnoremap <Leader>f :Fsgrep /
-
-" JSHint
-map <Leader>m :JSHintToggle<CR>
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
