@@ -119,6 +119,21 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+function! ExtCommandResults(cmd)
+    " Run the command and save results
+    let output = system(a:cmd)
+
+    " Open a new split and set it up.
+    vsplit __ExtCommandResults__
+    normal! ggdG
+    setlocal filetype=text
+    setlocal buftype=nofile
+    setlocal encoding=utf-8
+
+    " Insert the test results.
+    call append(0, split(output, '\v\n'))
+endfunction
+
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
