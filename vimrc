@@ -119,19 +119,18 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-function! ExtCommandResults(cmd)
-    " Run the command and save results
-    let output = system(a:cmd)
+function! ExtractLocalVariable()
+    let name = input("Variable name: ")
 
-    " Open a new split and set it up.
-    vsplit __ExtCommandResults__
-    normal! ggdG
-    setlocal filetype=text
-    setlocal buftype=nofile
-    setlocal encoding=utf-8
+    if (visualmode() == "")
+        normal! viw
+    else
+        normal! gv
+    endif
 
-    " Insert the test results.
-    call append(0, split(output, '\v\n'))
+    exec "normal! c" . name
+    exec "normal! Ovar " . name . " = "
+    exec "normal! pa;"
 endfunction
 
 " ================ Auto commands ======================
@@ -198,6 +197,7 @@ nnoremap <s-tab> <<
 
 " Run npm test
 nnoremap <Leader>t :!npm test<CR>
+vnoremap <Leader>var :call ExtractLocalVariable()<CR>
 
 " ================ Plugins setups ========================
 
