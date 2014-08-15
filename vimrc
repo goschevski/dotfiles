@@ -25,6 +25,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -61,7 +62,7 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-colorscheme Tomorrow-Night      "Color scheme
+colorscheme xoria256            "Color scheme
 let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
@@ -178,8 +179,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Shorthand for making window smaller and bigger
-nnoremap <Leader>< <C-w>5<
-nnoremap <Leader>> <C-w>5>
+nnoremap <Leader>, <C-w>20<
+nnoremap <Leader>. <C-w>20>
 
 " Copy and paste
 vnoremap <Leader>y "+y"
@@ -197,6 +198,8 @@ nnoremap <s-tab> <<
 
 " Run npm test
 nnoremap <Leader>t :!npm test<CR>
+
+" Extract variable
 vnoremap <Leader>var :call ExtractLocalVariable()<CR>
 
 " ================ Plugins setups ========================
