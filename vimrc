@@ -25,7 +25,6 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -62,7 +61,7 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-colorscheme xoria256            "Color scheme
+colorscheme tomorrow-night
 let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
