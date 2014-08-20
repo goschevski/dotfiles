@@ -31,6 +31,14 @@ Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
 
+" ================ GUI options ====================
+set guioptions-=m                           "remove menu bar
+set guioptions-=T                           "remove toolbar
+set guioptions-=L                           "remove left scrollbar when vertical split
+set guioptions-=l                           "remove left scrollbar
+set guifont=Inconsolata\ for\ Powerline\ 12 "font setup
+set linespace=10                            "Set lineheight in gvim
+
 " ================ General Config ====================
 set t_Co=256                    "Set 256 colors
 set showtabline=0               "Hide tabs
