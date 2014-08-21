@@ -16,6 +16,7 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'mattn/emmet-vim'
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
@@ -297,8 +298,8 @@ nmap <Leader>\ gcc
 nnoremap <Leader>f :Fsgrep /
 
 " Emmet
-let g:user_emmet_expandabbr_key = '<c-e>'           "Change trigger emmet key
-let g:user_emmet_next_key = '<c-n>'                 "Change trigger jump to next for emmet
+let g:user_emmet_expandabbr_key = '<C-e>'           "Change trigger emmet key
+let g:user_emmet_next_key = '<C-n>'                 "Change trigger jump to next for emmet
 
 " GitGutter
 let g:gitgutter_realtime = 0                        "Disable gitgutter in realtime
