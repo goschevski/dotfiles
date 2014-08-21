@@ -172,6 +172,9 @@ map <Leader><Tab> <C-w>w
 nnoremap j gj
 nnoremap k gk
 
+" Delete content of the file
+nnoremap <Leader>d ggdG
+
 " Add empty line and stay in command mode
 nmap <Leader>j o<Esc>
 nmap <Leader>k O<Esc>
