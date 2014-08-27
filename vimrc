@@ -12,7 +12,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mhinz/vim-startify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'szw/vim-ctrlspace'
-" Bundle 'itchyny/lightline.vim'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
@@ -262,29 +261,6 @@ let g:ctrlp_buftag_types = {
           \ 'args': '-f -',
     \ },
     \ }
-
-let g:lightline = {
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste', 'fugitive' ], [ 'filename', 'modified' ] ],
-  \   'right': [ [ 'filetype' ], [ 'percent' ] ]
-  \ },
-  \ 'component_function': {
-  \     'mode': 'MyMode'
-  \ },
-  \ 'component': {
-  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ },
-\ }
-function! MyMode()
-  let fname = expand('%:t')
-  return fname == '__CS__' ? ctrlspace#statusline_mode_segment() :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
