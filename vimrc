@@ -12,7 +12,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mhinz/vim-startify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'szw/vim-ctrlspace'
-Bundle 'itchyny/lightline.vim'
+" Bundle 'itchyny/lightline.vim'
+Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -26,6 +27,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'tomasr/molokai'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -70,7 +72,8 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-colorscheme tomorrow-night
+let g:molokai_original = 1
+colorscheme molokai
 let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
@@ -330,3 +333,10 @@ let g:gist_clip_command = 'pbcopy'
 xnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>agist :Gist -a -m<CR>
+
+let g:airline_powerline_fonts = 1                           "Enable powerline fonts
+let g:airline_theme = "powerlineish"                        "Set theme to powerline default theme
+let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                       "set encoding type info
+let g:airline_section_z = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'    "Set relative path
+let g:airline_section_c = '%<%f %#__accent_red#%m%#__restore__# %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#' "Adds red modified
+let g:airline#extensions#whitespace#enabled = 0             "Disable whitespace extension"'"))}'"'")}'"
