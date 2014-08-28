@@ -7,29 +7,44 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Bundles
+" Gui plugins
 Bundle 'scrooloose/nerdtree'
 Bundle 'mhinz/vim-startify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'szw/vim-ctrlspace'
 Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
+
+" Search and movement
+Bundle 'jeetsukumaran/vim-filesearch'
+Bundle 'Lokaltog/vim-easymotion'
+
+" Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'mattn/emmet-vim'
+
+" Autocomplete and sinppets
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+
+" Code edit
+Bundle 'mattn/emmet-vim'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'jeetsukumaran/vim-filesearch'
 Bundle 'tpope/vim-commentary'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/syntastic'
+
+" Syntax highlight
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tomasr/molokai'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+
+" Share code (gist)
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+
+" Color schemes
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 filetype plugin indent on
 
@@ -38,11 +53,9 @@ set guioptions-=m                           "remove menu bar
 set guioptions-=T                           "remove toolbar
 set guioptions-=L                           "remove left scrollbar when vertical split
 set guioptions-=l                           "remove left scrollbar
-set guifont=Inconsolata\ for\ Powerline\ 12 "font setup
 set linespace=10                            "Set lineheight in gvim
 
 " ================ General Config ====================
-set t_Co=256                    "Set 256 colors
 set showtabline=0               "Hide tabs
 set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
@@ -54,7 +67,6 @@ set gdefault                    "Set global flag for search and replace
 set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
-:hi CursorLine cterm=NONE
 set visualbell                  "No sounds
 set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
@@ -63,7 +75,6 @@ set ignorecase                  "case insensitive search
 set hlsearch                    "Highlight search term
 set incsearch                   "Jump to found term while searching
 set showmatch                   "Highlight matching bracket
-set background=dark             "Set background to dark
 set clipboard+=unnamed          "Copy to system clibpoard
 set tags=tags;/                 "ctags file location, searches to root until it founds it
 set listchars=tab:\ \ ,trail:·  "Set trails for tabs and spaces
@@ -71,14 +82,19 @@ set list                        "Enable listchars
 set completeopt-=preview        "Disable preview for autocomplete
 set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
-let g:molokai_original = 1
-colorscheme molokai
-let base16colorspace=256
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
 set timeoutlen=1000             " Reduce Command timeout for faster escape and O
 set ttimeoutlen=200
+
+" =============== Color Schemes ====================
+set t_Co=256
+set background=dark
+" let g:molokai_original = 1
+" colorscheme molokai
+" colorscheme tomorrow-night
+colorscheme solarized
 
 " ================ Indentation ======================
 set smarttab
@@ -95,7 +111,7 @@ set foldmarker={{{,}}}
 set nofoldenable
 
 " ================ Scrolling ========================
-set scrolloff=8
+set scrolloff=4
 set sidescrolloff=15
 set sidescroll=1
 
