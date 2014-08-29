@@ -146,6 +146,11 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+function! SetFileType()
+    let name = input("Filetype: ")
+    exec "set filetype=" . name
+endfunction
+
 function! ExtractLocalVariable()
     let name = input("Variable name: ")
 
@@ -227,6 +232,9 @@ nnoremap <s-tab> <<
 
 " Run npm test
 nnoremap <Leader>t :!npm test<CR>
+
+" Set FileType
+nnoremap <Leader>/ :call SetFileType()<CR>
 
 " Extract variable
 vnoremap <Leader>var :call ExtractLocalVariable()<CR>
