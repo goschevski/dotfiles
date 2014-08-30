@@ -13,6 +13,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'szw/vim-ctrlspace'
 Bundle 'bling/vim-airline'
+Bundle 'junegunn/goyo.vim'
 
 " Search and movement
 Bundle 'jeetsukumaran/vim-filesearch'
@@ -296,6 +297,9 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 nnoremap <Leader>c :SyntasticCheck<CR>
 nnoremap <Leader>x :lclose<CR>
+
+" Goyo
+nnoremap <Leader>m :Goyo<CR>
 
 " Commentary
 nmap <Leader>\ gcc
