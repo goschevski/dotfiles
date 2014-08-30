@@ -2,6 +2,12 @@
 alias ls='ls -G'
 alias la='ls -lAFh'
 
+# Back folders
+alias .='cd ../'
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+
 # Folders
 alias sites="cd ~/Sites"
 alias downloads="cd ~/Downloads"
@@ -12,6 +18,7 @@ alias emptytrash="sudo rm -rf ~/.Trash/*"
 
 # Git
 alias st='open -a SourceTree'
+alias glog="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Server
 alias restartApache='sudo apachectl restart'
@@ -27,7 +34,7 @@ function bp () {
     volo create $1 https://github.com/goschevski/fronty/archive/master.zip
 	cd $1
     npm i
-    gvim .
+    vim .
 	gulp watch
 }
 
