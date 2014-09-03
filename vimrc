@@ -166,6 +166,12 @@ function! ExtractLocalVariable()
     exec "normal! pa;"
 endfunction
 
+function! ShowErrorsList()
+    let g:syntastic_auto_loc_list=1
+    :SyntasticCheck
+    let g:syntastic_auto_loc_list=0
+endfunction
+
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
@@ -287,15 +293,15 @@ let g:ctrlp_buftag_types = {
     \ },
     \ }
 
+
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-nnoremap <Leader>c :SyntasticCheck<CR>
+nnoremap <Leader>c :call ShowErrorsList()<CR>
 nnoremap <Leader>x :lclose<CR>
 
 " Goyo
