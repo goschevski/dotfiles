@@ -25,7 +25,7 @@ function coloredEcho(){
 home_dir=/Users/aleksandargosevski
 dotfiles_dir=$home_dir/dotfiles
 sublime_dir="$home_dir/Library/Application Support/Sublime Text 3/Packages/"
-FILES="vimrc zshrc aliases osx vim slate"
+FILES="vimrc zshrc aliases osx vim slate jshintrc"
 
 # Install oh-my-zsh
 coloredEcho "1. Installing oh-my-zsh" green
