@@ -96,6 +96,7 @@ set background=dark
 " colorscheme molokai
 " colorscheme tomorrow-night
 colorscheme solarized
+highlight clear SignColumn
 
 " ================ Indentation ======================
 set smarttab
