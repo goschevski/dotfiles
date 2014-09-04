@@ -97,9 +97,9 @@ set background=dark
 " colorscheme molokai
 " colorscheme tomorrow-night
 " colorscheme solarized
+" highlight clear SignColumn
 let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
-highlight clear SignColumn
 
 " ================ Indentation ======================
 set smarttab
