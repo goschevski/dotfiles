@@ -46,6 +46,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
@@ -95,7 +96,9 @@ set background=dark
 " let g:molokai_original = 1
 " colorscheme molokai
 " colorscheme tomorrow-night
-colorscheme solarized
+" colorscheme solarized
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
 highlight clear SignColumn
 
 " ================ Indentation ======================
