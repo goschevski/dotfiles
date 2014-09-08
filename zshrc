@@ -46,7 +46,7 @@ source ~/.aliases
 source ~/.nvm/nvm.sh
 
 # MySQL
-export PATH="/opt/local/bin:/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:/opt/local/bin:/usr/local/mysql/bin:$PATH"
 
 # Ctags for js
 NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
