@@ -8,7 +8,7 @@ call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
 " Gui plugins
-Plugin 'scrooloose/nerdtree'
+filetype 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'szw/vim-ctrlspace'
@@ -169,17 +169,6 @@ function! ShowErrorsList()
     :SyntasticCheck
     let g:syntastic_auto_loc_list=0
 endfunction
-
-" vp doesn't replace paste buffer
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
 
 " ================ Auto commands ======================
 
