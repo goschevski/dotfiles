@@ -8,7 +8,7 @@ call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
 " Gui plugins
-filetype 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'szw/vim-ctrlspace'
