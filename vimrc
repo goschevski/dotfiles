@@ -29,9 +29,9 @@ Plugin 'Shougo/neosnippet-snippets'
 " Code edit
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 " Syntax highlight
 Plugin 'jelera/vim-javascript-syntax'
@@ -46,7 +46,6 @@ Plugin 'mattn/gist-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'w0ng/vim-hybrid'
 
-call vundle#end()
 filetype plugin indent on
 
 " ================ GUI options ====================
@@ -170,6 +169,17 @@ function! ShowErrorsList()
     :SyntasticCheck
     let g:syntastic_auto_loc_list=0
 endfunction
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
 " ================ Auto commands ======================
 
