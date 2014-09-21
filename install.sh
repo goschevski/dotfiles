@@ -64,7 +64,7 @@ ln -s "$dotfiles_dir/User" "$sublime_dir/User"
 
 coloredEcho "7. Cloning vundle package manager for vim" green
 rm -rf ~/dotfiles/vim/bundle/*
-git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle --quiet
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
 
 # Install doctorjs (jsctags)
 coloredEcho "8. Installing doctorjs (jsctags)" green

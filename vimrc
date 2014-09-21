@@ -3,51 +3,50 @@ scriptencoding utf-8    "Set scriptencoding to utf-8 (listchars)
 
 " ================ Vundle ====================
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Gui plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'mhinz/vim-startify'
-Bundle 'kien/ctrlp.vim'
-Bundle 'szw/vim-ctrlspace'
-Bundle 'bling/vim-airline'
-Bundle 'junegunn/goyo.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mhinz/vim-startify'
+Plugin 'kien/ctrlp.vim'
+Plugin 'szw/vim-ctrlspace'
+Plugin 'bling/vim-airline'
 
 " Search and movement
-Bundle 'jeetsukumaran/vim-filesearch'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'jeetsukumaran/vim-filesearch'
 
 " Git
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Autocomplete and sinppets
-Bundle 'Shougo/neocomplete'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 " Code edit
-Bundle 'mattn/emmet-vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/syntastic'
+Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-commentary'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
 
 " Syntax highlight
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'cakebaker/scss-syntax.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'digitaltoad/vim-jade'
 
 " Share code (gist)
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 " Color schemes
-Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Bundle 'w0ng/vim-hybrid'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'w0ng/vim-hybrid'
 
+call vundle#end()
 filetype plugin indent on
 
 " ================ GUI options ====================
@@ -58,7 +57,6 @@ set guioptions-=l                           "remove left scrollbar
 set linespace=10                            "Set lineheight in gvim
 
 " ================ General Config ====================
-set showtabline=0               "Hide tabs
 set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
 set number                      "Line numbers are good
@@ -93,9 +91,6 @@ set ttimeoutlen=200
 " =============== Color Schemes ====================
 set t_Co=256
 set background=dark
-" let g:molokai_original = 1
-" colorscheme molokai
-" colorscheme tomorrow-night
 " colorscheme solarized
 " highlight clear SignColumn
 let g:hybrid_use_iTerm_colors = 1
@@ -308,9 +303,6 @@ let g:syntastic_style_warning_symbol = '⚠'
 nnoremap <Leader>c :call ShowErrorsList()<CR>
 nnoremap <Leader>x :lclose<CR>
 
-" Goyo
-nnoremap <Leader>m :Goyo<CR>
-
 " Commentary
 nmap <Leader>\ gcc
 
@@ -333,13 +325,6 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
 
-" EasyMotion
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-s2)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
@@ -348,6 +333,7 @@ xnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>agist :Gist -a -m<CR>
 
+" Airline
 let g:airline_theme = "luna"
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
