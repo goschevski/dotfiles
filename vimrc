@@ -293,6 +293,7 @@ let g:ctrlp_buftag_types = {
 
 
 " Syntastic
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol='✗'
