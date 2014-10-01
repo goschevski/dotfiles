@@ -90,10 +90,10 @@ set ttimeoutlen=200
 " =============== Color Schemes ====================
 set t_Co=256
 set background=dark
-" colorscheme solarized
-" highlight clear SignColumn
+colorscheme solarized
+highlight clear SignColumn
 let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid
+" colorscheme hybrid
 
 " ================ Indentation ======================
 set smarttab
@@ -257,7 +257,6 @@ let g:startify_custom_header = [
 \ ''
 \ ]
 let g:startify_relative_path = 1
-let g:startify_list_order = ['dir']
 let g:startify_list_order = [['    My last recently modified files in the current directory:'], 'dir']
 
 " NERDTree
