@@ -14,7 +14,7 @@ Plugin 'szw/vim-ctrlspace'
 Plugin 'bling/vim-airline'
 
 " Search and movement
-Plugin 'jeetsukumaran/vim-filesearch'
+Plugin 'mileszs/ack.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -284,8 +284,9 @@ nnoremap <Leader>x :lclose<CR>
 " Commentary
 nmap <Leader>\ gcc
 
-" File Search
-nnoremap <Leader>f :Fsgrep /
+" Ack Search
+let g:ackhighlight = 1
+nnoremap <Leader>f :Ack
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'           "Change trigger emmet key
