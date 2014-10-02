@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
-Plugin 'szw/vim-ctrlspace'
+Plugin 'Shougo/unite.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
@@ -223,7 +223,6 @@ nnoremap <Leader>. <C-w>20>
 " Copy and paste
 vnoremap <Leader>y "+y"
 nnoremap <Leader>p <Esc>"+p
-nnoremap <Leader>op o<Esc>p
 
 " Hide highlight
 nnoremap <Leader>h :noh<CR>
@@ -263,6 +262,10 @@ map <Leader>s :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
+
+" Unite
+nnoremap <Leader>p :Unite -start-insert file<CR>
+nnoremap <Leader>o :Unite -start-insert buffer<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
