@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
-Plugin 'kien/ctrlp.vim'
 Plugin 'szw/vim-ctrlspace'
 Plugin 'bling/vim-airline'
 
@@ -175,7 +174,7 @@ endfunction
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
-" Startify CtrlP NERDTree Sync
+" Startify NERDTree Sync
 autocmd FileType startify setlocal buftype=
 autocmd VimEnter * if !argc() | Startify | NERDTree | execute "normal \<c-w>w" | endif
 
@@ -270,26 +269,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit<CR>
-
-" CtrlP
-map <Leader>r :CtrlPBufTag<CR>
-let g:ctrlp_buffer_func = { 'enter': 'HideStatusLine', 'exit':  'ShowStatusLine' }
-func! HideStatusLine()
-    set laststatus=0
-endfunc
-func! ShowStatusLine()
-    set laststatus=2
-endfunc
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-let g:ctrlp_buftag_types = {
-      \ 'javascript' : {
-          \ 'bin': 'jsctags',
-          \ 'args': '-f -',
-    \ },
-    \ }
-
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']

@@ -66,17 +66,4 @@ coloredEcho "7. Cloning vundle package manager for vim" green
 rm -rf ~/dotfiles/vim/bundle/*
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
 
-# Install doctorjs (jsctags)
-coloredEcho "8. Installing doctorjs (jsctags)" green
-rm -rf ~/doctorjs
-git clone https://github.com/mozilla/doctorjs ~/doctorjs --quiet
-cd ~/doctorjs && git submodule init --quiet && git submodule update --quiet && (sudo make install) 2>&1 > /dev/null
-sudo ed /usr/local/lib/jsctags/ctags/index.js << END
-51i
-tags: [],
-.
-w
-q
-END
-
 coloredEcho "To update files, just pull changes." cyan
