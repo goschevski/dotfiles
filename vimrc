@@ -264,8 +264,14 @@ let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
 " Unite
-nnoremap <Leader>p :Unite -start-insert file<CR>
-nnoremap <Leader>o :Unite -start-insert buffer<CR>
+call unite#custom#profile('default', 'context', {
+    \ 'start_insert': 1,
+    \ 'winheight': 10,
+    \ 'direction': 'botright',
+    \ 'prompt': '» '
+\ })
+nnoremap <Leader>p :Unite file<CR>
+nnoremap <Leader>o :Unite buffer<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
