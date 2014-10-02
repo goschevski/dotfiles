@@ -24,6 +24,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'majutsushi/tagbar'
 
 " Code edit
 Plugin 'mattn/emmet-vim'
@@ -272,6 +273,10 @@ call unite#custom#profile('default', 'context', {
 \ })
 nnoremap <Leader>p :Unite file<CR>
 nnoremap <Leader>o :Unite buffer<CR>
+
+" Tagbar
+let g:tagbar_autofocus = 1
+nnoremap <Leader>t :TagbarToggle<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
