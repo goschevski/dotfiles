@@ -266,6 +266,7 @@ let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
 " CtrlP
+let g:ctrlp_reuse_window  = 'startify'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_matchtype = 'path'
 nnoremap <Leader>p :CtrlP<CR>
