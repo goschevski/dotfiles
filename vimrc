@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'bling/vim-airline'
 
 " Search and movement
@@ -265,9 +266,11 @@ let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
 " CtrlP
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_matchtype = 'path'
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
-nnoremap <Leader>r :CtrlPBufTag<CR>
+nnoremap <Leader>r :CtrlPFunky<CR>
 
 " Tagbar
 let g:tagbar_autofocus = 1
