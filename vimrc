@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
-Plugin 'Shougo/unite.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
@@ -264,15 +264,10 @@ let NERDTreeIgnore=['\.git$', '\.sass-cache$']
 let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
-" Unite
-call unite#custom#profile('default', 'context', {
-    \ 'start_insert': 1,
-    \ 'winheight': 10,
-    \ 'direction': 'botright',
-    \ 'prompt': '» '
-\ })
-nnoremap <Leader>p :Unite file<CR>
-nnoremap <Leader>o :Unite buffer<CR>
+" CtrlP
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>o :CtrlPBuffer<CR>
+nnoremap <Leader>r :CtrlPBufTag<CR>
 
 " Tagbar
 let g:tagbar_autofocus = 1
