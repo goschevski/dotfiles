@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
+Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'bling/vim-airline'
 
@@ -267,6 +268,7 @@ let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_reuse_window  = 'startify'
+call ctrlp_bdelete#init()
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_matchtype = 'path'
 nnoremap <Leader>p :CtrlP<CR>
