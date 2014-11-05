@@ -1,0 +1,16 @@
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="goschevski"
+source $ZSH/oh-my-zsh.sh
+
+source ~/.osx
+source ~/.aliases
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Setup zsh-autosuggestions
+source ~/.zsh-autosuggestions/autosuggestions.zsh
+zle-line-init() { zle autosuggest-start }
+zle -N zle-line-init
+AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
+AUTOSUGGESTION_HIGHLIGHT_CURSOR=0

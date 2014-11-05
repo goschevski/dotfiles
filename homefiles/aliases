@@ -29,15 +29,6 @@ alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
 # Create ctags
 alias makectags='`brew --prefix`/bin/ctags -R --exclude=node_modules'
 
-# Pull and prepare boilerplate
-function bp () {
-    volo create $1 https://github.com/goschevski/fronty/archive/master.zip
-	cd $1
-    npm i
-    vim .
-	gulp watch
-}
-
 # Clean install of node modules
 function cleaninstall () {
     rm -rf node_modules/
@@ -47,6 +38,3 @@ function cleaninstall () {
 
 # SSH
 alias vps="ssh root@188.40.242.169 -t"
-
-# Path
-export PATH=/usr/local/share/python:/user/bin/php:$PATH
