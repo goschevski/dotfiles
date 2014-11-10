@@ -57,6 +57,7 @@ set guioptions-=L                           "remove left scrollbar when vertical
 set guioptions-=l                           "remove left scrollbar
 set guioptions-=r                           "remove right scrollbar
 set linespace=10                            "Set lineheight in gvim
+set guifont=Monaco:h13                      "Set font-size in gvim
 
 " ================ General Config ====================
 set mouse=a                     "Enable mouse
