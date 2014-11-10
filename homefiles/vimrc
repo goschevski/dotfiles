@@ -18,9 +18,10 @@ Plugin 'bling/vim-airline'
 " Search and movement
 Plugin 'mileszs/ack.vim'
 
-" Git
+" Git and command line
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'thinca/vim-quickrun'
 
 " Autocomplete and sinppets
 Plugin 'Shougo/neocomplete'
