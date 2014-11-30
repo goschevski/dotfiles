@@ -2,6 +2,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 brew update
 brew tap casidiablo/homebrew-custom
-brew install ack wget ctags caskroom/cask/brew-cask git node mysql php56 php56-mcrypt composer
+brew install ack wget ctags node caskroom/cask/brew-cask
 brew install vim --with-lua
-brew cask install appcleaner adium skype caffeine google-chrome iterm2 slate sparrow vlc alfred cloud hyperswitch sketch sourcetree xtrafinder tunnelblick
+brew cask install adium appcleaner cloud hyperswitch sketch slate sparrow twitterrific xtrafinder alfred caffeine google-chrome iterm2 skype sourcetree tunnelblick vlc
+sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator
