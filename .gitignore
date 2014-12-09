@@ -1,10 +1,2 @@
 .DS_Store
 vim/bundle
-*pcr*
-Package Control.last-run
-Package Control.ca-list
-Package Control.ca-bundle
-Package Control.system-ca-bundle
-Package Control.cache/
-Package Control.ca-certs/
-Shell-Unix-Generic.sublime-settings
