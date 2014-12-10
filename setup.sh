@@ -22,7 +22,7 @@ brew install vim --with-lua
 sudo mv /usr/bin/vim /usr/bin/vim73
 
 loudEcho "Brew cask install apps..."
-brew cask install adium appcleaner cloud hyperswitch sketch slate sparrow twitterrific xtrafinder alfred caffeine google-chrome iterm2 skype sourcetree tunnelblick virtualbox qlcolorcode qlstephen qlmarkdown quicklook-json vlc
+brew cask install adium appcleaner cloud hyperswitch sketch slate sparrow twitterrific xtrafinder alfred caffeine google-chrome iterm2 skype sourcetree tunnelblick virtualbox qlcolorcode qlstephen qlmarkdown quicklook-json vlc dropbox copy
 
 loudEcho "NPM install global modules..."
 sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon puer rwdperf
