@@ -14,18 +14,45 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 loudEcho "Brew doctor & update..."
 brew doctor && brew update
 
-loudEcho "Brew install shell tools..."
+loudEcho "Brew install..."
 brew install ack wget node caskroom/cask/brew-cask
+brew tap casidiablo/homebrew-custom
 
 loudEcho "Brew install vim..."
 brew install vim --with-lua
 sudo mv /usr/bin/vim /usr/bin/vim73
 
-loudEcho "Brew cask install apps..."
-brew cask install adium appcleaner cloud hyperswitch sketch slate sparrow twitterrific xtrafinder alfred caffeine google-chrome iterm2 skype sourcetree tunnelblick virtualbox qlcolorcode qlstephen qlmarkdown quicklook-json vlc dropbox copy
+loudEcho "Brew cask..."
+brew cask install adium
+brew cask install appcleaner
+brew cask install popcorn-time
+brew cask install cyberduck
+brew cask install cloud
+brew cask install hyperswitch
+brew cask install sketch
+brew cask install slate
+brew cask install sparrow
+brew cask install twitterrific
+brew cask install xtrafinder
+brew cask install alfred
+brew cask install caffeine
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install skype
+brew cask install sourcetree
+brew cask install tunnelblick
+brew cask install virtualbox
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install vlc
+brew cask install dropbox
+brew cask install copy
+brew cask install transmission
 
 loudEcho "NPM install global modules..."
-sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon puer rwdperf
+sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon
 
 loudEcho "Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git ~/dotfiles --quiet
