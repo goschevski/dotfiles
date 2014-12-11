@@ -15,7 +15,8 @@ loudEcho "Brew doctor & update..."
 brew doctor && brew update
 
 loudEcho "Brew install..."
-brew install ack wget node caskroom/cask/brew-cask
+brew install ack wget node macvim caskroom/cask/brew-cask
+brew linkapps
 brew tap casidiablo/homebrew-custom
 
 loudEcho "Brew install vim..."
