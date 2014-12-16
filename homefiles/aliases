@@ -13,6 +13,10 @@ alias sites="cd ~/Sites"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 
+# Brew and cask
+alias cask="brew cask"
+alias cleanup="brew cleanup && brew cask cleanup"
+
 # Trash
 alias emptytrash="sudo rm -rf ~/.Trash/*"
 
