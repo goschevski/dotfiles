@@ -46,7 +46,7 @@
     "node": true,
     "browserify": true,
     "nonstandard": true,
-    "predef": ["define", "require", "$", "beforeEach", "afterEach", "jasmine", "it", "describe", "expect", "sinon", "Backbone", "VAST"],
+    "predef": ["define", "require", "$", "beforeEach", "afterEach", "jasmine", "it", "describe", "expect", "sinon"],
     "prototypejs": false,
     "rhino": false,
     "wsh": false,
