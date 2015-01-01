@@ -3,7 +3,6 @@ ZSH_THEME="goschevski"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-source ~/.osx
 source ~/.aliases
 
 bindkey "^[[H" beginning-of-line
