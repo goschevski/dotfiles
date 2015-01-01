@@ -263,7 +263,7 @@ let g:startify_custom_header = [
 \ ''
 \ ]
 let g:startify_relative_path = 1
-let g:startify_list_order = [['    My last recently modified files in the current directory:'], 'dir']
+let g:startify_list_order = [['    Recently modified files in the current directory:'], 'dir']
 
 " NERDTree
 map <Leader>s :NERDTreeToggle<CR>
