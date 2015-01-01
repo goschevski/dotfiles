@@ -8,6 +8,10 @@ loudEcho "Make me owner of important folders"
 sudo chown -R `whoami` ~/
 sudo chown -R `whoami` /usr/local
 
+loudEcho "Setup some OSX settings"
+sudo chmod +x ~/dotfiles/osx.sh
+~/dotfiles/osx.sh
+
 loudEcho "Installing home brew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
