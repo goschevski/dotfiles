@@ -27,7 +27,6 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'majutsushi/tagbar'
 
 " Code edit
 Plugin 'mattn/emmet-vim'
