@@ -1,0 +1,15 @@
+[core]
+    excludesfile = ~/.gitignore
+[user]
+    name = Aleksandar Gosevski
+    email = gosevskibg@gmail.com
+[github]
+    user = goschevski
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    d = difftool
+[merge]
+    tool = vimdiff
