@@ -13,6 +13,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
