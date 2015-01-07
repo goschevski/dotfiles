@@ -268,7 +268,7 @@ let g:startify_list_order = [['    Recently modified files in the current direct
 
 " NERDTree
 map <Leader>s :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.git$', '\.sass-cache$']
+let NERDTreeIgnore=['\.git$', '\.sass-cache$', '_site$']
 let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
