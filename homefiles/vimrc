@@ -35,6 +35,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'junegunn/goyo.vim'
 
 " Syntax highlight
 Plugin 'jelera/vim-javascript-syntax'
