@@ -283,10 +283,6 @@ nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
 nnoremap <Leader>r :CtrlPFunky<CR>
 
-" Tagbar
-let g:tagbar_autofocus = 1
-nnoremap <Leader>t :TagbarToggle<CR>
-
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
