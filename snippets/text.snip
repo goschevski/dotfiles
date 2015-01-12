@@ -1,23 +1,40 @@
-snippet pcr
-    Deploy ${1:Project Name} RC${2:1} build # ${3:Tag} to ${4:Beta}
+snippet pcrbeta
+    Deploy ${1:Project Name} RC${2:1} build # ${3:Tag} to Beta
 
     Fixes for:
-    ${5:Tickets list}
+    ${4:Tickets list}
 
     --------------------------------------------------------------------
 
     Hi all,
 
-    $1 $2 has just been deployed to $3 and it is ready for QA
+    $1 RC$2 has just been deployed to Beta and it is ready for QA
 
-    https://jira.vast.com/browse/PCR-${6:PCR Ticket}
+    https://jira.vast.com/browse/PCR-${5:PCR Ticket}
 
-    Deploy $1 build # $3 to $4
+    Deploy $1 RC$2 build # $3 to Beta
 
     Tag: $3${6}
 
     Fixes for:
-    $5
+    $4
+
+    Kind Regards,
+    Aleksandar
+
+snippet pcrprod
+    Hi all,
+
+    ${1:Project Name} RC${2:1} has just been deployed to Production.
+
+    https://jira.vast.com/browse/PCR-${3:PCR Ticket}
+
+    Deploy $1 RC$2 build # ${4:Tag}${5} to Production
+    Approved for execution by 24x7.
+
+    Tag: $4${6}
+
+    TeamCity build #: $4
 
     Kind Regards,
     Aleksandar
