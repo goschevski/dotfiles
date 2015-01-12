@@ -1,0 +1,23 @@
+snippet pcr
+    Deploy ${1:Project Name} RC${2:1} build # ${3:Tag} to ${4:Beta}
+
+    Fixes for:
+    ${5:Tickets list}
+
+    --------------------------------------------------------------------
+
+    Hi all,
+
+    $1 $2 has just been deployed to $3 and it is ready for QA
+
+    https://jira.vast.com/browse/PCR-${6:PCR Ticket}
+
+    Deploy $1 build # $3 to $4
+
+    Tag: $3${6}
+
+    Fixes for:
+    $5
+
+    Kind Regards,
+    Aleksandar
