@@ -41,7 +41,6 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'plasticboy/vim-markdown'
 
 " Share code (gist)
 Plugin 'mattn/webapi-vim'
