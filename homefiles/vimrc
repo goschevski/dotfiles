@@ -181,6 +181,9 @@ endfunction
 " Auto-remove trailing spaces
 autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
+" Prefer markdown insted of modula
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Startify NERDTree Sync
 autocmd FileType startify setlocal buftype=
 autocmd VimEnter * if !argc() | Startify | NERDTree | execute "normal \<c-w>w" | endif
