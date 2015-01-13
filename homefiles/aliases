@@ -22,7 +22,6 @@ alias emptytrash="sudo rm -rf ~/.Trash/*"
 
 # Git
 alias st='open -a SourceTree'
-alias glog="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 function retag () {
     git tag -d v$1 && git push origin :refs/tags/v$1 && git tag v$1
 }
