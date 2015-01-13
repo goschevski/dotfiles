@@ -170,12 +170,6 @@ function! ExtractLocalVariable()
     exec "normal! pa;"
 endfunction
 
-function! ShowErrorsList()
-    let g:syntastic_auto_loc_list=1
-    :SyntasticCheck
-    let g:syntastic_auto_loc_list=0
-endfunction
-
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
@@ -306,7 +300,7 @@ let g:syntastic_html_tidy_ignore_errors = [
     \  '<script> escaping malformed URI reference',
     \  '</head> isn''t allowed in <body> elements'
     \ ]
-nnoremap <Leader>c :call ShowErrorsList()<CR>
+nnoremap <Leader>c :Errors<CR>
 nnoremap <Leader>x :lclose<CR>
 
 " Commentary
