@@ -29,32 +29,32 @@ sudo mv /usr/bin/vim /usr/bin/vim73
 
 loudEcho "Brew cask..."
 brew cask install adium
-brew cask install appcleaner
-brew cask install popcorn-time
-brew cask install cyberduck
-brew cask install cloud
-brew cask install hyperswitch
-brew cask install sketch
-brew cask install slate
-brew cask install sparrow
-brew cask install twitterrific
-brew cask install xtrafinder
 brew cask install alfred
+brew cask install appcleaner
 brew cask install caffeine
+brew cask install cloud
+brew cask install cyberduck
+brew cask install firefox
 brew cask install google-chrome
+brew cask install hyperswitch
 brew cask install iterm2
-brew cask install skype
-brew cask install sourcetree
-brew cask install tunnelblick
-brew cask install virtualbox
+brew cask install mou
+brew cask install popcorn-time
 brew cask install qlcolorcode
-brew cask install qlstephen
 brew cask install qlmarkdown
+brew cask install qlstephen
 brew cask install quicklook-json
-brew cask install vlc
-brew cask install dropbox
-brew cask install copy
+brew cask install sketch
+brew cask install skype
+brew cask install slate
+brew cask install sourcetree
+brew cask install sparrow
 brew cask install transmission
+brew cask install tunnelblick
+brew cask install twitterrific
+brew cask install virtualbox
+brew cask install vlc
+brew cask install xtrafinder
 
 loudEcho "NPM install global modules..."
 sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon
