@@ -64,7 +64,7 @@ git clone git@github.com:goschevski/dotfiles.git ~/dotfiles --quiet
 
 loudEcho "Installing oh-my-zsh..."
 rm -rf ~/.oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh --quiet
+curl -L http://install.ohmyz.sh | sh
 sudo chsh -s /bin/zsh
 
 loudEcho "Installing zsh-autosuggestions..."
