@@ -20,10 +20,13 @@ alias cleanup="brew cleanup && brew cask cleanup"
 # Trash
 alias emptytrash="sudo rm -rf ~/.Trash/*"
 
+# Clean install of node modules
+alias npmi="sudo -v && rm -rf node_modules && npm cache clean && npm i"
+
 # Git
 alias st='open -a SourceTree'
 function retag () {
-    git tag -d v$1 && git push origin :refs/tags/v$1 && git tag v$1
+    git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
 }
 
 # Server
@@ -31,16 +34,6 @@ alias restartApache='sudo apachectl restart'
 alias editApacheConf='sudo vim /etc/apache2/httpd.conf'
 alias editHosts='sudo vim /etc/hosts'
 alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
-
-# Create ctags
-alias makectags='`brew --prefix`/bin/ctags -R --exclude=node_modules'
-
-# Clean install of node modules
-function cleaninstall () {
-    rm -rf node_modules/
-    npm cache clean
-    npm i
-}
 
 # SSH
 alias vps="ssh root@188.40.242.169 -t"
