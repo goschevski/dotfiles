@@ -43,6 +43,7 @@ brew cask install popcorn-time
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
+brew cask install quicklock
 brew cask install quicklook-json
 brew cask install sketch
 brew cask install skype
