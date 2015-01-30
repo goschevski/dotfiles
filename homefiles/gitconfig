@@ -1,5 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
+	editor = vim
 [user]
     name = Aleksandar Gosevski
     email = gosevskibg@gmail.com
