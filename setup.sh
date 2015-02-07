@@ -21,7 +21,6 @@ brew doctor && brew update
 loudEcho "Brew install..."
 brew install git ack wget node macvim caskroom/cask/brew-cask
 brew linkapps
-brew tap casidiablo/homebrew-custom
 
 loudEcho "Brew install vim..."
 brew install vim --with-lua
@@ -39,7 +38,6 @@ brew cask install google-chrome
 brew cask install hyperswitch
 brew cask install iterm2
 brew cask install mou
-brew cask install popcorn-time
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
@@ -57,7 +55,7 @@ brew cask install vlc
 brew cask install xtrafinder
 
 loudEcho "NPM install global modules..."
-sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon
+sudo npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon webtorrent torrent
 
 loudEcho "Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git ~/dotfiles --quiet
