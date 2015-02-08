@@ -83,3 +83,6 @@ done
 loudEcho "Cloning vundle..."
 rm -rf ~/dotfiles/vim/bundle/*
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
+
+loudEcho "Installing Vim plugins..."
+vim +PluginInstall +qall
