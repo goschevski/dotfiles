@@ -173,7 +173,7 @@ endfunction
 " ================ Auto commands ======================
 
 " Auto-remove trailing spaces
-autocmd BufWritePre * :call StripTrailingWhitespaces()"
+" autocmd BufWritePre * :call StripTrailingWhitespaces()"
 
 " Prefer markdown insted of modula
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -246,6 +246,9 @@ nnoremap <Leader>t :!npm test<CR>
 " Set FileType
 nnoremap <Leader>/ :call SetFileType()<CR>
 
+" Clear trailing whitespaces
+nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
+
 " Extract variable
 vnoremap <Leader>var :call ExtractLocalVariable()<CR>
 
@@ -308,7 +311,7 @@ nmap <Leader>\ gcc
 
 " Ack Search
 let g:ackhighlight = 1
-nnoremap <Leader>f :Ack
+nnoremap <Leader>f :Ack 
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'           "Change trigger emmet key
