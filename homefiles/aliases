@@ -31,6 +31,7 @@ alias npmi="sudo -v && rm -rf node_modules && npm cache clean && npm i"
 
 # Git
 alias st='open -a SourceTree'
+alias gd='git diff -U10|dwdiff --diff-input -c|less -R'
 function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
 }
