@@ -56,9 +56,9 @@ filetype plugin indent on
 set t_Co=256
 set background=dark
 highlight clear SignColumn
-" colorscheme solarized
-let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid
+colorscheme solarized
+" let g:hybrid_use_iTerm_colors = 1
+" colorscheme hybrid
 
 " ================ GUI options ====================
 set guioptions-=m                           "remove menu bar
