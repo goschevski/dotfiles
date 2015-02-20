@@ -179,6 +179,9 @@ endfunction
 " Prefer markdown insted of modula
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Close nerdtree if it is last buffer
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " Startify NERDTree Sync
 autocmd FileType startify setlocal buftype=
 autocmd VimEnter * if !argc() | Startify | NERDTree | execute "normal \<c-w>w" | endif
