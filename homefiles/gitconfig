@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-	editor = vim
+    editor = vim
 [user]
     name = Aleksandar Gosevski
     email = gosevskibg@gmail.com
@@ -15,4 +15,4 @@
 [merge]
     tool = vimdiff
 [color]
-	ui = true
+    ui = true
