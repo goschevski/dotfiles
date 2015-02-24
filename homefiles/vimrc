@@ -72,7 +72,7 @@ set guifont=Monaco:h13                      "Set font-size in gvim
 " ================ General Config ====================
 set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
-set number                      "Line numbers are good
+set relativenumber              "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
