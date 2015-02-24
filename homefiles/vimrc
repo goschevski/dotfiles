@@ -18,7 +18,6 @@ Plugin 'bling/vim-airline'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
-Plugin 'Lokaltog/vim-easymotion'
 
 " Git and command line
 Plugin 'tpope/vim-fugitive'
@@ -352,10 +351,3 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline_section_y = '%{&enc}'
 let g:airline_section_z = '%p%%'
 let g:airline_exclude_preview = 1
-
-" Easy motion
-nmap z <Plug>(easymotion-s2)
-map / <Plug>(easymotion-tn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
