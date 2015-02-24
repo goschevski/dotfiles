@@ -314,7 +314,7 @@ nmap <Leader>\ gcc
 
 " Ack Search
 let g:ackhighlight = 1
-nnoremap <Leader>f :Ack 
+nnoremap <Leader>f :Ack<Space>
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'           "Change trigger emmet key
