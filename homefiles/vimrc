@@ -235,7 +235,7 @@ vnoremap <Leader>y "+y"
 nnoremap <Leader>p <Esc>"+p
 
 " Hide highlight
-nnoremap <Leader>h :noh<CR>
+nnoremap <silent> <BS> :noh<CR>
 
 " Indenting in visual and normal mode
 xnoremap <s-tab> <gv
