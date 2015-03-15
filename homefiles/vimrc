@@ -28,6 +28,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'heavenshell/vim-jsdoc'
 
 " Code edit
 Plugin 'mattn/emmet-vim'
