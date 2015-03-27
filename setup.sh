@@ -44,7 +44,7 @@ brew cask install qlstephen
 brew cask install quicklook-json
 brew cask install sketch
 brew cask install skype
-brew cask install slate
+brew cask install mattr-slate
 brew cask install sourcetree
 brew cask install sparrow
 brew cask install transmission
