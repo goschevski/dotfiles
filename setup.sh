@@ -19,7 +19,7 @@ loudEcho "Brew doctor & update..."
 brew doctor && brew update
 
 loudEcho "Brew install..."
-brew install git ack wget node macvim caskroom/cask/brew-cask
+brew install git ack wget node macvim mutt mc youtube-dl pandoc caskroom/cask/brew-cask
 brew linkapps
 
 loudEcho "Brew install vim..."
@@ -37,7 +37,7 @@ brew cask install firefox
 brew cask install google-chrome
 brew cask install hyperswitch
 brew cask install iterm2
-brew cask install mou
+# brew cask install mou
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
