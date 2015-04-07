@@ -308,8 +308,8 @@ let g:syntastic_html_tidy_ignore_errors = [
     \  '<script> escaping malformed URI reference',
     \  '</head> isn''t allowed in <body> elements'
     \ ]
-nnoremap <Leader>c :Errors<CR>
-nnoremap <Leader>x :lclose<CR>
+nnoremap <Leader>c :SyntasticCheck<CR>
+nnoremap <Leader>x :SyntasticReset<CR>
 
 " Commentary
 nmap <Leader>\ gcc
