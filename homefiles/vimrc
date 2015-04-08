@@ -87,6 +87,7 @@ set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
 set ignorecase                  "case insensitive search
+set binary                      "don't add new line on end of file
 set hlsearch                    "Highlight search term
 set incsearch                   "Jump to found term while searching
 set showmatch                   "Highlight matching bracket
