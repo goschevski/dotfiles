@@ -35,21 +35,23 @@ brew cask install cloud
 brew cask install cyberduck
 brew cask install firefox
 brew cask install google-chrome
+brew cask install google-drive
+brew cask install hipchat
 brew cask install hyperswitch
 brew cask install iterm2
-# brew cask install mou
+brew cask install mattr-slate
+brew cask install nvalt
+brew cask install popcorn-time
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-json
-brew cask install sketch
 brew cask install skype
-brew cask install mattr-slate
 brew cask install sourcetree
-brew cask install sparrow
 brew cask install transmission
 brew cask install tunnelblick
 brew cask install twitterrific
+brew cask install typora
 brew cask install virtualbox
 brew cask install vlc
 brew cask install xtrafinder
