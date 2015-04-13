@@ -57,7 +57,7 @@ brew cask install vlc
 brew cask install xtrafinder
 
 loudEcho "NPM install global modules..."
-npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon webtorrent torrent
+npm i -g gulp grunt-cli jscs jshint nd n json david bower express-generator nodemon webtorrent torrent tmi psi
 
 loudEcho "Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git ~/dotfiles --quiet
