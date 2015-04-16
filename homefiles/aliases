@@ -32,6 +32,9 @@ alias npmi="rm -rf node_modules && npm cache clean && npm i"
 # Git
 alias st='open -a SourceTree'
 alias gdd='git diff -U10|dwdiff --diff-input -c|less -R'
+funcion gdb () {
+    git push origin --delete $1 && git branch -d $1
+}
 function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
 }
