@@ -157,7 +157,9 @@ endfunction
 
 function! SetFileType()
     let name = input("Filetype: ")
-    exec "set filetype=" . name
+    if (name != "")
+        exec "set filetype=" . name
+    endif
 endfunction
 
 function! ExtractLocalVariable()
