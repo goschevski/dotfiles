@@ -227,6 +227,9 @@ nmap <Leader>k O<Esc>
 inoremap jj <Esc>
 inoremap jk <Esc>
 
+" Book mode
+nnoremap <Leader>b magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
+
 " Subtitute
 nnoremap <Leader>sr :%s///g<left><left><left>
 
