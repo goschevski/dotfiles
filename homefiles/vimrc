@@ -18,7 +18,6 @@ Plugin 'bling/vim-airline'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
-Plugin 'sickill/vim-pasta'
 
 " Git and command line
 Plugin 'tpope/vim-fugitive'
