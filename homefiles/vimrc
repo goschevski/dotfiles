@@ -227,6 +227,9 @@ nmap <Leader>k O<Esc>
 inoremap jj <Esc>
 inoremap jk <Esc>
 
+" Subtitute
+nnoremap <Leader>sr :%s///g<left><left><left>
+
 " Fast save
 nnoremap <Leader>w :w<CR>
 
@@ -239,7 +242,7 @@ nnoremap <Leader>. <C-w>20>
 
 " Copy and paste
 vnoremap <Leader>y "+y"
-nnoremap <Leader>p <Esc>"+p
+nnoremap <Leader><Space>p <Esc>"+p
 
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
