@@ -189,7 +189,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Startify NERDTree Sync
 autocmd FileType startify setlocal buftype=
-autocmd VimEnter * if !argc() | Startify | NERDTree | execute "normal \<c-w>w" | endif
+autocmd VimEnter * if !argc() | Startify | execute "normal \<c-w>w" | endif
 
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
