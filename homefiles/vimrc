@@ -201,6 +201,7 @@ let mapleader = "\<Space>"
 
 " Easy command mode
 nnoremap ; :
+vnoremap ; :
 
 " Easier window navigation
 nmap <C-h> <C-w>h
