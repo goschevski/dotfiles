@@ -4,7 +4,10 @@ function loudEcho () {
     echo "------------------------------------"
 }
 
-loudEcho "Setup some OSX settings"
+loudEcho "Cloning dotfiles..."
+git clone git@github.com:goschevski/dotfiles.git ~/dotfiles
+
+loudEcho "Setup some OSX settings..."
 sudo chmod +x ~/dotfiles/osx.sh
 ~/dotfiles/osx.sh
 
@@ -35,8 +38,7 @@ apps=(
     adium
     alfred
     appcleaner
-    caffeine
-    cloud
+    cloudup
     cyberduck
     firefox
     google-chrome
@@ -77,9 +79,6 @@ npmModules=(
 )
 npm i -g ${npmModules[@]}
 
-loudEcho "Cloning dotfiles..."
-git clone git@github.com:goschevski/dotfiles.git ~/dotfiles --quiet
-
 loudEcho "Installing oh-my-zsh..."
 curl -L http://install.ohmyz.sh | sh
 chsh -s /bin/zsh
@@ -87,9 +86,9 @@ chsh -s /bin/zsh
 loudEcho "Installing zsh-autosuggestions..."
 git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
 
-loudEcho "Setup goschevski zsh theme..."
-mkdir ~/.oh-my-zsh/custom/themes/
-ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
+# loudEcho "Setup goschevski zsh theme..."
+# mkdir ~/.oh-my-zsh/custom/themes/
+# ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
 
 loudEcho "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
