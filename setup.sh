@@ -14,9 +14,20 @@ sudo chmod +x ~/dotfiles/osx.sh
 loudEcho "Installing home brew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+loudEcho "Brew tap..."
+brew tap casidiablo/custom
+brew tap caskroom/versions
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+
 loudEcho "Brew install..."
 brews=(
     git
+    mariadb
+    php54
+    php55
+    php56
     ack
     wget
     node
@@ -78,6 +89,10 @@ npmModules=(
     psi
 )
 npm i -g ${npmModules[@]}
+
+loudEcho "Download sphp (php version switcher)..."
+curl -L https://raw.githubusercontent.com/conradkleinespel/sphp-osx/master/sphp > /usr/local/bin/sphp
+sudo chmod +x /usr/local/bin/sphp
 
 loudEcho "Installing oh-my-zsh..."
 curl -L http://install.ohmyz.sh | sh
