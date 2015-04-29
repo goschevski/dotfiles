@@ -1,5 +1,5 @@
 if [[ -z $ZSH_THEME_GOSCHEVSKI_PREFIX ]]; then
-    ZSH_THEME_GOSCHEVSKI_PREFIX='♪'
+    ZSH_THEME_GOSCHEVSKI_PREFIX='☁'
 fi
 
 PROMPT='%{$fg[cyan]%}$ZSH_THEME_GOSCHEVSKI_PREFIX %{$fg[green]%}%p %{$fg[green]%}%c %{$fg[cyan]%}$(git_prompt_info)%{$fg[blue]%} % %{$reset_color%}'
