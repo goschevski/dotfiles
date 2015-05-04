@@ -24,6 +24,7 @@ brew tap homebrew/homebrew-php
 loudEcho "Brew install..."
 brews=(
     git
+    ngrok
     mariadb
     php54
     php55
