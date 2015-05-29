@@ -51,26 +51,25 @@ apps=(
     alfred
     appcleaner
     cloudup
-    cyberduck
     firefox
     google-chrome
     google-drive
     hipchat
     hyperswitch
     iterm2
+    itsycal
     mattr-slate
-    nvalt
     popcorn-time
     qlcolorcode
     qlmarkdown
     qlstephen
     quicklook-json
     skype
+    slack
     sourcetree
     transmission
     tunnelblick
     twitterrific
-    typora
     virtualbox
     vlc
     xtrafinder
