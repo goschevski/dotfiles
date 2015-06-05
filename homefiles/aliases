@@ -30,7 +30,13 @@ alias cleanup="brew cleanup && brew cask cleanup && dscacheutil -flushcache && k
 alias npmi="rm -rf node_modules && npm cache clean && npm i"
 
 # Git
-alias st='open -a SourceTree'
+function gitup () {
+    if [ $1 ]; then
+        open -a Gitup $1
+    else
+        open -a Gitup `pwd`
+    fi
+}
 alias gdd='git diff -U10|dwdiff --diff-input -c|less -R'
 funcion gdb () {
     git push origin --delete $1 && git branch -d $1
