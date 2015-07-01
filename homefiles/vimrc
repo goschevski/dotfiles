@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'bling/vim-airline'
+Plugin 'Yggdroot/indentLine'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
@@ -296,6 +297,9 @@ let g:ctrlp_reuse_window  = 'startify'
 call ctrlp_bdelete#init()
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
+
+" Indent line
+let g:indentLine_char = '︙'
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
