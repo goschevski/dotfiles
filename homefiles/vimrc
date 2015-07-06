@@ -14,7 +14,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'bling/vim-airline'
-Plugin 'Yggdroot/indentLine'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
