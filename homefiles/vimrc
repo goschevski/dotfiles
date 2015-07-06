@@ -245,10 +245,6 @@ nnoremap <Leader>. <C-w>20>
 vnoremap <Leader>y "+y"
 nnoremap <Leader><Space>p <Esc>"+p
 
-" Move selected lines up and down
-vnoremap j :m '>+1<cr>gv=gv
-vnoremap k :m '<-2<cr>gv=gv
-
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
 
