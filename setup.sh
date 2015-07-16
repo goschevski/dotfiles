@@ -54,7 +54,6 @@ apps=(
     firefox
     google-chrome
     google-drive
-    hipchat
     hyperswitch
     iterm2
     itsycal
@@ -65,7 +64,6 @@ apps=(
     qlstephen
     quicklook-json
     skype
-    slack
     sourcetree
     transmission
     tunnelblick
@@ -82,11 +80,8 @@ npmModules=(
     jscs
     jshint
     n
-    json
-    david
     bower
     nodemon
-    psi
 )
 npm i -g ${npmModules[@]}
 
@@ -95,15 +90,14 @@ curl -L https://raw.githubusercontent.com/conradkleinespel/sphp-osx/master/sphp 
 sudo chmod +x /usr/local/bin/sphp
 
 loudEcho "Installing oh-my-zsh..."
-curl -L http://install.ohmyz.sh | sh
-chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 loudEcho "Installing zsh-autosuggestions..."
 git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
 
 # loudEcho "Setup goschevski zsh theme..."
-# mkdir ~/.oh-my-zsh/custom/themes/
-# ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
+mkdir ~/.oh-my-zsh/custom/themes/
+ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
 
 loudEcho "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
