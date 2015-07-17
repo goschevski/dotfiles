@@ -16,3 +16,5 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
 AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
 
 export PATH="/usr/local/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

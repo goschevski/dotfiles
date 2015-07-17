@@ -24,6 +24,9 @@ brew tap homebrew/homebrew-php
 loudEcho "Brew install..."
 brews=(
     git
+    gpg
+    gpg2
+    tig
     ngrok
     mariadb
     php54
@@ -33,8 +36,6 @@ brews=(
     wget
     node
     macvim
-    mutt
-    mc
     youtube-dl
     caskroom/cask/brew-cask
 )
