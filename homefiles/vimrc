@@ -36,6 +36,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Syntax highlight
 Plugin 'jelera/vim-javascript-syntax'
@@ -191,6 +192,10 @@ autocmd VimEnter * if !argc() | Startify | execute "normal \<c-w>w" | endif
 
 " Remove unused markers for snippets
 autocmd InsertLeave * NeoSnippetClearMarkers
+
+" Goyo and Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " ================ Key mapping ========================
 
