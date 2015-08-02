@@ -12,7 +12,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
-Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
@@ -35,6 +34,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+
+" Markdown
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 
