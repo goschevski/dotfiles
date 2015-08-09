@@ -37,6 +37,7 @@ Plugin 'tpope/vim-commentary'
 
 " Markdown
 Plugin 'junegunn/goyo.vim'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'junegunn/limelight.vim'
 
 " Syntax highlight
