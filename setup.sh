@@ -59,7 +59,6 @@ apps=(
     iterm2
     itsycal
     mattr-slate
-    popcorn-time
     qlcolorcode
     qlmarkdown
     qlstephen
