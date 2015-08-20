@@ -44,6 +44,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Share code (gist)
 Plugin 'mattn/webapi-vim'
@@ -184,6 +185,9 @@ endfunction
 
 " Prefer markdown insted of modula
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Show nunjucks as jinja
+autocmd BufNewFile,BufReadPost *.nunj set filetype=jinja
 
 " Close nerdtree if it is last buffer
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
