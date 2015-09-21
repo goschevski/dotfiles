@@ -15,7 +15,6 @@ loudEcho "Installing home brew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 loudEcho "Brew tap..."
-brew tap casidiablo/custom
 brew tap caskroom/versions
 brew tap homebrew/dupes
 brew tap homebrew/versions
@@ -24,13 +23,6 @@ brew tap homebrew/homebrew-php
 loudEcho "Brew install..."
 brews=(
     git
-    gpg
-    gpg2
-    tig
-    ngrok
-    mariadb
-    php54
-    php55
     php56
     ack
     wget
@@ -55,7 +47,6 @@ apps=(
     firefox
     google-chrome
     google-drive
-    hyperswitch
     iterm2
     itsycal
     mattr-slate
