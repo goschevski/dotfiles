@@ -21,4 +21,4 @@ bind up:ctrl;alt;cmd    nudge +0   -10%
 bind down:ctrl;alt;cmd  nudge +0   +10%
 
 # Full Screen
-bind return:ctrl;cmd move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind return:ctrl;alt move screenOriginX;screenOriginY screenSizeX;screenSizeY
