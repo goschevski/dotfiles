@@ -16,7 +16,6 @@
     "disallowSpacesInsideArrayBrackets": "all",
     "disallowSpacesInsideParentheses": true,
     "disallowQuotedKeysInObjects": true,
-    "disallowDanglingUnderscores": true,
     "disallowSpaceAfterObjectKeys": true,
     "requireSpaceBeforeObjectValues": true,
     "requireCommaBeforeLineBreak": true,
