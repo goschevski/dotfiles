@@ -13,6 +13,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'bling/vim-airline'
+Plugin 'vim-signature'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
