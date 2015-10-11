@@ -84,7 +84,6 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=500                 "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set gdefault                    "Set global flag for search and replace
-set gcr=a:blinkon0              "Disable cursor blink
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
 set visualbell                  "No sounds
@@ -97,17 +96,10 @@ set hlsearch                    "Highlight search term
 set incsearch                   "Jump to found term while searching
 set showmatch                   "Highlight matching bracket
 set clipboard+=unnamed          "Copy to system clibpoard
-set tags=tags;/                 "ctags file location, searches to root until it founds it
-set listchars=tab:\ \ ,trail:·  "Set trails for tabs and spaces
-set list                        "Enable listchars
-set completeopt-=preview        "Disable preview for autocomplete
-set hidden                      "http://items.sjbach.com/319/configuring-vim-right
 syntax on                       "Turn on syntax highlighting
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
-set timeoutlen=1000             " Reduce Command timeout for faster escape and O
-set ttimeoutlen=200
 
 " ================ Indentation ======================
 set smarttab
@@ -117,17 +109,6 @@ set tabstop=4
 set expandtab
 set smartindent
 set autoindent
-
-" ================ Folds ============================
-set foldmethod=marker
-set foldmarker={{{,}}}
-set nofoldenable
-
-" ================ Scrolling ========================
-set scrolloff=4
-set sidescrolloff=15
-set sidescroll=1
-
 " ================ Completion =======================
 
 set wildmode=list:full
@@ -305,9 +286,6 @@ let g:ctrlp_reuse_window  = 'startify'
 call ctrlp_bdelete#init()
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
-
-" Indent line
-let g:indentLine_char = '︙'
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
