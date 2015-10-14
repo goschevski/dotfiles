@@ -17,7 +17,7 @@ alias desktop="cd ~/Desktop"
 alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; gem update --system; sudo gem update'
+alias update='softwareupdate -i -a; brew update; brew upgrade --all'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
