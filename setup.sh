@@ -23,7 +23,6 @@ brew tap homebrew/homebrew-php
 loudEcho "Brew install..."
 brews=(
     git
-    php56
     ack
     wget
     node
@@ -40,7 +39,6 @@ sudo mv /usr/bin/vim /usr/bin/vim73
 
 loudEcho "Brew cask..."
 apps=(
-    adium
     alfred
     appcleaner
     cloudup
@@ -48,7 +46,6 @@ apps=(
     google-chrome
     google-drive
     iterm2
-    itsycal
     mattr-slate
     qlcolorcode
     qlmarkdown
@@ -58,10 +55,8 @@ apps=(
     sourcetree
     transmission
     tunnelblick
-    twitterrific
     virtualbox
     vlc
-    xtrafinder
 )
 brew cask install ${apps[@]}
 
@@ -75,10 +70,6 @@ npmModules=(
     nodemon
 )
 npm i -g ${npmModules[@]}
-
-loudEcho "Download sphp (php version switcher)..."
-curl -L https://raw.githubusercontent.com/conradkleinespel/sphp-osx/master/sphp > /usr/local/bin/sphp
-sudo chmod +x /usr/local/bin/sphp
 
 loudEcho "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

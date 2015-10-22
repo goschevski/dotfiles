@@ -39,12 +39,3 @@ function retag () {
 # Url Encode/Decode
 alias decode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias encode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
-
-# Server
-alias restartApache='sudo apachectl restart'
-alias editApacheConf='sudo vim /etc/apache2/httpd.conf'
-alias editHosts='sudo vim /etc/hosts'
-alias editVhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
-
-# SSH
-alias vps="ssh root@188.40.242.169 -t"
