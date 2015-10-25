@@ -15,6 +15,6 @@ zle -N zle-line-init
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
 AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
 
-export PATH="/usr/local/bin:$PATH"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/usr/local/bin:$PATH" # local before everything else
+export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global dependencies
+export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
