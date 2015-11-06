@@ -11,9 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
-Plugin 'd11wtq/ctrlp_bdelete.vim'
 Plugin 'bling/vim-airline'
-Plugin 'vim-signature'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
@@ -21,7 +19,6 @@ Plugin 'mileszs/ack.vim'
 " Git and command line
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'thinca/vim-quickrun'
 
 " Autocomplete and sinppets
 Plugin 'Shougo/neocomplete'
@@ -52,10 +49,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 
 " Color schemes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'w0ng/vim-hybrid'
 Plugin 'whatyouhide/vim-gotham'
-Plugin 'chriskempson/base16-vim'
 
 filetype plugin indent on
 
@@ -64,7 +58,6 @@ set t_Co=256
 set background=dark
 highlight clear SignColumn
 colorscheme gotham
-" let g:hybrid_use_iTerm_colors = 1
 
 " ================ GUI options ====================
 set guioptions-=m                           "remove menu bar
