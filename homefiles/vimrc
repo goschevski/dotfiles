@@ -277,7 +277,6 @@ let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_reuse_window  = 'startify'
-call ctrlp_bdelete#init()
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
 
