@@ -186,6 +186,9 @@ autocmd! User GoyoLeave Limelight!
 " Map leader
 let mapleader = "\<Space>"
 
+" Disable Ex mode
+noremap Q <NOP>
+
 " Easy command mode
 nnoremap ; :
 vnoremap ; :
