@@ -15,6 +15,7 @@ Plugin 'bling/vim-airline'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
+Plugin 'easymotion/vim-easymotion'
 
 " Git and command line
 Plugin 'tpope/vim-fugitive'
@@ -270,7 +271,7 @@ let g:startify_relative_path = 1
 let g:startify_list_order = [['    Recently modified files in the current directory:'], 'dir']
 
 " NERDTree
-map <Leader>s :NERDTreeToggle<CR>
+map <Leader>r :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.sass-cache$', '_site$']
 let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
@@ -334,6 +335,9 @@ let g:gist_clip_command = 'pbcopy'
 xnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>gist :Gist -a<CR>
 nnoremap <Leader>agist :Gist -a -m<CR>
+
+" Easy motion
+nmap s <Plug>(easymotion-s2)
 
 " Airline
 let g:airline_theme = "gotham"
