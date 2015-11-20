@@ -28,6 +28,7 @@ brews=(
     node
     macvim
     youtube-dl
+    ical-buddy
     caskroom/cask/brew-cask
 )
 brew install ${brews[@]}
