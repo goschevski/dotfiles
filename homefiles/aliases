@@ -1,6 +1,12 @@
 # Tmux
-alias ta='tmux attach'
 alias tl='tmux ls'
+function ta () {
+    if [ -z "$1" ]; then
+        tmux attach
+    else
+        tmux attach -t $1
+    fi
+}
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
