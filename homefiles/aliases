@@ -1,3 +1,9 @@
+# Tmux
+alias ta='tmux attach'
+alias tl='tmux ls'
+function tk () { tmux kill-session -t $1 }
+function tc () { tmux new -s $1 }
+
 # List files
 alias ls='ls -G'
 alias la='ls -lAFh'
