@@ -1,21 +1,19 @@
-set nocompatible        "Be iMproved;
-scriptencoding utf-8    "Set scriptencoding to utf-8 (listchars)
-
-" ================ Vundle ====================
+" ================================================
+" Vundle
+" ================================================
+set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-Plugin 'gmarik/Vundle.vim'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
-Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
-Plugin 'easymotion/vim-easymotion'
 
 " Git and command line
 Plugin 'tpope/vim-fugitive'
@@ -24,8 +22,6 @@ Plugin 'airblade/vim-gitgutter'
 " Autocomplete and sinppets
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'heavenshell/vim-jsdoc'
 
 " Code edit
 Plugin 'mattn/emmet-vim'
@@ -34,15 +30,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
-" Markdown
-Plugin 'junegunn/goyo.vim'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'junegunn/limelight.vim'
-
-" Syntax highlight
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'digitaltoad/vim-jade'
+" Code highlight
+Plugin 'pangloss/vim-javascript'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Share code (gist)
@@ -52,24 +41,19 @@ Plugin 'mattn/gist-vim'
 " Color schemes
 Plugin 'whatyouhide/vim-gotham'
 
+call vundle#end()
 filetype plugin indent on
 
-" =============== Color Schemes ====================
+" ================================================
+" Color scheme
+" ================================================
 set t_Co=256
 set background=dark
-highlight clear SignColumn
 colorscheme gotham
 
-" ================ GUI options ====================
-set guioptions-=m                           "remove menu bar
-set guioptions-=T                           "remove toolbar
-set guioptions-=L                           "remove left scrollbar when vertical split
-set guioptions-=l                           "remove left scrollbar
-set guioptions-=r                           "remove right scrollbar
-set linespace=10                            "Set lineheight in gvim
-set guifont=Monaco:h13                      "Set font-size in gvim
-
-" ================ General Config ====================
+" ================================================
+" General config
+" ================================================
 set mouse=a                     "Enable mouse
 set title                       "change the terminal's title
 set relativenumber              "Line numbers are good
@@ -94,9 +78,11 @@ syntax on                       "Turn on syntax highlighting
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set encoding=utf-8              "Set utf-8 encoding on read
-set hidden                      "Switch buffers when they are not saved
+set hidden                      "Switch buffers when they are not saved"
 
-" ================ Indentation ======================
+" ================================================
+" Indentation
+" ================================================
 set smarttab
 set shiftwidth=4
 set softtabstop=4
@@ -104,8 +90,11 @@ set tabstop=4
 set expandtab
 set smartindent
 set autoindent
-" ================ Completion =======================
 
+
+" ================================================
+" Completion
+" ================================================
 set wildmode=list:full
 set wildmenu
 set wildignore=*.o,*.obj,*~
@@ -119,15 +108,16 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" ================ Turn Off Swap Files ==============
-
+" ================================================
+" Swap files
+" ================================================
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Functions ================
-
-" Remove trailing spaces on save
+" ================================================
+" Functions
+" ================================================
 function! StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -142,47 +132,17 @@ function! SetFileType()
     endif
 endfunction
 
-function! ExtractLocalVariable()
-    let name = input("Variable name: ")
-
-    if (visualmode() == "")
-        normal! viw
-    else
-        normal! gv
-    endif
-
-    exec "normal! c" . name
-    exec "normal! Ovar " . name . " = "
-    exec "normal! pa;"
-endfunction
-
-" ================ Auto commands ======================
-
-" Auto-remove trailing spaces
-" autocmd BufWritePre * :call StripTrailingWhitespaces()"
-
+" ================================================
+" Auto-Commands
+" ================================================
 " Prefer markdown insted of modula
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " Show nunjucks as jinja
 autocmd BufNewFile,BufReadPost *.nunj set filetype=jinja
 
-" Close nerdtree if it is last buffer
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Startify NERDTree Sync
-autocmd FileType startify setlocal buftype=
-autocmd VimEnter * if !argc() | Startify | execute "normal \<c-w>w" | endif
-
-" Remove unused markers for snippets
-autocmd InsertLeave * NeoSnippetClearMarkers
-
-" Goyo and Limelight
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-" ================ Key mapping ========================
-
+" ================================================
+" Key mappings (bindings)
+" ================================================
 " Map leader
 let mapleader = "\<Space>"
 
@@ -217,9 +177,6 @@ nmap <Leader>k O<Esc>
 inoremap jj <Esc>
 inoremap jk <Esc>
 
-" Book mode
-nnoremap <Leader>b magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
-
 " Substitute
 nnoremap <Leader>sr :%s///g<left><left>
 
@@ -233,10 +190,6 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>, <C-w>20<
 nnoremap <Leader>. <C-w>20>
 
-" Copy and paste
-vnoremap <Leader>y "+y"
-nnoremap <Leader><Space>p <Esc>"+p
-
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
 
@@ -246,37 +199,17 @@ xnoremap <tab> >gv
 nnoremap <tab> >>
 nnoremap <s-tab> <<
 
-" Run npm test
-nnoremap <Leader>t :!npm test<CR>
-
 " Set FileType
 nnoremap <Leader>/ :call SetFileType()<CR>
 
 " Clear trailing whitespaces
 nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 
-" Extract variable
-vnoremap <Leader>var :call ExtractLocalVariable()<CR>
-
-" ================ Plugins setups ========================
-
-" Startify
-let g:startify_custom_header = [
-\ '       ____                _                    _    _ ',
-\ '      / ___| ___  ___  ___| |__   _____   _____| | _(_)',
-\ '     | |  _ / _ \/ __|/ __|  _ \ / _ \ \ / / __| |/ / |',
-\ '     | |_| | (_) \__ \ (__| | | |  __/\ V /\__ \   <| |',
-\ '      \____|\___/|___/\___|_| |_|\___| \_/ |___/_|\_\_|',
-\ '',
-\ ''
-\ ]
-let g:startify_relative_path = 1
-let g:startify_list_order = [['    Recently modified files in the current directory:'], 'dir']
-
+" ================================================
+" Plugin settings and mappings (bindings)
+" ================================================
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.git$', '\.sass-cache$', '_site$']
-let g:NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
 " CtrlP
@@ -284,72 +217,51 @@ let g:ctrlp_reuse_window  = 'startify'
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
 
+" Airline
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#hunks#enabled=0
+let g:airline_section_y = '%{&enc}'
+let g:airline_section_z = '%p%%'
+
+" Ack Search
+nnoremap <Leader>f :Ack<Space>
+
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit<CR>
-
-" Syntastic
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_error_symbol='X'
-let g:syntastic_warning_symbol='!'
-let g:syntastic_style_error_symbol='X'
-let g:syntastic_style_warning_symbol='!'
-let g:syntastic_html_tidy_ignore_errors = [
-    \  'plain text isn''t allowed in <head> elements',
-    \  '<base> escaping malformed URI reference',
-    \  'discarding unexpected <body>',
-    \  '<script> escaping malformed URI reference',
-    \  '</head> isn''t allowed in <body> elements'
-    \ ]
-nnoremap <Leader>c :SyntasticCheck<CR>
-nnoremap <Leader>x :SyntasticReset<CR>
-
-" Commentary
-nmap <Leader>\ gcc
-
-" Ack Search
-let g:ackhighlight = 1
-nnoremap <Leader>f :Ack<Space>
-
-" Emmet
-let g:user_emmet_expandabbr_key = '<C-e>'           "Change trigger emmet key
-let g:user_emmet_next_key = '<C-n>'                 "Change trigger jump to next for emmet
+nnoremap <Leader>gr :Gread<CR>:w<CR>
 
 " GitGutter
-let g:gitgutter_realtime = 0                        "Disable gitgutter in realtime
-let g:gitgutter_eager = 0                           "Disable gitgutter to eager load on tab or buffer switch
+let g:gitgutter_realtime = 0
 
-" NeoSnippet
+" Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+
+" Neosnippet
 let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
 
+" Emmet
+let g:user_emmet_expandabbr_key = '<C-e>'
+
+" Syntastic
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+nnoremap <Leader>c :lwindow<CR>
+nnoremap <Leader>x :lclose<CR>
+
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_clip_command = 'pbcopy'
-xnoremap <Leader>gist :Gist -a<CR>
-nnoremap <Leader>gist :Gist -a<CR>
-nnoremap <Leader>agist :Gist -a -m<CR>
-
-" Easy motion
-nmap s <Plug>(easymotion-s2)
-
-" Airline
-let g:airline_theme = "gotham"
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_mode_map = { '__':'-', 'n':'N', 'i':'I', 'R':'R', 'c':'C', 'v':'V', 'V':'V', '':'V', 's':'S', 'S':'S', '':'S' }
-let g:airline#extensions#hunks#enabled=0
-let g:airline_section_y = '%{&enc}'
-let g:airline_section_z = '%p%%'
-let g:airline_exclude_preview = 1
+xnoremap <Leader>gist :Gist<CR>
+nnoremap <Leader>gist :Gist<CR>
