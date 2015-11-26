@@ -22,6 +22,7 @@ brew tap homebrew/homebrew-php
 
 echoGreen "4. Brew install..."
 brew install git
+brew install tig
 brew install ack
 brew install wget
 brew install node
