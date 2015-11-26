@@ -22,6 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 " Autocomplete and sinppets
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 " Code edit
 Plugin 'mattn/emmet-vim'
