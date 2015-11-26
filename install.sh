@@ -11,12 +11,12 @@ function printStatus () {
     fi
 }
 
-echo "1. Setup some OSX settings...\c"
-sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
-printStatus
-
 echo "2. Cloning dotfiles...\c"
 git clone git@github.com:goschevski/dotfiles.git --quiet
+printStatus
+
+echo "1. Setup some OSX settings...\c"
+sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
 printStatus
 
 echo "3. Installing home brew...\c"
