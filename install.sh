@@ -3,90 +3,78 @@ RED="$(tput setaf 1)"
 GREEN="$(tput setaf 2)"
 NORMAL="$(tput sgr0)"
 
-function printStatus () {
-    if [ $? -eq 0 ]; then
-        printf "${GREEN} Done!${NORMAL}\n"
-    else
-        printf "${RED} Error!${NORMAL}\n"
-    fi
+function echoGreen () {
+    printf "${RED} $1${NORMAL}\n"
 }
 
-echo "2. Cloning dotfiles...\c"
+echoGreen "1. Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git --quiet
-printStatus
 
-echo "1. Setup some OSX settings...\c"
+echoGreen "2. Setup some OSX settings..."
 sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
-printStatus
 
-echo "3. Installing home brew...\c"
+echoGreen "3. Installing home brew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/versions 2>&1 > /dev/null
-brew tap homebrew/dupes 2>&1 > /dev/null
-brew tap homebrew/versions 2>&1 > /dev/null
-brew tap homebrew/homebrew-php 2>&1 > /dev/null
-printStatus
+brew tap caskroom/versions
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
 
-echo "4. Brew install...\c"
-brew install git 2>&1 > /dev/null
-brew install ack 2>&1 > /dev/null
-brew install wget 2>&1 > /dev/null
-brew install node 2>&1 > /dev/null
-brew install macvim --with-lua 2>&1 > /dev/null
-brew install youtube-dl 2>&1 > /dev/null
-brew install ical-buddy 2>&1 > /dev/null
-brew install caskroom/cask/brew-cask 2>&1 > /dev/null
-brew install vim --with-lua 2>&1 > /dev/null
-sudo mv /usr/bin/vim /usr/bin/vim73 2>&1 > /dev/null
-brew linkapps 2>&1 > /dev/null
-printStatus
+echoGreen "4. Brew install..."
+brew install git
+brew install ack
+brew install wget
+brew install node
+brew install tmux
+brew install macvim --with-lua
+brew install youtube-dl
+brew install ical-buddy
+brew install caskroom/cask/brew-cask
+brew install vim --with-lua
+sudo mv /usr/bin/vim /usr/bin/vim73
+brew linkapps
 
-echo "5. Installing apps using brew cask...\c"
-brew cask install alfred 2>&1 > /dev/null
-brew cask install appcleaner 2>&1 > /dev/null
-brew cask install cloudup 2>&1 > /dev/null
-brew cask install firefox 2>&1 > /dev/null
-brew cask install google-chrome 2>&1 > /dev/null
-brew cask install google-drive 2>&1 > /dev/null
-brew cask install iterm2 2>&1 > /dev/null
-brew cask install mattr-slate 2>&1 > /dev/null
-brew cask install qlcolorcode 2>&1 > /dev/null
-brew cask install qlmarkdown 2>&1 > /dev/null
-brew cask install qlstephen 2>&1 > /dev/null
-brew cask install quicklook-json 2>&1 > /dev/null
-brew cask install skype 2>&1 > /dev/null
-brew cask install sourcetree 2>&1 > /dev/null
-brew cask install transmission 2>&1 > /dev/null
-brew cask install tunnelblick 2>&1 > /dev/null
-brew cask install virtualbox 2>&1 > /dev/null
-brew cask install vlc 2>&1 > /dev/null
-printStatus
+echoGreen "5. Installing apps using brew cask..."
+brew cask install alfred
+brew cask install appcleaner
+brew cask install cloudup
+brew cask install firefox
+brew cask install google-chrome
+brew cask install google-drive
+brew cask install iterm2-beta
+brew cask install mattr-slate
+brew cask install qlcolorcode
+brew cask install qlmarkdown
+brew cask install qlstephen
+brew cask install quicklook-json
+brew cask install skype
+brew cask install sourcetree
+brew cask install transmission
+brew cask install tunnelblick
+brew cask install virtualbox
+brew cask install vlc
 
-echo "6. Installing node global modules...\c"
-npm i -g gulp 2>&1 > /dev/null
-npm i -g jscs 2>&1 > /dev/null
-npm i -g jshint 2>&1 > /dev/null
-npm i -g n 2>&1 > /dev/null
-npm i -g bower 2>&1 > /dev/null
-npm i -g nodemon 2>&1 > /dev/null
-printStatus
+echoGreen "6. Installing node global modules..."
+npm i -g gulp
+npm i -g jscs
+npm i -g jshint
+npm i -g n
+npm i -g bower
+npm i -g nodemon
 
-echo "7. Install and setup oh-my-zsh...\c"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 2>&1 > /dev/null
-git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
-mkdir ~/.oh-my-zsh/custom/themes/ 2>&1 > /dev/null
-ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme 2>&1 > /dev/null
-printStatus
-
-echo "8. Setup homefiles...\c"
+echoGreen "7. Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
 do
-    rm -rf ~/.$file 2>&1 > /dev/null
-    ln -s ~/dotfiles/homefiles/$file ~/.$file 2>&1 > /dev/null
+    rm -rf ~/.$file
+    ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
-printStatus
 
-echo "9. Setup Vundle and Vim...\c"
+echoGreen "8. Setup Vundle and Vim..."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
 vim +PluginInstall +qall
-printStatus
+
+echoGreen "9. Install and setup oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
+mkdir ~/.oh-my-zsh/custom/themes/
+ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
