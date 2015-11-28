@@ -35,6 +35,10 @@ Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
+" Markdown
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+
 " Share code (gist)
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
@@ -140,6 +144,9 @@ endfunction
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Show nunjucks as jinja
 autocmd BufNewFile,BufReadPost *.nunj set filetype=jinja
+" Goyo and Limelight sync
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " ================================================
 " Key mappings (bindings)
