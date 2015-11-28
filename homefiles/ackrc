@@ -5,7 +5,9 @@
 --follow
 
 # ignore directories
---ignore-dir={node_modules,tmp,public}
+--ignore-dir=node_modules
+--ignore-dir=tmp
+--ignore-dir=public
 
 # added file types
 --type-set=css=.css,.less,.scss,.styl
