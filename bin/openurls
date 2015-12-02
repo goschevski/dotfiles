@@ -1,0 +1,2 @@
+open $HOME/Applications/Google\ Chrome.app/ -n $(while read in; do open $in; done < $1);
+

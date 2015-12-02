@@ -9,6 +9,7 @@ function echoGreen () {
 
 echoGreen "1. Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git --quiet
+chmod +x ~/dotfiles/bin/*
 
 echoGreen "2. Setup some OSX settings..."
 sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null

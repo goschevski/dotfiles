@@ -17,6 +17,7 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
 AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
 
 # PATH
+export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path
 export PATH="/usr/local/bin:$PATH" # local before everything else
 export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global dependencies
 export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
