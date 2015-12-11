@@ -1,0 +1,25 @@
+# izdajnici i zapadni mediji
+izdajnici=(
+    http://blic.rs
+    http://b92.net
+)
+
+# vesti iz Srbije i sveta
+vesti=(
+    http://srbin.info
+    http://srbinaokup.info
+    http://vaseljenska.com
+    http://fakti.rs
+    http://fsksrb.ru/
+    http://nspm.rs/
+)
+
+open -n $HOME/Applications/Google\ Chrome.app
+sleep 1
+for i in ${izdajnici[@]}; do
+    open "${i}"
+done
+
+for i in ${vesti[@]}; do
+    open "${i}"
+done
