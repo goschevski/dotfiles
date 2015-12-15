@@ -10,8 +10,13 @@ vesti=(
     http://srbinaokup.info
     http://vaseljenska.com
     http://fakti.rs
-    http://fsksrb.ru/
-    http://nspm.rs/
+    http://fsksrb.ru
+    http://nspm.rs
+)
+
+sport=(
+    http://kkpartizan.rs
+    http://www.mozzartsport.com
 )
 
 open -n $HOME/Applications/Google\ Chrome.app
@@ -21,5 +26,9 @@ for i in ${izdajnici[@]}; do
 done
 
 for i in ${vesti[@]}; do
+    open "${i}"
+done
+
+for i in ${sport[@]}; do
     open "${i}"
 done
