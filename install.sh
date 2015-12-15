@@ -28,6 +28,7 @@ brew install ack
 brew install wget
 brew install node
 brew install tmux
+brew install httpie
 brew install macvim --with-lua
 brew install youtube-dl
 brew install ical-buddy
