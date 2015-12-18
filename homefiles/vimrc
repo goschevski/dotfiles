@@ -7,6 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+" Other
+Plugin 'itchyny/calendar.vim'
+
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -273,3 +276,6 @@ let g:gist_post_private = 1
 let g:gist_clip_command = 'pbcopy'
 xnoremap <Leader>gist :Gist<CR>
 nnoremap <Leader>gist :Gist<CR>
+
+" Calendar
+let g:calendar_google_calendar = 1
