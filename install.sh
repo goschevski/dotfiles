@@ -20,10 +20,12 @@ brew tap caskroom/versions
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
+brew tap thoughtbot/formulae
 
 echoGreen "4. Brew install..."
 brew install git
 brew install tig
+brew install pick
 brew install ack
 brew install wget
 brew install node
