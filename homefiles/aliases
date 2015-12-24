@@ -46,6 +46,8 @@ alias cleanup="brew cleanup; brew cask cleanup; dscacheutil -flushcache; killall
 
 # Clean install of node modules
 alias npmi="rm -rf node_modules; npm cache clean; npm i"
+# kill node chooser
+kill -9 $(ps -ef | grep node | pick | sed -r 's/\s+/\|/g' | cut -d "|" -f 3)
 
 function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
