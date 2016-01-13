@@ -32,6 +32,7 @@ brew install wget
 brew install node
 brew install tmux
 brew install httpie
+brew install reattach-to-user-namespace
 brew install macvim --with-lua
 brew install youtube-dl
 brew install ical-buddy
