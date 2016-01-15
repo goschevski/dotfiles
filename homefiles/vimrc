@@ -72,6 +72,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set gdefault                    "Set global flag for search and replace
 set noerrorbells                "No error bells
 set cursorline                  "Highlight current line
+set cursorline cursorcolumn     "Highlight column (vertical line)
 set visualbell                  "No sounds
 set wrap                        "Enable word wrap
 set autoread                    "Reload files changed outside vim
