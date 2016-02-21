@@ -13,6 +13,9 @@ function tc () { tmux new -s $1 }
 # Calendar events
 alias ev="icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday"
 
+# Weather
+alias we='curl http://wttr.in/belgrade'
+
 # List files
 alias ls='ls -G'
 alias la='ls -lAFh'
