@@ -67,6 +67,7 @@ npm i -g jscs
 npm i -g jshint
 npm i -g n
 npm i -g bower
+npm i -g how2
 npm i -g nodemon
 
 echoGreen "7. Setup homefiles..."
