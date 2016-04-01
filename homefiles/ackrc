@@ -8,6 +8,7 @@
 --ignore-dir=node_modules
 --ignore-dir=tmp
 --ignore-dir=public
+--ignore-dir=build
 
 # added file types
 --type-set=css=.css,.less,.scss,.styl
