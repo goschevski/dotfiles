@@ -9,10 +9,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Other
 Plugin 'itchyny/calendar.vim'
+Plugin 'itchyny/screensaver.vim'
 
 " Gui plugins
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 
 " Search and movement
