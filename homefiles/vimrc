@@ -34,6 +34,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " Code highlight
 Plugin 'pangloss/vim-javascript'
