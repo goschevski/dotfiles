@@ -15,6 +15,7 @@ Plugin 'itchyny/screensaver.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'ryanoasis/vim-devicons'
 
 " Search and movement
 Plugin 'mileszs/ack.vim'
@@ -88,7 +89,7 @@ set clipboard+=unnamed          "Copy to system clibpoard
 syntax on                       "Turn on syntax highlighting
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
-set encoding=utf-8              "Set utf-8 encoding on read
+set encoding=utf8              "Set utf-8 encoding on read
 set hidden                      "Switch buffers when they are not saved"
 
 " ================================================
