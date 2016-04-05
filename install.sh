@@ -38,6 +38,7 @@ brew install youtube-dl
 brew install ical-buddy
 brew install caskroom/cask/brew-cask
 brew install vim --with-lua
+brew install --HEAD neovim
 sudo mv /usr/bin/vim /usr/bin/vim73
 brew linkapps
 
@@ -81,10 +82,15 @@ echoGreen "8. Setup Vundle and Vim..."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
 vim +PluginInstall +qall
 
-echoGreen "9. Install tmux plugin manager..."
+echoGreen "9. Setup neovim"
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+nvim +PlugInstall +qall
+
+echoGreen "10. Install tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --quiet
 
-echoGreen "10. Install and setup oh-my-zsh..."
+echoGreen "11. Install and setup oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
 mkdir ~/.oh-my-zsh/custom/themes/
