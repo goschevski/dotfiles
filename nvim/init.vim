@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Other
 Plug 'itchyny/calendar.vim'
-Plug 'itchyny/screensaver.vim'
 
 " Gui plugins
 Plug 'scrooloose/nerdtree'
@@ -61,7 +60,6 @@ set ignorecase                  "case insensitive search
 set clipboard+=unnamedplus      "use system clipboard
 set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
-set encoding=utf8               "Set utf-8 encoding on read
 set hidden                      "Switch buffers when they are not saved"
 syntax on                       "Turn on syntax highlighting
 
