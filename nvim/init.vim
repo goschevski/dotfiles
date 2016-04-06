@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 " Code highlight
 Plug 'pangloss/vim-javascript'
