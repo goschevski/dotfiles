@@ -5,6 +5,7 @@ Plug 'itchyny/calendar.vim'
 
 " Gui plugins
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'ryanoasis/vim-devicons'
