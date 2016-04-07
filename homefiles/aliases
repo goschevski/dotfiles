@@ -10,6 +10,9 @@ function ta () {
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
+# Use neovim
+alias vim='nvim'
+
 # Calendar events
 alias ev="icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday"
 
