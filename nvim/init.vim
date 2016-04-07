@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'ryanoasis/vim-devicons'
+Plug 'benekastah/neomake'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
@@ -17,6 +18,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Autocomplete and sinppets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 " Code edit
 Plug 'mattn/emmet-vim'
@@ -122,6 +127,8 @@ autocmd BufNewFile,BufReadPost *.nunj set filetype=jinja
 " Goyo and Limelight sync
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+" Run neomake on file save
+autocmd! BufWritePost * Neomake
 
 " ================================================
 " Key mappings (bindings)
