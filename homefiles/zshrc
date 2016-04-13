@@ -16,6 +16,9 @@ zle -N zle-line-init
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
 AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
 
+# Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
+export JOBS=max
+
 # PATH
 export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path
 export PATH="/usr/local/bin:$PATH" # local before everything else
