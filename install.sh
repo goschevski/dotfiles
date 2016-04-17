@@ -31,6 +31,7 @@ brew install gnu-sed --default-names
 brew install wget
 brew install node
 brew install tmux
+brew install python3
 brew install httpie
 brew install reattach-to-user-namespace
 brew install macvim --with-lua
@@ -85,6 +86,7 @@ vim +PluginInstall +qall
 echoGreen "9. Setup neovim"
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+pip3 install neovim
 nvim +PlugInstall +qall
 
 echoGreen "10. Install tmux plugin manager..."

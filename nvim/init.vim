@@ -10,6 +10,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'benekastah/neomake'
+Plug 'mhinz/vim-startify'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
@@ -19,10 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Autocomplete and sinppets
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/neosnippet'
 
 " Code edit
 Plug 'mattn/emmet-vim'
@@ -210,6 +209,7 @@ let NERDTreeShowHidden=1
 " CtrlP
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
+let g:ctrlp_reuse_window = 'startify'
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
@@ -233,3 +233,16 @@ let g:gist_post_private = 1
 let g:gist_clip_command = 'pbcopy'
 xnoremap <Leader>gist :Gist<CR>
 nnoremap <Leader>gist :Gist<CR>
+
+" Startify
+let g:startify_list_order = ['dir']
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+" Neosnippet
+let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
