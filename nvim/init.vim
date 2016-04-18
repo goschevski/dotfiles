@@ -46,6 +46,7 @@ Plug 'mattn/gist-vim'
 
 " Color schemes
 Plug 'whatyouhide/vim-gotham'
+Plug 'altercation/vim-colors-solarized'
 
 " Add plugins to &runtimepath
 call plug#end()
