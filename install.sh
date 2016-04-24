@@ -30,6 +30,7 @@ brew install ack
 brew install gnu-sed --default-names
 brew install wget
 brew install node
+brew install w3m
 brew install tmux
 brew install python3
 brew install httpie
