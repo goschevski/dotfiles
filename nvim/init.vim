@@ -137,6 +137,9 @@ autocmd! BufWritePost * Neomake
 " Map leader
 let mapleader = "\<Space>"
 
+" Notes
+nnoremap <Leader>n :e ~/Google\ Drive/Notes/
+
 " Disable Ex mode
 noremap Q <NOP>
 
