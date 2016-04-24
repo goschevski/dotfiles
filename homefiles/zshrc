@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Source aliases
 source ~/.aliases
+source ~/.variables
 
 # Setup zsh-autosuggestions
 bindkey "^[[H" beginning-of-line
