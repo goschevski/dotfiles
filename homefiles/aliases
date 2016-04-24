@@ -10,6 +10,9 @@ function ta () {
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
+# Reload
+alias re="source ~/.zshrc"
+
 # Use neovim
 alias vim='nvim'
 
@@ -51,9 +54,10 @@ alias cask="brew cask"
 alias cleanup="brew cleanup; brew cask cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder; rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Clean install of node modules
+alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
 alias npmi="rm -rf node_modules; npm cache clean; npm i"
 # kill node chooser
-alias kn="ps -ef | grep node | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill"
+alias kn="ps -ef | grep node | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill -9"
 
 function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
