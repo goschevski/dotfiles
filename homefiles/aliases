@@ -20,7 +20,7 @@ alias vim='nvim'
 alias ev="icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday"
 
 # Weather
-alias we='curl http://wttr.in/belgrade'
+alias we='curl http://wttr.in/\?m'
 
 # List files
 alias ls='ls -G'
