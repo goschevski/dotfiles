@@ -14,6 +14,7 @@ Plug 'mhinz/vim-startify'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
+Plug 'easymotion/vim-easymotion'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
@@ -217,6 +218,7 @@ let g:ctrlp_reuse_window = 'startify'
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
+let g:ackprg = 'ag --vimgrep'
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>

@@ -27,6 +27,7 @@ brew install git
 brew install tig
 brew install pick
 brew install ack
+brew install ag
 brew install gnu-sed --default-names
 brew install wget
 brew install node
