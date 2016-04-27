@@ -34,8 +34,9 @@ alias ....='cd ../../../../'
 
 # Folders
 alias sites="cd ~/Sites"
-alias downloads="cd ~/Downloads"
-alias desktop="cd ~/Desktop"
+alias down="cd ~/Downloads"
+alias desk="cd ~/Desktop"
+alias dotf="cd ~/dotfiles"
 
 # Youtube Download
 alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
