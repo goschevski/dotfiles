@@ -144,6 +144,14 @@ nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 " Disable Ex mode
 noremap Q <NOP>
 
+" Quickfix and location lists
+map <Leader>co :copen<CR>
+map <Leader>cc :cclose<CR>
+map <Leader>cn :cn<CR>
+map <Leader>cp :cp<CR>
+map <Leader>lo :lopen<CR>
+map <Leader>lc :lclose<CR>
+
 " Easy command mode
 nnoremap ; :
 vnoremap ; :
