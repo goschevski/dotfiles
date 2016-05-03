@@ -15,6 +15,7 @@ Plug 'mhinz/vim-startify'
 " Search and movement
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'rhysd/clever-f.vim'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
