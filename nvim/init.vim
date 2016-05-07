@@ -2,6 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Other
 Plug 'itchyny/calendar.vim'
+Plug 'nicwest/QQ.vim'
+Plug 'keith/investigate.vim'
 
 " Gui plugins
 Plug 'scrooloose/nerdtree'
@@ -59,6 +61,7 @@ call plug#end()
 colorscheme gotham
 set nocompatible                " not compatible with vi
 set relativenumber              "Line numbers are good
+set number                      "Line numbers are good
 set gdefault                    "Set global flag for search and replace
 set cursorline                  "Highlight current line
 set cursorline cursorcolumn     "Highlight column (vertical line)
@@ -215,6 +218,9 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 
 " Calendar
 let g:calendar_google_calendar = 1
+
+" Investigate
+let g:investigate_use_dash=1
 
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
