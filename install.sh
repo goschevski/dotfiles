@@ -95,6 +95,7 @@ echoGreen "10. Install tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --quiet
 
 echoGreen "11. Install and setup oh-my-zsh..."
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
 mkdir ~/.oh-my-zsh/custom/themes/

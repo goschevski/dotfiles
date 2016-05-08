@@ -50,15 +50,22 @@ Plug 'mattn/gist-vim'
 
 " Color schemes
 Plug 'whatyouhide/vim-gotham'
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
 
 " ================================================
+" Color scheme
+" ================================================
+let base16colorspace=256
+set t_Co=256
+execute "set background=".$BACKGROUND
+execute "colorscheme base16-".$THEME
+
+" ================================================
 " General config
 " ================================================
-colorscheme gotham
 set nocompatible                " not compatible with vi
 set relativenumber              "Line numbers are good
 set number                      "Line numbers are good

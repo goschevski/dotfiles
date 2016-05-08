@@ -13,6 +13,30 @@ function tc () { tmux new -s $1 }
 # Reload
 alias re="source ~/.zshrc"
 
+function color () {
+    # Base16 Shell
+    if [ -z "$1" ]; then
+        export BACKGROUND="dark"
+    fi
+
+    if [ -z "$2" ]; then
+        export THEME="chalk"
+    fi
+
+    BASE16_SHELL="$HOME/.config/base16-shell/base16-$2.$1.sh"
+    export BACKGROUND=$1
+    export THEME=$2
+    source $BASE16_SHELL
+}
+
+function dark () {
+    color dark $1
+}
+
+function light () {
+    color light $1
+}
+
 # Use neovim
 alias vim='nvim'
 
