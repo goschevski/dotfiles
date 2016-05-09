@@ -156,6 +156,9 @@ nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 " Disable Ex mode
 noremap Q <NOP>
 
+" Copy file path
+nnoremap <Leader>y :let @* = expand("%:p")<CR>
+
 " Quickfix and location lists
 map <Leader>co :copen<CR>
 map <Leader>cc :cclose<CR>
