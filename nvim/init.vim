@@ -70,6 +70,7 @@ execute "colorscheme base16-".$THEME
 set nocompatible                " not compatible with vi
 set relativenumber              "Line numbers are good
 set number                      "Line numbers are good
+set binary                      "don't add new line on end of file (git)
 set gdefault                    "Set global flag for search and replace
 set cursorline                  "Highlight current line
 set cursorline cursorcolumn     "Highlight column (vertical line)
