@@ -151,6 +151,9 @@ autocmd! BufWritePost * Neomake
 " Map leader
 let mapleader = "\<Space>"
 
+" Map leader
+nnoremap <Leader><Leader>r :source ~/.config/nvim/init.vim<CR>
+
 " Notes
 nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 
