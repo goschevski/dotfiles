@@ -197,7 +197,7 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 
 " Substitute
-nnoremap <Leader>sr :%s///g<left><left>
+nnoremap <Leader>sr :%s//g<left><left>
 
 " Fast save
 nnoremap <Leader>w :w<CR>
