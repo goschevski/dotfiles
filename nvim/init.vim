@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'benekastah/neomake'
 Plug 'mhinz/vim-startify'
+Plug 'benmills/vimux'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
