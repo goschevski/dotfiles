@@ -1,10 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Other
-Plug 'itchyny/calendar.vim'
-Plug 'nicwest/QQ.vim'
-Plug 'keith/investigate.vim'
-
 " Gui plugins
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -18,7 +13,6 @@ Plug 'benmills/vimux'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/clever-f.vim'
 
 " Git and command line
@@ -35,7 +29,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " Code highlight
