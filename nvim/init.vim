@@ -2,18 +2,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Gui plugins
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'benekastah/neomake'
-Plug 'mhinz/vim-startify'
-Plug 'benmills/vimux'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
-Plug 'rhysd/clever-f.vim'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
@@ -230,10 +224,6 @@ let g:calendar_google_calendar = 1
 
 " Investigate
 let g:investigate_use_dash=1
-
-" Airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='base16'
 
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
