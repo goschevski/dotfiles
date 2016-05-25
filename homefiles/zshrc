@@ -1,7 +1,7 @@
 # Setup oh-my-zsh theme, plugins, etc.
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="goschevski"
-plugins=(git)
+plugins=(git jira)
 source $ZSH/oh-my-zsh.sh
 
 # Source aliases
