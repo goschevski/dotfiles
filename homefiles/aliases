@@ -41,7 +41,15 @@ function light () {
 alias vim='nvim'
 
 # Calendar events
-alias ev="icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday"
+function ev () {
+    if [ $1 ]; then
+        daysToAdd=$1
+    else
+        daysToAdd=0
+    fi
+
+    icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday+$daysToAdd
+}
 
 # Weather
 alias we='curl http://wttr.in/\?m'
