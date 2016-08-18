@@ -159,6 +159,9 @@ map <Leader>cp :cp<CR>
 map <Leader>lo :lopen<CR>
 map <Leader>lc :lclose<CR>
 
+" Search selected
+vnoremap // y/<C-R>"<CR>
+
 " Easy command mode
 nnoremap ; :
 vnoremap ; :
