@@ -67,8 +67,7 @@ brew cask install vlc
 
 echoGreen "6. Installing node global modules..."
 npm i -g gulp
-npm i -g jscs
-npm i -g jshint
+npm i -g eslint
 npm i -g n
 npm i -g bower
 npm i -g how2
@@ -81,20 +80,16 @@ do
     ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
 
-echoGreen "8. Setup Vundle and Vim..."
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim --quiet
-vim +PluginInstall +qall
-
-echoGreen "9. Setup neovim"
+echoGreen "8. Setup neovim"
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 pip3 install neovim
 nvim +PlugInstall +qall
 
-echoGreen "10. Install tmux plugin manager..."
+echoGreen "9. Install tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --quiet
 
-echoGreen "11. Install and setup oh-my-zsh..."
+echoGreen "10. Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
