@@ -23,7 +23,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
 
 " Code highlight
 Plug 'pangloss/vim-javascript'
@@ -32,10 +31,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 " Markdown
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-
-" Share code (gist)
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
 
 " Color schemes
 Plug 'whatyouhide/vim-gotham'
@@ -48,7 +43,6 @@ call plug#end()
 " Color scheme
 " ================================================
 let base16colorspace=256
-set t_Co=256
 execute "set background=".$BACKGROUND
 execute "colorscheme base16-".$THEME
 
@@ -60,13 +54,11 @@ set relativenumber              "Line numbers are good
 set number                      "Line numbers are good
 set binary                      "don't add new line on end of file (git)
 set gdefault                    "Set global flag for search and replace
-set cursorline                  "Highlight current line
 set cursorline cursorcolumn     "Highlight column (vertical line)
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
 set ignorecase                  "case insensitive search
 set clipboard+=unnamedplus      "use system clipboard
-set laststatus=2                "Show statusbar
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set hidden                      "Switch buffers when they are not saved"
 syntax on                       "Turn on syntax highlighting
@@ -166,12 +158,6 @@ vnoremap // y/<C-R>"<CR>
 nnoremap ; :
 vnoremap ; :
 
-" Easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
 " Switch window quickly
 map <Leader><Tab> <C-w>w
 
@@ -191,7 +177,7 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 
 " Substitute
-nnoremap <Leader>sr :%s//g<left><left>
+nnoremap <Leader>sr :%s//<left>
 
 " Fast save
 nnoremap <Leader>w :w<CR>
@@ -222,12 +208,6 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 " Plugin settings and mappings (bindings)
 " ================================================
 
-" Calendar
-let g:calendar_google_calendar = 1
-
-" Investigate
-let g:investigate_use_dash=1
-
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -235,7 +215,6 @@ let NERDTreeShowHidden=1
 " CtrlP
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>o :CtrlPBuffer<CR>
-let g:ctrlp_reuse_window = 'startify'
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
@@ -253,16 +232,6 @@ let g:gitgutter_realtime = 0
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
-
-" Gist
-let g:gist_detect_filetype = 1
-let g:gist_post_private = 1
-let g:gist_clip_command = 'pbcopy'
-xnoremap <Leader>gist :Gist<CR>
-nnoremap <Leader>gist :Gist<CR>
-
-" Startify
-let g:startify_list_order = ['dir']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
