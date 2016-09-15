@@ -158,8 +158,8 @@ vnoremap // y/<C-R>"<CR>
 nnoremap ; :
 vnoremap ; :
 
-" Switch window quickly
-map <Leader><Tab> <C-w>w
+" Switch between buffers quickly
+map <Leader><Tab> <C-^>
 
 " Down is really the next line
 nnoremap j gj

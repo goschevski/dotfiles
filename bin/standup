@@ -1,0 +1,9 @@
+# Use headphones instead of speakers
+SwitchAudioSource -s "Built-in Output"
+
+# Pause music
+osascript -e 'tell application "System Events" to keystroke "p" using {command down, option down}'
+
+# Open standup link
+open "https://hangouts.google.com/hangouts/_/vast.com/standup?authuser=0"
+
