@@ -35,6 +35,7 @@ brew install w3m
 brew install tmux
 brew install python3
 brew install httpie
+brew install switchaudio-osx
 brew install reattach-to-user-namespace
 brew install macvim --with-lua
 brew install youtube-dl
