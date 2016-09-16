@@ -2,7 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Gui plugins
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 
@@ -212,9 +213,9 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 map <Leader>r :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-" CtrlP
-nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>o :CtrlPBuffer<CR>
+" Fzf
+nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>o :Buffers<CR>
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
