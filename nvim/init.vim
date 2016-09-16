@@ -214,8 +214,9 @@ map <Leader>r :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
-nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>p :GFiles<CR>
 nnoremap <Leader>o :Buffers<CR>
+nnoremap <Leader>[ :Files<CR>
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
