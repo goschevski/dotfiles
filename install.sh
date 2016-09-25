@@ -8,7 +8,7 @@ function echoGreen () {
 }
 
 echoGreen "1. Cloning dotfiles..."
-git clone git@github.com:goschevski/dotfiles.git --quiet
+git clone git@github.com:goschevski/dotfiles.git
 chmod +x ~/dotfiles/bin/*
 
 echoGreen "2. Setup some OSX settings..."
@@ -26,7 +26,6 @@ echoGreen "4. Brew install..."
 brew install git
 brew install tig
 brew install pick
-brew install ack
 brew install ag
 brew install gnu-sed --default-names
 brew install wget
@@ -87,12 +86,9 @@ ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 pip3 install neovim
 nvim +PlugInstall +qall
 
-echoGreen "9. Install tmux plugin manager..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --quiet
-
-echoGreen "10. Install and setup oh-my-zsh..."
+echoGreen "9. Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions --quiet
+git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
 mkdir ~/.oh-my-zsh/custom/themes/
 ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
