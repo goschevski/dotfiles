@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 
 " Search and movement
@@ -50,7 +49,7 @@ execute "colorscheme base16-".$THEME
 " ================================================
 " General config
 " ================================================
-set nocompatible                " not compatible with vi
+set nocompatible                "not compatible with vi
 set relativenumber              "Line numbers are good
 set number                      "Line numbers are good
 set binary                      "don't add new line on end of file (git)
@@ -58,6 +57,7 @@ set gdefault                    "Set global flag for search and replace
 set cursorline cursorcolumn     "Highlight column (vertical line)
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
+set ruler                       "Show line/column number
 set ignorecase                  "case insensitive search
 set clipboard+=unnamedplus      "use system clipboard
 set fileencoding=utf-8          "Set utf-8 encoding on write
