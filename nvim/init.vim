@@ -44,7 +44,7 @@ call plug#end()
 " Color scheme
 " ================================================
 let base16colorspace=256
-execute "set background=".$BACKGROUND
+set background=dark
 execute "colorscheme base16-".$THEME
 
 " ================================================

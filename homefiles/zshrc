@@ -9,7 +9,7 @@ source ~/.aliases
 source ~/.variables
 
 # Color scheme
-color dark chalk
+color chalk
 
 # Setup zsh-autosuggestions
 bindkey "^[[H" beginning-of-line
