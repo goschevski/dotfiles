@@ -142,7 +142,7 @@ nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 noremap Q <NOP>
 
 " Copy file path
-nnoremap <Leader>y :let @* = expand("%:p")<CR>
+nnoremap <Leader>y :let @* = expand("%")<CR>
 
 " Quickfix and location lists
 map <Leader>co :copen<CR>
