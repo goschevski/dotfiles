@@ -8,6 +8,7 @@ Plug 'benekastah/neomake'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
+Plug 'embear/vim-foldsearch'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
@@ -200,7 +201,7 @@ nnoremap <tab> >>
 nnoremap <s-tab> <<
 
 " Set FileType
-nnoremap <Leader>/ :call SetFileType()<CR>
+nnoremap <Leader>\ :call SetFileType()<CR>
 
 " Clear trailing whitespaces
 nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
@@ -221,6 +222,9 @@ nnoremap <Leader>[ :Files<CR>
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
 let g:ackprg = 'ag --vimgrep'
+
+" Fold searches
+nnoremap <Leader>/ :Fs<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
