@@ -145,6 +145,9 @@ noremap Q <NOP>
 " Copy file path
 nnoremap <Leader>y :let @* = expand("%")<CR>
 
+" Copy to the end of the line
+nnoremap Y y$
+
 " Quickfix and location lists
 map <Leader>co :copen<CR>
 map <Leader>cc :cclose<CR>
@@ -212,6 +215,7 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
+nnoremap - :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
