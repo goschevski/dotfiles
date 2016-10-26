@@ -228,6 +228,7 @@ nnoremap <Leader>f :Ack<Space>
 let g:ackprg = 'ag --vimgrep'
 
 " Fold searches
+let g:foldsearch_disable_mappings=1
 nnoremap <Leader>/ :Fs<CR>
 
 " Fugitive commands
