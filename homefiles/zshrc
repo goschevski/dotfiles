@@ -8,8 +8,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.variables
 
-# Color scheme
-color chalk
+# Random color scheme
+color $(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
 
 # Setup zsh-autosuggestions
 bindkey "^[[H" beginning-of-line
