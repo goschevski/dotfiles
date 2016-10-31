@@ -90,6 +90,5 @@ nvim +PlugInstall +qall
 echoGreen "9. Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
 mkdir ~/.oh-my-zsh/custom/themes/
 ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme

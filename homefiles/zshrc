@@ -11,15 +11,6 @@ source ~/.variables
 # Random color scheme
 color $(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
 
-# Setup zsh-autosuggestions
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-source ~/.zsh-autosuggestions/autosuggestions.zsh
-zle-line-init() { zle autosuggest-start }
-zle -N zle-line-init
-AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=8'
-AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
-
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
 
