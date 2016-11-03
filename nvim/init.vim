@@ -227,7 +227,6 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 " ================================================
 
 " NERDTree
-map <Leader>r :NERDTreeToggle<CR>
 nnoremap - :call NERDTreeToggleInCurDir()<CR>
 let NERDTreeShowHidden=1
 
