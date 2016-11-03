@@ -116,6 +116,19 @@ function! SetFileType()
     endif
 endfunction
 
+function! NERDTreeToggleInCurDir()
+    " If NERDTree is open in the current buffer
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        exe ":NERDTreeClose"
+    else
+        if (expand("%:t") != '')
+            exe ":NERDTreeFind"
+        else
+            exe ":NERDTreeToggle"
+        endif
+    endif
+endfunction
+
 " ================================================
 " Auto-Commands
 " ================================================
@@ -215,7 +228,7 @@ nnoremap <Leader>i :call StripTrailingWhitespaces()<CR>
 
 " NERDTree
 map <Leader>r :NERDTreeToggle<CR>
-nnoremap - :NERDTreeFind<CR>
+nnoremap - :call NERDTreeToggleInCurDir()<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
