@@ -19,6 +19,14 @@ function color () {
     source $BASE16_SHELL
 }
 
+function rndcolor () {
+    color $(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
+}
+
+function lscolor () {
+    ls ~/.config/base16-shell/scripts/ | grep -v light
+}
+
 # Use neovim
 alias vim='nvim'
 

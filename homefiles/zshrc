@@ -9,7 +9,7 @@ source ~/.aliases
 source ~/.variables
 
 # Random color scheme
-color $(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
+rndcolor
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
