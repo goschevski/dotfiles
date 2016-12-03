@@ -44,7 +44,7 @@ function ev () {
 # Weather
 alias we='curl http://wttr.in/\?m'
 
-alias unrarall='find ./ -name \'*.rar\' -execdir unrar e {} \;'
+alias unrarall='find ./ -name "*.rar" -execdir unrar e {} \;'
 
 # List files
 alias ls='ls -G'
