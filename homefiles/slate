@@ -23,5 +23,9 @@ bind left:ctrl;alt;cmd  nudge -10% +0
 bind up:ctrl;alt;cmd    nudge +0   -10%
 bind down:ctrl;alt;cmd  nudge +0   +10%
 
+# Move to different monitor
+bind right:ctrl;alt;shift;cmd throw 1 resize
+bind left:ctrl;alt;shift;cmd throw 0 resize
+
 # Full Screen
 bind return:ctrl;alt move screenOriginX;screenOriginY screenSizeX;screenSizeY
