@@ -161,6 +161,9 @@ nnoremap <Leader>y :let @* = expand("%")<CR>
 " Copy to the end of the line
 nnoremap Y y$
 
+" Fix indentation
+nnoremap == miggVG=`i
+
 " Quickfix and location lists
 map <Leader>co :copen<CR>
 map <Leader>cc :cclose<CR>
