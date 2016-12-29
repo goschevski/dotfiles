@@ -146,7 +146,7 @@ autocmd! BufWritePost * Neomake
 " Map leader
 let mapleader = "\<Space>"
 
-" Map leader
+" Reload vim config
 nnoremap <Leader><Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " Notes
