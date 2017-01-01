@@ -43,7 +43,6 @@ brew install youtube-dl
 brew install ical-buddy
 brew install caskroom/cask/brew-cask
 brew install vim --with-lua
-brew install --HEAD neovim
 sudo mv /usr/bin/vim /usr/bin/vim73
 brew linkapps
 
@@ -82,11 +81,9 @@ do
     ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
 
-echoGreen "8. Setup neovim"
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-pip3 install neovim
-nvim +PlugInstall +qall
+echoGreen "8. Setup vim"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
 
 echoGreen "9. Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell

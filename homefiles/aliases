@@ -27,9 +27,6 @@ function lscolor () {
     ls ~/.config/base16-shell/scripts/ | grep -v light
 }
 
-# Use neovim
-alias vim='nvim'
-
 # Calendar events
 function ev () {
     if [ $1 ]; then

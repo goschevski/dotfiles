@@ -1,2 +1,2 @@
 export NOTES_PATH="$HOME/Google Drive/Notes"
-export EDITOR=nvim
+export EDITOR=vim

@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-    editor = nvim
+    editor = vim
 [user]
     name = Aleksandar Gosevski
     email = gosevski@vast.com
