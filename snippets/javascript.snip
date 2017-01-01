@@ -3,7 +3,7 @@ snippet method
           ${3}
       },
 
-snippet class
+snippet proto
     var ${1} = function (${2:options}) {
 
      };
@@ -12,10 +12,25 @@ snippet class
         ${3}
      };
 
+snippet class
+    class ${1} {
+
+     }
+
 snippet for
     for (var ${2:i} = ${1:Things.length} - 1; $2 >= 0; $2--) {
         ${3}
     }
+
+snippet each
+    ${1}.forEach((${2:item}) => {
+        ${3}
+    })
+
+snippet oeach
+    Object.keys(${1}).forEach((${2:key}) => {
+        ${3}
+    })
 
 snippet iife
     ;(function () {

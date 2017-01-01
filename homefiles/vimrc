@@ -62,7 +62,7 @@ set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
 set ruler                       "Show line/column number
 set ignorecase                  "case insensitive search
-set clipboard+=unnamedplus      "use system clipboard
+set clipboard+=unnamed          "use system clipboard
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set hidden                      "Switch buffers when they are not saved"
 syntax on                       "Turn on syntax highlighting
