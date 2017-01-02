@@ -41,6 +41,10 @@ function ev () {
 # Weather
 alias we='curl http://wttr.in/\?m'
 
+# Imgur upload
+alias img='imgur-screenshot.sh'
+
+# Unrar all .rar files in current folder
 alias unrarall='find ./ -name "*.rar" -execdir unrar e {} \;'
 
 # List files

@@ -31,6 +31,7 @@ brew install coreutils
 brew install gnu-sed --default-names
 brew install wget
 brew install node
+brew install imgur-screenshot
 brew install w3m
 brew install tmux
 brew install python3
@@ -49,7 +50,6 @@ brew linkapps
 echoGreen "5. Installing apps using brew cask..."
 brew cask install alfred
 brew cask install appcleaner
-brew cask install cloudup
 brew cask install firefox
 brew cask install google-chrome
 brew cask install google-drive
