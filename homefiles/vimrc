@@ -66,6 +66,8 @@ set hlsearch                    "highlight search results
 set clipboard+=unnamed          "use system clipboard
 set fileencoding=utf-8          "Set utf-8 encoding on write
 set hidden                      "Switch buffers when they are not saved"
+set belloff=all                 "turn off bells
+set mouse=a                     "enable mouse
 syntax on                       "Turn on syntax highlighting
 
 " ================================================
