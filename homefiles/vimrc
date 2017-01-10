@@ -9,6 +9,7 @@ Plug 'benekastah/neomake'
 " Search and movement
 Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch'
+Plug 'easymotion/vim-easymotion'
 Plug 'yuttie/comfortable-motion.vim'
 
 " Git and command line
@@ -254,6 +255,12 @@ let g:ackprg = 'ag --vimgrep'
 " Fold searches
 let g:foldsearch_disable_mappings=1
 nnoremap <Leader>/ :Fs<CR>
+
+" Easymotion
+nmap s <Plug>(easymotion-overwin-f2)
+map  / <Plug>(easymotion-sn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
