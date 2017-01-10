@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'benekastah/neomake'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
