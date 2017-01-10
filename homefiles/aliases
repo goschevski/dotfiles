@@ -82,6 +82,10 @@ alias cleanup="brew cleanup; brew cask cleanup; dscacheutil -flushcache; killall
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
 alias npmi="rm -rf node_modules; npm cache clean; npm i"
+alias nis="npm i --save"
+alias nid="npm i --save-dev"
+alias yis="yarn add"
+alias yid="yarn add --dev"
 
 # kill procces chooser
 function kp () {
