@@ -181,6 +181,9 @@ map <Leader>lc :lclose<CR>
 " Search selected
 vnoremap // y/<C-R>"<CR>
 
+" Search under the cursor and back to that instance
+nnoremap \ *N
+
 " Easy command mode
 nnoremap ; :
 vnoremap ; :
