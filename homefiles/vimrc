@@ -22,7 +22,7 @@ Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 
 " Code edit
-Plug 'mattn/emmet-vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -272,8 +272,8 @@ nnoremap <Leader>gr :Gread<CR>:w<CR>
 " GitGutter
 let g:gitgutter_realtime = 0
 
-" Emmet
-let g:user_emmet_expandabbr_key = '<C-e>'
+" Syntastic
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
