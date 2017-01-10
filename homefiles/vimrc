@@ -36,7 +36,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 " Color schemes
-Plug 'whatyouhide/vim-gotham'
 Plug 'chriskempson/base16-vim'
 
 " Add plugins to &runtimepath
