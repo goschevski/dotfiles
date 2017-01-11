@@ -81,10 +81,10 @@ alias cleanup="brew cleanup; brew cask cleanup; dscacheutil -flushcache; killall
 
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
-alias npmi="rm -rf node_modules; npm cache clean; npm i"
+alias ni="rm -rf node_modules; npm cache clean; npm i"
 alias nis="npm i --save --save-exact"
 alias nid="npm i --save-dev --save-exact"
-alias yi="yarn cache clean; yarn yarn upgrade"
+alias yi="yarn cache clean; yarn upgrade"
 alias yis="yarn add --exact"
 alias yid="yarn add --dev -exact"
 
