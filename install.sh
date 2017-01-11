@@ -35,15 +35,17 @@ brew install imgur-screenshot
 brew install w3m
 brew install tmux
 brew install diff-so-fancy
+brew install python3
 brew install httpie
+brew install cmus
 brew install switchaudio-osx
 brew install reattach-to-user-namespace
-brew install macvim --with-lua
 brew install youtube-dl
 brew install ical-buddy
 brew install caskroom/cask/brew-cask
+brew install macvim --with-lua
 brew install vim --with-lua
-brew linkapps
+brew linkapps --local macvim
 
 echoGreen "5. Installing apps using brew cask..."
 brew cask install alfred
@@ -89,3 +91,7 @@ echoGreen "9. Setup vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
 
+echoGreen "10. Setup cmus"
+pip3 install mutagen pyobjc
+git clone https://github.com/azadkuh/cmus-osx.git ~/.cmus-osx
+~/.cmus-osx/setup.py install

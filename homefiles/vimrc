@@ -142,8 +142,6 @@ autocmd BufNewFile,BufReadPost *.njk set filetype=jinja
 " Goyo and Limelight sync
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-" Run neomake on file save
-autocmd! BufWritePost * Neomake
 
 " ================================================
 " Key mappings (bindings)
