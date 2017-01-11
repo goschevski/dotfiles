@@ -71,6 +71,7 @@ npm i -g gulp
 npm i -g eslint
 npm i -g n
 npm i -g how2
+npm i -g vtop
 npm i -g nodemon
 npm i -g yarn
 
