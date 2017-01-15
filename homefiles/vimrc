@@ -15,6 +15,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'metakirby5/codi.vim'
+Plug 'sunaku/vim-dasht'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
@@ -261,6 +262,11 @@ map  N <Plug>(easymotion-prev)
 
 " Run Codi
 nnoremap , :Codi!!<CR>
+
+" Search with dasht
+nnoremap <Leader><Leader>d :Dasht!<Space>
+nnoremap <Leader><Leader>K :call Dasht([expand('<cWORD>'), expand('<cword>')], '!')<CR>
+vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>

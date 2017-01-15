@@ -7,14 +7,14 @@ function echoGreen () {
     printf "${RED} $1${NORMAL}\n"
 }
 
-echoGreen "1. Cloning dotfiles..."
+echoGreen "Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git
 chmod +x ~/dotfiles/bin/*
 
-echoGreen "2. Setup some OSX settings..."
+echoGreen "Setup some OSX settings..."
 sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
 
-echoGreen "3. Installing home brew..."
+echoGreen "Installing home brew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/versions
 brew tap homebrew/dupes
@@ -22,7 +22,7 @@ brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 brew tap thoughtbot/formulae
 
-echoGreen "4. Brew install..."
+echoGreen "Brew install..."
 brew install git
 brew install tig
 brew install pick
@@ -42,12 +42,13 @@ brew install switchaudio-osx
 brew install reattach-to-user-namespace
 brew install youtube-dl
 brew install ical-buddy
+brew install dasht
 brew install caskroom/cask/brew-cask
 brew install macvim --with-lua
 brew install vim --with-lua
 brew linkapps --local macvim
 
-echoGreen "5. Installing apps using brew cask..."
+echoGreen "Installing apps using brew cask..."
 brew cask install alfred
 brew cask install appcleaner
 brew cask install firefox
@@ -66,7 +67,7 @@ brew cask install tunnelblick
 brew cask install virtualbox
 brew cask install vlc
 
-echoGreen "6. Installing node global modules..."
+echoGreen "Installing node global modules..."
 npm i -g gulp
 npm i -g eslint
 npm i -g n
@@ -75,24 +76,31 @@ npm i -g vtop
 npm i -g nodemon
 npm i -g yarn
 
-echoGreen "7. Install and setup oh-my-zsh..."
+echoGreen "Install dasht docets..."
+dasht-docsets-install BackboneJS
+dasht-docsets-install JavaScript
+dasht-docsets-install Lo-Dash
+dasht-docsets-install NodeJS
+dasht-docsets-install Vim
+
+echoGreen "Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mkdir ~/.oh-my-zsh/custom/themes/
 ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
 
-echoGreen "8. Setup homefiles..."
+echoGreen "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
 do
     rm -rf ~/.$file
     ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
 
-echoGreen "9. Setup vim"
+echoGreen "Setup vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
 
-echoGreen "10. Setup cmus"
+echoGreen "Setup cmus"
 pip3 install mutagen pyobjc
 git clone https://github.com/azadkuh/cmus-osx.git ~/.cmus-osx
 ~/.cmus-osx/setup.py install
