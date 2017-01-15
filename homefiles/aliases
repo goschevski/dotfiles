@@ -41,6 +41,9 @@ function ev () {
 # Weather
 alias we="curl http://wttr.in/\?m"
 
+# asciinema rec
+alias rec="asciinema rec"
+
 # Imgur upload
 alias img="imgur-screenshot.sh"
 

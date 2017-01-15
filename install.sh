@@ -37,6 +37,7 @@ brew install tmux
 brew install diff-so-fancy
 brew install python3
 brew install httpie
+brew install asciinema
 brew install cmus
 brew install switchaudio-osx
 brew install reattach-to-user-namespace
