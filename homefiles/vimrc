@@ -14,6 +14,7 @@ Plug 'yuttie/comfortable-motion.vim'
 " Git and command line
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'metakirby5/codi.vim'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
@@ -257,6 +258,9 @@ nmap s <Plug>(easymotion-overwin-f2)
 map  / <Plug>(easymotion-sn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+" Run Codi
+nnoremap , :Codi!!<CR>
 
 " Fugitive commands
 nnoremap <Leader>gs :Gstatus<CR>
