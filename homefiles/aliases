@@ -102,6 +102,9 @@ function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
 }
 
+# JSON pretty print
+alias json='python -m json.tool'
+
 # Url Encode/Decode
 alias decode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias encode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
