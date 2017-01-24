@@ -52,7 +52,6 @@ execute "colorscheme base16-".$THEME
 " ================================================
 " General config
 " ================================================
-set nocompatible                "not compatible with vi
 set relativenumber              "Line numbers are good
 set number                      "Line numbers are good
 set binary                      "don't add new line on end of file (git)
@@ -60,15 +59,17 @@ set gdefault                    "Set global flag for search and replace
 set cursorline cursorcolumn     "Highlight column (vertical line)
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
-set ruler                       "Show line/column number
 set ignorecase                  "case insensitive search
 set hlsearch                    "highlight search results
 set incsearch                   "show matches in real time
 set clipboard+=unnamed          "use system clipboard
 set fileencoding=utf-8          "Set utf-8 encoding on write
+set laststatus=0
+set ruler                       "Show line/column number
 set hidden                      "Switch buffers when they are not saved"
 set belloff=all                 "turn off bells
 set mouse=a                     "enable mouse
+set lazyredraw                  "lazy redraw for macors
 syntax on                       "Turn on syntax highlighting
 
 " ================================================
@@ -180,6 +181,10 @@ map <Leader>lc :lclose<CR>
 " Search selected
 vnoremap // y/<C-R>"<CR>
 
+" Move selected
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Search under the cursor and back to that instance
 nnoremap \ *N
 
@@ -204,6 +209,10 @@ nmap <Leader>k O<Esc>
 " Fast exit to normal mode
 inoremap jj <Esc>
 inoremap jk <Esc>
+
+" Center highlighted search
+nnoremap n nzz
+nnoremap N Nzz
 
 " Substitute
 nnoremap <Leader>sr :%s//<left>
@@ -277,6 +286,13 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
+ 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
