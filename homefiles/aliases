@@ -20,7 +20,11 @@ function color () {
 }
 
 function rndcolor () {
-    color $(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
+    SELECTED=$(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
+
+
+    color $SELECTED
+    echo "Color scheme is $SELECTED"
 }
 
 function lscolor () {
