@@ -267,7 +267,7 @@ nnoremap <Leader>/ :Fs<CR>
 nnoremap , :Codi!!<CR>
 
 " Search with dasht
-nnoremap <Leader><Leader>d :Dasht!<Space>
+nnoremap <Leader><Leader>k :Dasht!<Space>
 nnoremap <Leader><Leader>K :call Dasht([expand('<cWORD>'), expand('<cword>')], '!')<CR>
 vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 
