@@ -78,6 +78,9 @@ alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
 alias dotf="cd ~/dotfiles"
 
+# Folder sizes
+alias sizes="du -xhd1 | sort -n"
+
 # Youtube Download
 alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
 
