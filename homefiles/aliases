@@ -13,12 +13,14 @@ function tc () { tmux new -s $1 }
 # Reload
 alias re="source ~/.zshrc"
 
+# Set color scheme
 function color () {
     export THEME=$1
     BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$1.sh"
     source $BASE16_SHELL
 }
 
+# Set random color scheme
 function rndcolor () {
     SELECTED=$(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
 
@@ -27,8 +29,14 @@ function rndcolor () {
     echo "Color scheme is $SELECTED"
 }
 
+# List colors
 function lscolor () {
     ls ~/.config/base16-shell/scripts/ | grep -v light
+}
+
+# Read markdown
+rmd () {
+    grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
 }
 
 # Calendar events
