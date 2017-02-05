@@ -14,6 +14,9 @@ color atelier-plateau
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
 
+# Set go path
+export GOPATH=~/.gocode
+
 # PATH
 export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path
 export PATH="/usr/local/bin:$PATH" # local before everything else
