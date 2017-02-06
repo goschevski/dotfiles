@@ -9,7 +9,7 @@ source ~/.aliases
 source ~/.variables
 
 # Color scheme
-color atelier-plateau
+color hopscotch
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
