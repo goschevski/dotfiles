@@ -9,6 +9,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'brooth/far.vim'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
