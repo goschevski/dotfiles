@@ -106,3 +106,8 @@ echoGreen "Setup cmus"
 pip3 install mutagen pyobjc
 git clone https://github.com/azadkuh/cmus-osx.git ~/.cmus-osx
 ~/.cmus-osx/setup.py install
+
+echoGreen "Setup hosts files"
+sudo su -
+echo "* 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
+crontab /tmp/mycron
