@@ -5,6 +5,10 @@ curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambl
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts >> /tmp/newHosts
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts >> /tmp/newHosts
 
+# Enable few sites
+sudo sed -i 's/www.rt.com/www.cnn.com/g' /tmp/newHosts
+sudo sed -i -e '/linkedin/d; /licdn/d' /tmp/newHosts
+
 # Add new hosts to real file
 sudo awk '/#GENERATEDHOSTS#/{system("cat /tmp/newHosts");next}1' /Users/gosevski/dotfiles/hostsTemplate > /etc/hosts
 
