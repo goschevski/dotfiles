@@ -1,10 +1,4 @@
-# izdajnici i zapadni mediji
-izdajnici=(
-    http://blic.rs
-    http://b92.net
-)
-
-# vesti iz Srbije i sveta
+# news websites
 vesti=(
     http://srbin.info
     http://srbinaokup.info
@@ -12,23 +6,17 @@ vesti=(
     http://fakti.rs
     http://fsksrb.ru
     http://nspm.rs
-)
-
-sport=(
     http://kkpartizan.rs
     http://www.mozzartsport.com
 )
 
-open -n $HOME/Applications/Google\ Chrome.app
+# open new chrome window
+open -n /Applications/Google\ Chrome.app
+
+# wait for chome to open
 sleep 1
-for i in ${izdajnici[@]}; do
-    open "${i}"
-done
 
+# open urls
 for i in ${vesti[@]}; do
-    open "${i}"
-done
-
-for i in ${sport[@]}; do
     open "${i}"
 done
