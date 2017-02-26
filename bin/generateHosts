@@ -9,6 +9,10 @@ curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/socia
 sudo sed -i 's/www.rt.com/www.cnn.com/g' /tmp/newHosts
 sudo sed -i -e '/linkedin/d; /licdn/d' /tmp/newHosts
 
+# Disable few sites (izdajnici)
+echo '0.0.0.0 www.blic.rs' >> /tmp/newHosts
+echo '0.0.0.0 www.b92.net' >> /tmp/newHosts
+
 # Add new hosts to real file
 sudo awk '/#GENERATEDHOSTS#/{system("cat /tmp/newHosts");next}1' /Users/gosevski/dotfiles/hostsTemplate > /etc/hosts
 
