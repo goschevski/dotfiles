@@ -116,7 +116,7 @@ function! FixFile()
     " Delete trailing slashes
     %s/\s\+$//e
     " Replace tabs with spaces
-    exec "retab"
+    %s/\t/    /
     " Fix indentation
     exec "normal! gg=G"
     call cursor(l, c)
