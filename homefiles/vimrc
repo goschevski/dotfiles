@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'metakirby5/codi.vim'
 Plug 'sunaku/vim-dasht'
+Plug 'samsonw/vim-task'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
@@ -297,6 +298,9 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
+
+" Tasks
+nnoremap <Leader>t :call Toggle_task_status()<CR>
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
