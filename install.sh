@@ -27,6 +27,8 @@ brew install git
 brew install tig
 brew install pick
 brew install ag
+brew install archey
+brew install figlet
 brew install coreutils
 brew install gnu-sed --default-names
 brew install wget
