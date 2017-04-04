@@ -21,6 +21,7 @@ brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 brew tap thoughtbot/formulae
+brew tap caskroom/fonts 
 
 echoGreen "Brew install..."
 brew install git
@@ -70,6 +71,8 @@ brew cask install transmission
 brew cask install tunnelblick
 brew cask install virtualbox
 brew cask install vlc
+brew cask install font-iosevka
+brew cask install font-fira-code
 
 echoGreen "Installing node global modules..."
 npm i -g gulp
