@@ -209,8 +209,8 @@ nnoremap k gk
 nnoremap <Leader>d ggdG
 
 " Add empty line and stay in command mode
-nmap <Leader>j o<Esc>
-nmap <Leader>k O<Esc>
+nmap <Leader>j o<Esc>k
+nmap <Leader>k O<Esc>j
 
 " Fast exit to normal mode
 inoremap jj <Esc>
