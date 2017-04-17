@@ -22,6 +22,7 @@ Plug 'samsonw/vim-task'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
+Plug 'mattn/emmet-vim'
 
 " Code edit
 Plug 'vim-syntastic/syntastic'
