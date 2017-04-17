@@ -3,7 +3,6 @@ curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > /tmp/new
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts >> /tmp/newHosts
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling/hosts >> /tmp/newHosts
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts >> /tmp/newHosts
-curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts >> /tmp/newHosts
 
 # Enable few sites
 sudo sed -i 's/www.rt.com/www.cnn.com/g' /tmp/newHosts
