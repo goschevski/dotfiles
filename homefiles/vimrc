@@ -267,8 +267,16 @@ let g:fzf_layout = { 'right': '~40%' }
 nnoremap <Leader>p :GFiles<CR>
 nnoremap <Leader>o :Buffers<CR>
 nnoremap <Leader>[ :Files<CR>
-nnoremap <Leader>gc :Commits<CR>
+nnoremap <Leader>gf :Commits<CR>
 nnoremap <Leader>gh :BCommits<CR>
+
+" Fugitive commands
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <C-h> :echo fugitive#statusline()<CR>
+nnoremap <Leader>gcm :Gcommit<CR>
+nnoremap <Leader>gco :Gread<CR>:w<CR>
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
@@ -285,14 +293,6 @@ nnoremap , :Codi!!<CR>
 nnoremap <Leader><Leader>k :Dasht!<Space>
 nnoremap <Leader><Leader>K :call Dasht([expand('<cWORD>'), expand('<cword>')], '!')<CR>
 vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
-
-" Fugitive commands
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <C-h> :echo fugitive#statusline()<CR>
-nnoremap <Leader>gcm :Gcommit<CR>
-nnoremap <Leader>gr :Gread<CR>:w<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 0
