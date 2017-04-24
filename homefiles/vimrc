@@ -290,6 +290,7 @@ vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <C-h> :echo fugitive#statusline()<CR>
 nnoremap <Leader>gcm :Gcommit<CR>
 nnoremap <Leader>gr :Gread<CR>:w<CR>
 
