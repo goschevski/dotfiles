@@ -263,9 +263,12 @@ nnoremap - :call NERDTreeToggleInCurDir()<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
+let g:fzf_layout = { 'right': '~40%' }
 nnoremap <Leader>p :GFiles<CR>
 nnoremap <Leader>o :Buffers<CR>
 nnoremap <Leader>[ :Files<CR>
+nnoremap <Leader>gc :Commits<CR>
+nnoremap <Leader>gh :BCommits<CR>
 
 " Ack Search
 nnoremap <Leader>f :Ack<Space>
@@ -287,7 +290,7 @@ vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gcm :Gcommit<CR>
 nnoremap <Leader>gr :Gread<CR>:w<CR>
 
 " GitGutter
