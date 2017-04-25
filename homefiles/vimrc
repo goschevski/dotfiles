@@ -271,7 +271,11 @@ nnoremap <Leader>gf :Commits<CR>
 nnoremap <Leader>gh :BCommits<CR>
 
 " Fugitive commands
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gst :Gstatus<CR>
+nnoremap <Leader>gss :Dispatch !git stash<CR>
+nnoremap <Leader>gsp :Dispatch !git stash pop<CR>
+nnoremap <Leader>gpl :Git pull --rebase<CR>
+nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <C-h> :echo fugitive#statusline()<CR>
