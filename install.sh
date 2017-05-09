@@ -27,6 +27,7 @@ brew install git
 brew install tig
 brew install pick
 brew install ag
+brew install vifm
 brew install archey
 brew install figlet
 brew install coreutils
