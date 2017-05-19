@@ -35,7 +35,6 @@ Plug 'tpope/vim-commentary'
 " Code highlight
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'joshglendenning/vim-caddyfile'
 
 " Markdown
 Plug 'junegunn/goyo.vim'
@@ -131,13 +130,6 @@ function! FixFile()
     " Fix indentation
     exec "normal! gg=G"
     call cursor(l, c)
-endfunction
-
-function! SetFileType()
-    let name = input("Filetype: ")
-    if (name != "")
-        exec "set filetype=" . name
-    endif
 endfunction
 
 function! NERDTreeToggleInCurDir()
@@ -256,9 +248,6 @@ xnoremap <tab> >gv
 nnoremap <tab> >>
 nnoremap <s-tab> <<
 
-" Set FileType
-nnoremap <Leader>\ :call SetFileType()<CR>
-
 " Clear trailing whitespaces
 nnoremap <Leader>i :call FixFile()<CR>
 
@@ -277,6 +266,8 @@ nnoremap <Leader>o :Buffers<CR>
 nnoremap <Leader>[ :Files<CR>
 nnoremap <Leader>gf :Commits<CR>
 nnoremap <Leader>gh :BCommits<CR>
+nnoremap <Leader>m :Maps<CR>
+nnoremap <Leader>\ :Filetypes<CR>
 
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
