@@ -282,7 +282,7 @@ nnoremap <Leader>gcm :Gcommit<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
 " Ack Search
-nnoremap <Leader>f :Ack<Space>
+nnoremap <Leader>f :Ack -Q ""<Left>
 nnoremap <Leader>a :Ack <cword><cr>
 let g:ackprg = 'ag --vimgrep'
 
