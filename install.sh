@@ -115,5 +115,5 @@ git clone https://github.com/azadkuh/cmus-osx.git ~/.cmus-osx
 
 colorEcho "Setup hosts files"
 sudo su -
-echo "* 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
+echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
 crontab /tmp/mycron
