@@ -227,7 +227,7 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " Substitute
-nnoremap <Leader>sr :%s//<left>
+nnoremap <Leader>sr :Far \V %<left><left>
 
 " Fast save
 nnoremap <Leader>w :w<CR>
