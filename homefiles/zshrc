@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Source aliases
 source ~/.aliases
+source ~/Google\ Drive/.private
 source ~/.variables
 
 # Color scheme
