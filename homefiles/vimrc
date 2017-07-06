@@ -207,6 +207,9 @@ vnoremap ; :
 " Switch between buffers quickly
 map <Leader><Tab> <C-^>
 
+" Switch between buffers quickly
+nnoremap <Leader>x :bdelete<CR>
+
 " Down is really the next line
 nnoremap j gj
 nnoremap k gk
