@@ -280,7 +280,7 @@ nnoremap <Leader>\ :Filetypes<CR>
 nnoremap <Leader>gst :Gstatus<CR>
 nnoremap <Leader>gss :Dispatch !git stash<CR>
 nnoremap <Leader>gsp :Dispatch !git stash pop<CR>
-nnoremap <Leader>gpl :Git pull --rebase<CR>
+nnoremap <Leader>gpl :Gpull --rebase<CR>
 nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
