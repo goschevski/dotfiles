@@ -10,11 +10,11 @@ Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'brooth/far.vim'
+Plug 'easymotion/vim-easymotion'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
-Plug 'airblade/vim-gitgutter'
 Plug 'mtth/scratch.vim'
 Plug 'metakirby5/codi.vim'
 Plug 'sunaku/vim-dasht'
@@ -51,6 +51,7 @@ call plug#end()
 " ================================================
 let base16colorspace=256
 set background=dark
+set foldcolumn=5
 execute "colorscheme base16-".$THEME
 
 " ================================================
@@ -60,7 +61,7 @@ set relativenumber              "Line numbers are good
 set number                      "Line numbers are good
 set binary                      "don't add new line on end of file (git)
 set gdefault                    "Set global flag for search and replace
-set cursorline cursorcolumn     "Highlight column (vertical line)
+set cursorline                  "Highlight row
 set autoread                    "Reload files changed outside vim
 set smartcase                   "Smart case search if there is uppercase
 set ignorecase                  "case insensitive search
@@ -75,6 +76,8 @@ set belloff=all                 "turn off bells
 set mouse=a                     "enable mouse
 set lazyredraw                  "lazy redraw for macors
 syntax on                       "Turn on syntax highlighting
+highlight clear FoldColumn      "Use same color for padding as background
+highlight LineNr ctermfg=18     "Use same color for padding as background
 
 " ================================================
 " Cursor style in tmux
@@ -317,9 +320,14 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 
+" Easymotion
+nmap s <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_smartcase = 1
+
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
 let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
+
