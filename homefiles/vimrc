@@ -77,7 +77,7 @@ set mouse=a                     "enable mouse
 set lazyredraw                  "lazy redraw for macors
 syntax on                       "Turn on syntax highlighting
 highlight clear FoldColumn      "Use same color for padding as background
-highlight LineNr ctermfg=18     "Use same color for padding as background
+highlight LineNr ctermfg=18     "Use same color for line numbers as background
 
 " ================================================
 " Cursor style in tmux
