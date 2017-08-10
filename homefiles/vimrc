@@ -181,6 +181,10 @@ nnoremap <Leader>y :let @* = expand("%")<CR>
 " Copy to the end of the line
 nnoremap Y y$
 
+" Line start and end
+nnoremap L $
+nnoremap H ^
+
 " Fast navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
