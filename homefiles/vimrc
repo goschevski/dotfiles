@@ -172,6 +172,9 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 " Notes
 nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 
+" Close splits
+nnoremap = :only<CR>
+
 " Disable Ex mode
 noremap Q <NOP>
 
@@ -313,6 +316,7 @@ vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 0
+nnoremap <Leader>Gd :GitGutterPreviewHunk<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
