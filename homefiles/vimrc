@@ -76,6 +76,8 @@ set hidden                      "Switch buffers when they are not saved"
 set belloff=all                 "turn off bells
 set mouse=a                     "enable mouse
 set lazyredraw                  "lazy redraw for macors
+set timeoutlen=1000             "Fast escape
+set ttimeoutlen=0               "Fast escape
 syntax on                       "Turn on syntax highlighting
 highlight clear FoldColumn      "Use same color for padding as background
 highlight clear LineNr          "Use same color for line numbers as background
