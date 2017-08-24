@@ -213,6 +213,8 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " Search under the cursor and back to that instance
 nnoremap \ *N
+" Search under the cursor and change it
+nnoremap ' *Ncgn
 
 " Easy command mode
 nnoremap ; :
