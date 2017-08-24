@@ -130,12 +130,12 @@ set nowb
 function! FixFile()
     let l = line(".")
     let c = col(".")
+    " Fix indentation
+    exec "normal! gg=G"
     " Delete trailing slashes
     %s/\s\+$//e
     " Replace tabs with spaces
     %s/\t/    /e
-    " Fix indentation
-    exec "normal! gg=G"
     call cursor(l, c)
 endfunction
 
@@ -260,7 +260,7 @@ nnoremap <Leader>. <C-w>20>
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
 
-" Indenting in visual and normal mode
+    " Indenting in visual and normal mode
 xnoremap <s-tab> <gv
 xnoremap <tab> >gv
 nnoremap <tab> >>
