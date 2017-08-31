@@ -6,7 +6,6 @@ curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/
 
 # Enable few sites
 sudo sed -i 's/www.rt.com/www.cnn.com/g' /tmp/newHosts
-sudo sed -i -e '/linkedin/d; /licdn/d' /tmp/newHosts
 
 # Disable few sites (izdajnici)
 echo '0.0.0.0 www.blic.rs' >> /tmp/newHosts
