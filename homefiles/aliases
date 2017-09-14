@@ -79,6 +79,7 @@ alias ....="cd ../../../../"
 
 # Folders
 alias sites="cd ~/Sites"
+alias akordi="cd ~/Google\ Drive/Akordi && vim"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
 alias dotf="cd ~/dotfiles"
