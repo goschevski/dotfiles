@@ -258,8 +258,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Shorthand for making window smaller and bigger
-nnoremap <Leader>, <C-w>20<
-nnoremap <Leader>. <C-w>20>
+nnoremap <Leader>, <C-w>10<
+nnoremap <Leader>. <C-w>10>
 
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
