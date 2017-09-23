@@ -81,8 +81,9 @@ set ttimeoutlen=0               "Fast escape
 syntax on                       "Turn on syntax highlighting
 highlight clear FoldColumn      "Use same color for padding as background
 highlight clear LineNr          "Use same color for line numbers as background
-highlight LineNr ctermfg=18     "Change color of line numbers
-highlight VertSplit ctermbg=bg ctermfg=bg "Remove border background
+highlight LineNr ctermfg=18                    "Change color of line numbers
+highlight VertSplit ctermbg=bg ctermfg=bg      "Remove border background
+highlight EndOfBuffer ctermfg=bg ctermbg=bg    "Color of ~ at end of the file
 
 " ================================================
 " Cursor style in tmux
