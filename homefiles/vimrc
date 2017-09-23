@@ -82,6 +82,7 @@ syntax on                       "Turn on syntax highlighting
 highlight clear FoldColumn      "Use same color for padding as background
 highlight clear LineNr          "Use same color for line numbers as background
 highlight LineNr ctermfg=18     "Change color of line numbers
+highlight VertSplit ctermbg=bg ctermfg=bg "Remove border background
 
 " ================================================
 " Cursor style in tmux
@@ -205,7 +206,7 @@ map <Leader>lo :lopen<CR>
 map <Leader>lc :lclose<CR>
 
 " Search selected
-vnoremap // y/<C-R>"<CR>
+vnoremap // y/<C-R>"<CR>N
 
 " Move selected
 vnoremap J :m '>+1<CR>gv=gv
@@ -262,7 +263,7 @@ nnoremap <Leader>. <C-w>20>
 " Hide highlight
 nnoremap <silent> <BS> :noh<CR>
 
-    " Indenting in visual and normal mode
+" Indenting in visual and normal mode
 xnoremap <s-tab> <gv
 xnoremap <tab> >gv
 nnoremap <tab> >>
@@ -320,7 +321,6 @@ vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 0
-nnoremap <Leader>gD :GitGutterPreviewHunk<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
