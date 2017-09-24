@@ -52,7 +52,6 @@ call plug#end()
 " ================================================
 let base16colorspace=256
 set background=dark
-set foldcolumn=5
 execute "colorscheme base16-".$THEME
 
 " ================================================
@@ -78,10 +77,16 @@ set mouse=a                     "enable mouse
 set lazyredraw                  "lazy redraw for macors
 set timeoutlen=1000             "Fast escape
 set ttimeoutlen=0               "Fast escape
+set foldcolumn=0                "Hide fold column
 syntax on                       "Turn on syntax highlighting
-highlight clear FoldColumn      "Use same color for padding as background
-highlight clear LineNr          "Use same color for line numbers as background
-highlight LineNr ctermfg=18                    "Change color of line numbers
+
+" ================================================
+" Colors
+" ================================================
+highlight clear FoldColumn                     "Use same color for padding as background
+highlight LineNr ctermfg=19 ctermbg=bg         "Change color of line numbers
+highlight CursorLineNr ctermfg=20 ctermbg=19   "Change color of line numbers
+highlight CursorLine ctermbg=19                "Current line
 highlight VertSplit ctermbg=bg ctermfg=bg      "Remove border background
 highlight EndOfBuffer ctermfg=bg ctermbg=bg    "Color of ~ at end of the file
 
