@@ -62,7 +62,7 @@ alias we="curl http://wttr.in/\?m"
 alias rec="asciinema rec"
 
 # Imgur upload
-alias img="imgur-screenshot.sh"
+alias img="imgur-screenshot.sh -l true"
 
 # Unrar all .rar files in current folder
 alias unrarall='find ./ -name "*.rar" -execdir unrar e {} \;'
