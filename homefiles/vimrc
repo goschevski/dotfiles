@@ -84,11 +84,11 @@ syntax on                       "Turn on syntax highlighting
 " Colors
 " ================================================
 highlight clear FoldColumn                     "Use same color for padding as background
-highlight LineNr ctermfg=19 ctermbg=bg         "Change color of line numbers
-highlight CursorLineNr ctermfg=20 ctermbg=19   "Change color of line numbers
-highlight CursorLine ctermbg=19                "Current line
-highlight VertSplit ctermbg=bg ctermfg=bg      "Remove border background
-highlight EndOfBuffer ctermfg=bg ctermbg=bg    "Color of ~ at end of the file
+highlight LineNr ctermfg=19 ctermbg=NONE         "Change color of line numbers
+highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
+highlight CursorLine ctermbg=19                  "Current line
+highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
+highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
 
 " ================================================
 " Cursor style in tmux
@@ -327,10 +327,10 @@ vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 0
-hi GitGutterAdd          ctermbg=bg
-hi GitGutterChange       ctermbg=bg
-hi GitGutterDelete       ctermbg=bg
-hi GitGutterChangeDelete ctermbg=bg
+hi GitGutterAdd          ctermbg=NONE
+hi GitGutterChange       ctermbg=NONE
+hi GitGutterDelete       ctermbg=NONE
+hi GitGutterChangeDelete ctermbg=NONE
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']

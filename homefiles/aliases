@@ -13,6 +13,9 @@ function tc () { tmux new -s $1 }
 # Reload
 alias re="source ~/.zshrc"
 
+# Edit hosts
+alias hos="sudo -E vim /etc/hosts"
+
 # Set color scheme
 function color () {
     export THEME=$1
@@ -20,15 +23,9 @@ function color () {
     source $BASE16_SHELL
 }
 
-# Enable something in hosts
-henable () {
-    sudo sed -i "/$1/,/^$/{/^$/q; d}" /etc/hosts
-}
-
 # Set random color scheme
 function rndcolor () {
     SELECTED=$(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
-
 
     color $SELECTED
     echo "Color scheme is $SELECTED"
