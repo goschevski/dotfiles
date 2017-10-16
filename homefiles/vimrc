@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Files buffers navigation
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Search and movement
@@ -287,14 +287,13 @@ nnoremap - :call NERDTreeToggleInCurDir()<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
-let g:fzf_layout = { 'right': '~40%' }
-nnoremap <Leader>p :GFiles<CR>
-nnoremap <Leader>o :Buffers<CR>
-nnoremap <Leader>[ :Files<CR>
-nnoremap <Leader>gf :Commits<CR>
-nnoremap <Leader>gh :BCommits<CR>
-nnoremap <Leader>m :Maps<CR>
-nnoremap <Leader>\ :Filetypes<CR>
+nnoremap <Leader>p :GFiles!<CR>
+nnoremap <Leader>o :Buffers!<CR>
+nnoremap <Leader>[ :Files!<CR>
+nnoremap <Leader>gf :Commits!<CR>
+nnoremap <Leader>gh :BCommits!<CR>
+nnoremap <Leader>m :Maps!<CR>
+nnoremap <Leader>\ :Filetypes!<CR>
 
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
