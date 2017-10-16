@@ -16,9 +16,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-dispatch'
-Plug 'mtth/scratch.vim'
 Plug 'metakirby5/codi.vim'
 Plug 'sunaku/vim-dasht'
+Plug 'joonty/vim-do'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
@@ -28,7 +28,7 @@ Plug 'mattn/emmet-vim'
 
 " Code edit
 Plug 'vim-syntastic/syntastic'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
