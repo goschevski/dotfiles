@@ -195,7 +195,9 @@ nnoremap Y y$
 
 " Line start and end
 nnoremap L $
+vnoremap L $h
 nnoremap H ^
+vnoremap H ^
 
 " Fast navigation
 " nnoremap <C-j> <C-w>j
