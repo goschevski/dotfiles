@@ -16,7 +16,6 @@ Plug 'easymotion/vim-easymotion'
 " Git and command line
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-dispatch'
 Plug 'metakirby5/codi.vim'
 Plug 'sunaku/vim-dasht'
 Plug 'joonty/vim-do'
@@ -298,14 +297,13 @@ nnoremap <Leader>\ :Filetypes!<CR>
 
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
-nnoremap <Leader>gss :Dispatch !git stash<CR>
-nnoremap <Leader>gsp :Dispatch !git stash pop<CR>
-nnoremap <Leader>gpl :Gpull --rebase<CR>
-nnoremap <Leader>gps :Gpush<CR>
+nnoremap <Leader>gss :Do git stash<CR>
+nnoremap <Leader>gsp :Do git stash pop<CR>
+nnoremap <Leader>gpl :Do git pull --rebase<CR>
+nnoremap <Leader>gps :Do git push<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>
-nnoremap <Leader>gcm :Gcommit<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
 " Ack Search
