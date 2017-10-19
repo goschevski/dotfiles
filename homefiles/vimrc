@@ -27,7 +27,7 @@ Plug 'Shougo/neosnippet'
 Plug 'mattn/emmet-vim'
 
 " Code edit
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -332,19 +332,19 @@ hi GitGutterChange       ctermbg=NONE
 hi GitGutterDelete       ctermbg=NONE
 hi GitGutterChangeDelete ctermbg=NONE
 
-" Syntastic
-let g:syntastic_javascript_checkers = ['eslint']
+" Ale
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fixers = {
+\   'javascript': [
+\       'eslint'
+\   ],
+\}
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
  
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
