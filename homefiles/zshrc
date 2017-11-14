@@ -25,3 +25,5 @@ export PATH="/usr/local/bin:$PATH" # local before everything else
 export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global dependencies
 export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
