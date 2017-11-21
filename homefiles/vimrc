@@ -289,13 +289,22 @@ nnoremap - :call NERDTreeToggleInCurDir()<CR>
 let NERDTreeShowHidden=1
 
 " Fzf
-nnoremap <Leader>p :GFiles!<CR>
+if isdirectory(".git")
+    nnoremap <Leader>p :GFiles!<CR>
+else
+    nnoremap <Leader>p :Files!<CR>
+endif
 nnoremap <Leader>o :Buffers!<CR>
 nnoremap <Leader>[ :Files!<CR>
 nnoremap <Leader>gf :Commits!<CR>
 nnoremap <Leader>gh :BCommits!<CR>
 nnoremap <Leader>m :Maps!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
