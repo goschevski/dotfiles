@@ -25,6 +25,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'mattn/emmet-vim'
+Plug 'dhruvasagar/vim-table-mode'
 
 " Code edit
 Plug 'w0rp/ale'
