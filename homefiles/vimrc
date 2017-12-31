@@ -182,6 +182,9 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 " Notes
 nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 
+" Chords
+nnoremap <Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
+
 " Close splits
 nnoremap = :only<CR>
 
