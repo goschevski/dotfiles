@@ -1,4 +1,4 @@
-# Tmux
+
 alias tl="tmux ls"
 function ta () {
     if [ -z "$1" ]; then
@@ -108,6 +108,15 @@ alias nid="npm i --save-dev --save-exact"
 alias yi="rm -rf node_modules; yarn install"
 alias yis="yarn add --exact"
 alias yid="yarn add --dev --exact"
+
+# Docker
+alias dlc="docker ps -a"
+alias dsc="docker stop"
+alias dcc='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias drc="docker rm"
+alias dli="docker images"
+alias dri="docker rmi"
+alias dci='docker rmi $(docker images -a -q)'
 
 # kill procces chooser
 function kp () {
