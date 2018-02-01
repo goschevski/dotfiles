@@ -32,6 +32,8 @@ brew install fzf
 brew install vifm
 brew install archey
 brew install figlet
+brew install cmatrix
+brew install pipes-sh
 brew install coreutils
 brew install gnu-sed --default-names
 brew install wget
