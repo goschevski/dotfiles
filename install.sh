@@ -50,7 +50,6 @@ brew install reattach-to-user-namespace
 brew install youtube-dl
 brew install ical-buddy
 brew install dasht
-brew install caskroom/cask/brew-cask
 brew install macvim --with-lua
 brew install vim --with-lua
 brew linkapps --local macvim
