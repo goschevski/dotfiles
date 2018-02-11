@@ -12,7 +12,7 @@ echo '0.0.0.0 www.blic.rs' >> /tmp/newHosts
 echo '0.0.0.0 www.b92.net' >> /tmp/newHosts
 
 # Add new hosts to real file
-sudo awk '/#GENERATEDHOSTS#/{system("cat /tmp/newHosts");next}1' /Users/gosevski/dotfiles/hostsTemplate > /etc/hosts
+sudo awk '/#GENERATEDHOSTS#/{system("cat /tmp/newHosts");next}1' /Users/gosevski/dotfiles/templates/hostsTemplate > /etc/hosts
 
 # Remove tmp file
 rm /tmp/newHosts

@@ -14,12 +14,9 @@ colorEcho "Setup some OSX settings..."
 sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
 
 colorEcho "Installing home brew..."
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/versions
-brew tap homebrew/dupes
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap homebrew/core
 brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew tap thoughtbot/formulae
 brew tap caskroom/fonts 
 
 colorEcho "Brew install..."
@@ -30,6 +27,7 @@ brew install ag
 brew install ripgrep
 brew install fzf
 brew install vifm
+brew install sc-im
 brew install archey
 brew install figlet
 brew install cmatrix
@@ -60,21 +58,19 @@ brew linkapps --local macvim
 colorEcho "Installing apps using brew cask..."
 brew cask install alfred
 brew cask install appcleaner
-brew cask install firefox
+brew cask install firefox-nightly
 brew cask install google-chrome
 brew cask install google-drive
-brew cask install iterm2-beta
+brew cask install iterm2-nightly
 brew cask install mattr-slate
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-json
 brew cask install skype
-brew cask install sourcetree
 brew cask install transmission
 brew cask install tunnelblick
 brew cask install virtualbox
-brew cask install vlc
 brew cask install font-iosevka
 brew cask install font-fira-code
 
@@ -96,9 +92,9 @@ dasht-docsets-install Vim
 
 colorEcho "Install and setup oh-my-zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mkdir ~/.oh-my-zsh/custom/themes/
-ln -s ~/dotfiles/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
+ln -s ~/dotfiles/templates/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
 
 colorEcho "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
