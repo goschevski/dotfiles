@@ -188,6 +188,9 @@ nnoremap <Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbin
 " Close splits
 nnoremap = :only<CR>
 
+" Format json
+nnoremap <Leader><Leader>j :%!python -m json.tool<CR>
+
 " Disable Ex mode
 noremap Q <NOP>
 
