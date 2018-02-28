@@ -2,6 +2,9 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
+# Reload config
+bind r:cmd;alt relaunch
+
 # Hints for windows
 bind esc:cmd hint
 
@@ -36,4 +39,4 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Full Screen
-bind return:ctrl;alt move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind return:ctrl;alt move screenOriginX+50;screenOriginY+50 screenSizeX-100;screenSizeY-100
