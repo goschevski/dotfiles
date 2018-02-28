@@ -10,12 +10,6 @@ vesti=(
     http://www.mozzartsport.com
 )
 
-# open new chrome window
-open -n /Applications/Google\ Chrome.app
-
-# wait for chome to open
-sleep 1
-
 # open urls
 for i in ${vesti[@]}; do
     open "${i}"
