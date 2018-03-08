@@ -261,6 +261,8 @@ inoremap jk <Esc>
 nnoremap n nzz
 nnoremap N Nzz
 
+nnoremap <CR> xi<CR><ESC>
+
 " Substitute
 nnoremap <Leader>sf :Far \V %<left><left>
 nnoremap <Leader>sr :%s///<left><left><C-f>i
