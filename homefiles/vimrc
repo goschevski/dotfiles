@@ -235,8 +235,6 @@ nnoremap ' *Ncgn
 " Easy command mode
 nnoremap ; :
 vnoremap ; :
-nnoremap <CR> :
-vnoremap <CR> :
 
 " Switch between buffers quickly
 map <Leader><Tab> <C-^>
@@ -262,6 +260,8 @@ inoremap jk <Esc>
 " Center highlighted search
 nnoremap n nzz
 nnoremap N Nzz
+
+nnoremap <CR> xi<CR><ESC>
 
 " Substitute
 nnoremap <Leader>sf :Far \V %<left><left>
