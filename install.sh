@@ -23,16 +23,22 @@ colorEcho "Brew install..."
 brew install git
 brew install tig
 brew install pick
+brew install ansible
 brew install ag
+brew install fd
 brew install ripgrep
 brew install fzf
 brew install vifm
+brew install ranger
 brew install sc-im
 brew install archey
 brew install figlet
 brew install cmatrix
 brew install pipes-sh
 brew install coreutils
+brew install htop
+brew install noti
+brew install pidof
 brew install gnu-sed --default-names
 brew install wget
 brew install node
@@ -42,9 +48,12 @@ brew install tmux
 brew install diff-so-fancy
 brew install python3
 brew install httpie
+brew install siege
 brew install pandoc
 brew install asciinema
 brew install cmus
+brew install mpd
+brew install ncmpcpp
 brew install switchaudio-osx
 brew install reattach-to-user-namespace
 brew install youtube-dl
