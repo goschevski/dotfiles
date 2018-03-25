@@ -120,6 +120,13 @@ pip3 install mutagen pyobjc
 git clone https://github.com/azadkuh/cmus-osx.git ~/.cmus-osx
 ~/.cmus-osx/setup.py install
 
+colorEcho "Setup mpd and ncmpcpp"
+mkdir -p ~/.mpd
+mkdir -p ~/.ncmpcpp
+ln -s ~/dotfiles/homefiles/ncmpcpp ~/.ncmpcpp/bindings
+ln -s ~/dotfiles/homefiles/mpd.conf ~/.mpd/mpd.conf
+touch ~/.mpd/mpd.db ~/.mpd/mpd.log ~/.mpd/mpdstate ~/.mpd/mpd.log
+
 colorEcho "Setup hosts files"
 sudo su -
 echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
