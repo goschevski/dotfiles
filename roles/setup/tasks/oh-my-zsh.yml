@@ -1,9 +1,13 @@
 ---
 
-- name: install oh-my-zsh
+- name: clone oh-my-zsh
   git: repo=https://github.com/chriskempson/base16-shell.git dest=~/.config/base16-shell accept_hostkey=yes
+
+- name: install oh-my-zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-- name: setup oh-my-zsh theme
+- name: create folder for custom oh-my-zsh themes
   file: path=~/.oh-my-zsh/custom/themes state=directory
+
+- name: copy custom oh-my-zsh theme
   file: path=~/dotfiles/templates/goschevski.zsh-theme dest=~/.oh-my-zsh/custom/themes/goschevski.zsh-theme state=link

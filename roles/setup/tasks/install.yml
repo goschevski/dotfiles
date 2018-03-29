@@ -4,7 +4,9 @@
   shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 - name: homebrew taps
-  homebrew_tap: name=homebrew/core, homebrew/versions, caskroom/fonts 
+  homebrew_tap:
+    name: homebrew/core,homebrew/versions,caskroom/fonts 
+    state: present
 
 - name: homebrew install packages
   homebrew: name={{ item.name }} install_options={{ item.install_options }} state=present

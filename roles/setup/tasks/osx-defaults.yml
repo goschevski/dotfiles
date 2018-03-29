@@ -1,25 +1,73 @@
 ---
 
-- name: setup osx defaults
-  osx_defaults: domain=com.apple.systemuiserver key=menuExtras type=array value=["/System/Library/CoreServices/Menu Extras/Battery.menu", "/System/Library/CoreServices/Menu Extras/Clock.menu"]
+- name: osx-defaults - hide time machine and volume icons from menu bar
+  osx_defaults:
+    domain: com.apple.systemuiserver
+    key: menuExtras
+    type: array
+    value:
+      - "/System/Library/CoreServices/Menu Extras/Battery.menu"
+      - "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+- name: osx-defaults - expand save panel by default
   osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode type=bool value=true
+
+- name: osx-defaults - disable the “Are you sure you want to open this application?” dialog
   osx_defaults: domain=com.apple.LaunchServices key=LSQuarantine type=bool value=false
+
+- name: osx-defaults - save to disk (not to iCloud) by default
   osx_defaults: domain=NSGlobalDomain key=NSDocumentSaveNewDocumentsToCloud type=bool value=false
+
+- name: osx-defaults - speed up keyboard
   osx_defaults: domain=NSGlobalDomain key=KeyRepeat type=int value=0 
+
+- name: osx-defaults - show status bar inside finder
   osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
+
+- name: osx-defaults - show path bar inside finder
   osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
+
+- name: osx-defaults - hide external harddrives from desktop
   osx_defaults: domain=com.apple.finder key=ShowExternalHardDrivesOnDesktop type=bool value=false
+
+- name: osx-defaults - hide harddrives from desktop
   osx_defaults: domain=com.apple.finder key=ShowHardDrivesOnDesktop type=bool value=false
+
+- name: osx-defaults - hide servers from desktop
   osx_defaults: domain=com.apple.finder key=ShowMountedServersOnDesktop type=bool value=false
+
+- name: osx-defaults - hide removable media from desktop
   osx_defaults: domain=com.apple.finder key=ShowRemovableMediaOnDesktop type=bool value=false
+
+- name: osx-defaults - disable auto-correct
   osx_defaults: domain=NSGlobalDomain key=NSAutomaticSpellingCorrectionEnabled type=bool value=false
+
+- name: osx-defaults - scroll gesture zoom
   osx_defaults: domain=com.apple.universalaccess key=closeViewScrollWheelToggle type=bool value=true
+
+- name: osx-defaults - scroll gesture zoom
   osx_defaults: domain=com.apple.universalaccess key=HIDScrollZoomModifierMask type=int value=262144
+
+- name: osx-defaults - scroll gesture zoom
   osx_defaults: domain=com.apple.universalaccess key=closeViewZoomFollowsFocus type=bool value=true
+
+- name: osx-defaults - disable resume system-wide
   osx_defaults: domain=NSGlobalDomain key=NSQuitAlwaysKeepsWindows type=bool value=false
+
+- name: osx-defaults - check for software updates daily
   osx_defaults: domain=com.apple.SoftwareUpdate key=ScheduleFrequency type=int value=1
+
+- name: osx-defaults - avoid creating .DS_Store files on network volumes
   osx_defaults: domain=com.apple.desktopservices key=DSDontWriteNetworkStores type=bool value=true
+
+- name: osx-defaults - when performing a search, search the current folder by default
   osx_defaults: domain=com.apple.finder key=FXDefaultSearchScope type=string value="SCcf"
+
+- name: osx-defaults - disable warning when changing file extension
   osx_defaults: domain=com.apple.finder key=FXEnableExtensionChangeWarning type=bool value=false
+
+- name: osx-defaults - disable the warning before emptying the trash
   osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
+
+- name: osx-defaults - enable text selection in quick look
   osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=TRUE

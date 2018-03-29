@@ -1,5 +1,4 @@
 ---
 - hosts: mac
-  become: true
   roles:
     - setup
