@@ -1,0 +1,7 @@
+---
+
+- name: symlink dotfiles
+  copy: src={{ item }} dest=~/.{{ item }}
+  with_fileglob:
+    - "../files/homefiles/*"
+

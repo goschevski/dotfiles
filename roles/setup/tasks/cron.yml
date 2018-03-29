@@ -1,0 +1,7 @@
+---
+
+- name: setup cron for hosts
+  cron:
+    name: "update hosts"
+    hour: "15"
+    job: "sh /Users/gosevski/dotfiles/bin/generateHosts"

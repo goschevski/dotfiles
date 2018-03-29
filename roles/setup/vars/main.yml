@@ -1,0 +1,86 @@
+---
+
+brew_taps:
+  - "homebrew/core"
+  - "homebrew/versions"
+  - "caskroom/fonts"
+
+brew_apps:
+  - { name: "git" }
+  - { name: "tig" }
+  - { name: "pick" }
+  - { name: "ansible" }
+  - { name: "ag" }
+  - { name: "fd" }
+  - { name: "ripgrep" }
+  - { name: "fzf" }
+  - { name: "vifm" }
+  - { name: "ranger" }
+  - { name: "sc-im" }
+  - { name: "archey" }
+  - { name: "figlet" }
+  - { name: "cmatrix" }
+  - { name: "pipes-sh" }
+  - { name: "coreutils" }
+  - { name: "htop" }
+  - { name: "noti" }
+  - { name: "pidof" }
+  - { name: "gnu-sed", install_options: "default-names" }
+  - { name: "wget" }
+  - { name: "node" }
+  - { name: "imgur-screenshot" }
+  - { name: "w3m" }
+  - { name: "tmux" }
+  - { name: "diff-so-fancy" }
+  - { name: "python3" }
+  - { name: "httpie" }
+  - { name: "siege" }
+  - { name: "pandoc" }
+  - { name: "asciinema" }
+  - { name: "cmus" }
+  - { name: "mpd" }
+  - { name: "ncmpcpp" }
+  - { name: "switchaudio-osx" }
+  - { name: "reattach-to-user-namespace" }
+  - { name: "youtube-dl" }
+  - { name: "ical-buddy" }
+  - { name: "dasht" }
+  - { name: "macvim", install_options: "with-lua" }
+  - { name: "vim", install_options: "with-lua" }
+
+brew_link:
+  - "macvim"
+
+cask_apps:
+  - "alfred"
+  - "appcleaner"
+  - "firefox-nightly"
+  - "google-chrome"
+  - "google-drive"
+  - "iterm2-nightly"
+  - "mattr-slate"
+  - "qlcolorcode"
+  - "qlmarkdown"
+  - "qlstephen"
+  - "quicklook-json"
+  - "skype"
+  - "transmission"
+  - "tunnelblick"
+  - "virtualbox"
+  - "font-iosevka"
+  - "font-fira-code"
+
+npm_modules:
+  - "eslint"
+  - "n"
+  - "how2"
+  - "vtop"
+  - "nodemon"
+  - "yarn"
+
+dasht_docsets:
+  - "BackboneJS"
+  - "JavaScript"
+  - "Lo-Dash"
+  - "NodeJS"
+  - "Vim"

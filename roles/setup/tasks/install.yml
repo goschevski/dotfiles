@@ -1,0 +1,27 @@
+---
+
+- name: install homebrew
+  shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+- name: homebrew taps
+  homebrew_tap: name=homebrew/core, homebrew/versions, caskroom/fonts 
+
+- name: homebrew install packages
+  homebrew: name={{ item.name }} install_options={{ item.install_options }} state=present
+  with_items: "{{ brew_apps | default([]) }}"
+
+- name: homebrew link
+  homebrew: name={{ item }} state=linked
+  with_items: "{{ brew_link | default([]) }}"
+
+- name: cask install packages
+  homebrew_cask: name={{ item.name }} install_options={{ item.install_options }} state=present
+  with_items: "{{ cask_apps | default([]) }}"
+
+- name: install npm global modules
+  npm: name={{ item }} global=yes
+  with_items: "{{ npm_modules | default([]) }}"
+
+- name: install dasht docsets
+  shell: dasht-docsets-install {{ item }}
+  with_items: "{{ dasht_docsets | default([]) }}"

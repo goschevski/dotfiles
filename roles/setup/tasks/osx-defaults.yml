@@ -1,0 +1,25 @@
+---
+
+- name: setup osx defaults
+  osx_defaults: domain=com.apple.systemuiserver key=menuExtras type=array value=["/System/Library/CoreServices/Menu Extras/Battery.menu", "/System/Library/CoreServices/Menu Extras/Clock.menu"]
+  osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode type=bool value=true
+  osx_defaults: domain=com.apple.LaunchServices key=LSQuarantine type=bool value=false
+  osx_defaults: domain=NSGlobalDomain key=NSDocumentSaveNewDocumentsToCloud type=bool value=false
+  osx_defaults: domain=NSGlobalDomain key=KeyRepeat type=int value=0 
+  osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
+  osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
+  osx_defaults: domain=com.apple.finder key=ShowExternalHardDrivesOnDesktop type=bool value=false
+  osx_defaults: domain=com.apple.finder key=ShowHardDrivesOnDesktop type=bool value=false
+  osx_defaults: domain=com.apple.finder key=ShowMountedServersOnDesktop type=bool value=false
+  osx_defaults: domain=com.apple.finder key=ShowRemovableMediaOnDesktop type=bool value=false
+  osx_defaults: domain=NSGlobalDomain key=NSAutomaticSpellingCorrectionEnabled type=bool value=false
+  osx_defaults: domain=com.apple.universalaccess key=closeViewScrollWheelToggle type=bool value=true
+  osx_defaults: domain=com.apple.universalaccess key=HIDScrollZoomModifierMask type=int value=262144
+  osx_defaults: domain=com.apple.universalaccess key=closeViewZoomFollowsFocus type=bool value=true
+  osx_defaults: domain=NSGlobalDomain key=NSQuitAlwaysKeepsWindows type=bool value=false
+  osx_defaults: domain=com.apple.SoftwareUpdate key=ScheduleFrequency type=int value=1
+  osx_defaults: domain=com.apple.desktopservices key=DSDontWriteNetworkStores type=bool value=true
+  osx_defaults: domain=com.apple.finder key=FXDefaultSearchScope type=string value="SCcf"
+  osx_defaults: domain=com.apple.finder key=FXEnableExtensionChangeWarning type=bool value=false
+  osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
+  osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=TRUE

@@ -1,0 +1,15 @@
+---
+
+- name: prepare vim folders
+  file: path={{ item }} state=directory
+  with_items:
+   - /etc/vim/autoload/
+   - /etc/vim/plugged/
+
+- name: download vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /etc/vim/autoload/plug.vim
+
+- name: install vim plugins
+  shell: vim +PlugInstall +qall

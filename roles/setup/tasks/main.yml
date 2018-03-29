@@ -1,0 +1,17 @@
+- name: setup osx defaults
+  include: osx-defaults.yml 
+
+- name: install apps
+  include: install.yml 
+
+- name: install oh-my-zsh
+  include: oh-my-zsh.yml 
+
+- name: install dotfiles
+  include: dotfiles.yml 
+
+- name: setup vim
+  include: vim.yml 
+
+- name: setup cron
+  include: cron.yml 

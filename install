@@ -1,0 +1,12 @@
+# Make sure we're in home folder
+cd ~
+
+# Install pip and ansible
+sudo easy_install pip
+sudo easy_install ansible
+
+# Clone dotfiles
+git clone git@github.com:goschevski/dotfiles.git
+
+# Run ansible
+ansible-playbook site.yml -i dotfiles/inventory
