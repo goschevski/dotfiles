@@ -9,4 +9,4 @@ sudo easy_install ansible
 git clone git@github.com:goschevski/dotfiles.git
 
 # Run ansible
-ansible-playbook site.yml -i dotfiles/inventory
+ansible-playbook dotfiles/site.yml -i dotfiles/inventory
