@@ -39,4 +39,4 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Full Screen
-bind return:ctrl;alt move screenOriginX+50;screenOriginY+50 screenSizeX-100;screenSizeY-100
+bind return:ctrl;alt move screenOriginX;screenOriginY screenSizeX;screenSizeY
