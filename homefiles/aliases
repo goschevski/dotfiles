@@ -33,7 +33,7 @@ function rndcolor () {
 
 # List colors
 function lscolor () {
-    ls ~/.config/base16-shell/scripts/ | grep -v light
+    ls ~/.config/base16-shell/scripts/
 }
 
 # Read markdown
