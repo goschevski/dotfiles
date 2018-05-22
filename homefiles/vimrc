@@ -258,9 +258,6 @@ nnoremap <Leader>d ggdG
 nmap <Leader>j o<Esc>k
 nmap <Leader>k O<Esc>j
 
-" Shady remaps
-imap ;; jkA;jk
-
 " Save previous position
 nnoremap gg mpgg
 nnoremap G mpG
@@ -273,8 +270,6 @@ inoremap jk <Esc>
 " Center highlighted search
 nnoremap n nzz
 nnoremap N Nzz
-
-nnoremap <CR> xi<CR><ESC>
 
 " Substitute
 nnoremap <Leader>sf :Far \V %<left><left>
@@ -379,9 +374,6 @@ let g:neocomplete#enable_at_startup = 1
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
-
-" Anyfold
-set foldlevel=0
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
