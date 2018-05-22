@@ -33,6 +33,8 @@ Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'pseewald/vim-anyfold'
+Plug 'Yggdroot/indentLine'
 
 " Code highlight
 Plug 'sheerun/vim-polyglot'
@@ -182,6 +184,9 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 " Notes
 nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 
+" Paste and copy pasted
+nnoremap <Leader>v viwpyiw
+
 " Chords
 nnoremap <Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
 
@@ -252,6 +257,14 @@ nnoremap <Leader>d ggdG
 " Add empty line and stay in command mode
 nmap <Leader>j o<Esc>k
 nmap <Leader>k O<Esc>j
+
+" Shady remaps
+imap ;; jkA;jk
+
+" Save previous position
+nnoremap gg mpgg
+nnoremap G mpG
+nnoremap / mp/
 
 " Fast exit to normal mode
 inoremap jj <Esc>
@@ -366,6 +379,9 @@ let g:neocomplete#enable_at_startup = 1
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
+
+" Anyfold
+set foldlevel=0
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
