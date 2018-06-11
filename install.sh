@@ -103,6 +103,8 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mkdir ~/.oh-my-zsh/custom/themes/
 ln -s ~/dotfiles/templates/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 colorEcho "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
