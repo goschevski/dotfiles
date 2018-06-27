@@ -5,10 +5,10 @@ plugins=(git jira)
 source $ZSH/oh-my-zsh.sh
 
 # Source aliases
-source ~/.aliases
+source ~/dotfiles/homefiles/aliases
 source ~/Google\ Drive/.private
-source ~/.variables
-source ~/.abbr
+source ~/dotfiles/homefiles/variables
+source ~/dotfiles/homefiles/abbr
 
 # Color scheme
 color material-palenight
