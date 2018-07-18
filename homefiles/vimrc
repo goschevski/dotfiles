@@ -255,6 +255,8 @@ nnoremap k gk
 
 " Delete content of the file
 nnoremap <Leader>d ggdG
+" Copy content of the file
+nnoremap <Leader><Leader>y mpggVGy`p
 
 " Add empty line and stay in command mode
 nmap <Leader>j o<Esc>k
