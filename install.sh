@@ -18,10 +18,12 @@ colorEcho "Installing home brew..."
 brew tap homebrew/core
 brew tap homebrew/versions
 brew tap caskroom/fonts 
+brew tap jesseduffield/lazygit
 
 colorEcho "Brew install..."
 brew install git
 brew install tig
+brew install lazygit
 brew install pick
 brew install ansible
 brew install ag

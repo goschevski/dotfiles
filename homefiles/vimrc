@@ -9,12 +9,12 @@ Plug 'christoomey/vim-tmux-navigator'
 " Search and movement
 Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch'
-Plug 'yuttie/comfortable-motion.vim'
 Plug 'brooth/far.vim'
 Plug 'easymotion/vim-easymotion'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
+Plug 'whiteinge/diffconflicts'
 Plug 'airblade/vim-gitgutter'
 Plug 'metakirby5/codi.vim'
 Plug 'sunaku/vim-dasht'
@@ -149,6 +149,14 @@ function! FixFile()
     call cursor(l, c)
 endfunction
 
+function! ToggleSyntax()
+    if (exists("g:syntax_on"))
+        syntax off
+    else
+        syntax enable
+    endif
+endfunction
+
 function! NERDTreeToggleInCurDir()
     " If NERDTree is open in the current buffer
     if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
@@ -182,6 +190,9 @@ let mapleader = "\<Space>"
 
 " Reload vim config
 nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
+
+" ToggleSyntax
+nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
 
 " Notes
 nnoremap <Leader>n :e ~/Google\ Drive/Notes/
@@ -388,4 +399,5 @@ let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
+
 
