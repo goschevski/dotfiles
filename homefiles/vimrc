@@ -7,17 +7,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Search and movement
-Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch'
+Plug 'dyng/ctrlsf.vim'
+Plug 'wsdjeg/FlyGrep.vim'
 Plug 'brooth/far.vim'
+Plug 'osyo-manga/vim-anzu'
 Plug 'easymotion/vim-easymotion'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
 Plug 'whiteinge/diffconflicts'
-Plug 'airblade/vim-gitgutter'
-Plug 'metakirby5/codi.vim'
-Plug 'sunaku/vim-dasht'
 Plug 'joonty/vim-do'
 
 " Snippets and autocomplete
@@ -148,6 +147,17 @@ function! FixFile()
     %s/\t/    /e
     call cursor(l, c)
 endfunction
+
+let $unrol=1
+function! ToggleFold()
+    if $unrol==0
+        :exe "normal! zR"
+        let $unrol=1
+    else
+        :Fs<CR>
+        let $unrol=0
+    endif
+ endfunction
 
 function! ToggleSyntax()
     if (exists("g:syntax_on"))
@@ -282,10 +292,6 @@ nnoremap / mp/
 inoremap jj <Esc>
 inoremap jk <Esc>
 
-" Center highlighted search
-nnoremap n nzz
-nnoremap N Nzz
-
 " Substitute
 nnoremap <Leader>sf :Far \V %<left><left>
 nnoremap <Leader>sr :%s///<left><left><C-f>i
@@ -349,29 +355,17 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
-" Ack Search
-nnoremap <Leader>f :Ack -F -S ""<Left>
-nnoremap <Leader>a :Ack <cword><cr>
-let g:ackprg = 'rg --vimgrep'
+" CtrlSF Search
+let g:ctrlsf_ackprg = 'rg'
+nnoremap <Leader>f :CtrlSF -L ""<Left>
+nnoremap <Leader>a <Plug>(CtrlSFCwordPath)<CR>
+
+" FlyGrep
+nnoremap <Leader><Leader>f :FlyGrep<CR>
 
 " Fold searches
 let g:foldsearch_disable_mappings=1
-nnoremap <Leader>/ :Fs<CR>
-
-" Run Codi
-nnoremap , :Codi!!<CR>
-
-" Search with dasht
-nnoremap <Leader><Leader>k :Dasht!<Space>
-nnoremap <Leader><Leader>K :call Dasht([expand('<cWORD>'), expand('<cword>')], '!')<CR>
-vnoremap <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<CR>
-
-" GitGutter
-let g:gitgutter_realtime = 0
-hi GitGutterAdd          ctermbg=NONE
-hi GitGutterChange       ctermbg=NONE
-hi GitGutterDelete       ctermbg=NONE
-hi GitGutterChangeDelete ctermbg=NONE
+nnoremap , :call ToggleFold()<CR>
 
 " Ale
 let g:ale_linters = {
@@ -389,6 +383,12 @@ let g:neocomplete#enable_at_startup = 1
 " Indent lines
 nnoremap <Leader>= :IndentLinesToggle<CR>
  
+" Center highlighted search and show n/N
+" nnoremap n nzz
+" nnoremap N Nzz
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
