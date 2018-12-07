@@ -33,6 +33,7 @@ brew install fzf
 brew install vifm
 brew install ranger
 brew install sc-im
+brew install sox
 brew install archey
 brew install figlet
 brew install cmatrix

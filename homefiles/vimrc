@@ -359,6 +359,13 @@ nnoremap <Leader>gco :Gread<CR>:w<CR>
 let g:ctrlsf_ackprg = 'rg'
 nnoremap <Leader>f :CtrlSF -L ""<Left>
 nnoremap <Leader>a <Plug>(CtrlSFCwordPath)<CR>
+let g:ctrlsf_auto_focus = {
+    \ "at": "done",
+    \ "duration_less_than": 1000
+    \ }
+let g:ctrlsf_extra_backend_args = {
+    \ 'rg': '--ignore-file package-lock.json'
+    \ }
 
 " FlyGrep
 nnoremap <Leader><Leader>f :FlyGrep<CR>
@@ -399,5 +406,3 @@ let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
-
-

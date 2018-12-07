@@ -98,7 +98,7 @@ alias localip="ipconfig getifaddr en0"
 alias cask="brew cask"
 
 # Brew and cask cleanup & Flush Directory Service cache & Empty the Trash on all mounted volumes and main HDD & Clear Apple’s System Logs
-alias cleanup="brew cleanup; brew cask cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder; rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias cleanup="brew cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder; rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
