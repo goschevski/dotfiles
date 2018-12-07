@@ -16,6 +16,9 @@ color material-palenight
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
 
+# FZF
+export FZF_DEFAULT_OPTS='--bind up:preview-up,down:preview-down'
+
 # Set go path
 export GOPATH=~/.gocode
 
