@@ -358,14 +358,14 @@ nnoremap <Leader>gco :Gread<CR>:w<CR>
 
 " CtrlSF Search
 let g:ctrlsf_ackprg = 'rg'
-nnoremap <Leader>f :CtrlSF -L ""<Left>
-nnoremap <Leader>a <Plug>(CtrlSFCwordPath)<CR>
+nmap <Leader>f :CtrlSF -L ""<Left>
+nmap <Leader>a <plug>CtrlSFCwordPath
 let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ "duration_less_than": 1000
     \ }
 let g:ctrlsf_extra_backend_args = {
-    \ 'rg': '--ignore-file package-lock.json'
+    \ 'rg': '-g !package-lock.json'
     \ }
 
 " FlyGrep
