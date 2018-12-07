@@ -17,7 +17,6 @@ Plug 'easymotion/vim-easymotion'
 " Git and command line
 Plug 'tpope/vim-fugitive'
 Plug 'whiteinge/diffconflicts'
-Plug 'joonty/vim-do'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
@@ -347,10 +346,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
-nnoremap <Leader>gss :Do git stash<CR>
-nnoremap <Leader>gsp :Do git stash pop<CR>
-nnoremap <Leader>gpl :Do git pull --rebase<CR>
-nnoremap <Leader>gps :Do git push<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>
