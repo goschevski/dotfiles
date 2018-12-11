@@ -13,6 +13,7 @@ Plug 'wsdjeg/FlyGrep.vim'
 Plug 'brooth/far.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'easymotion/vim-easymotion'
+Plug 'sickill/vim-pasta'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
