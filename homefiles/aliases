@@ -126,9 +126,17 @@ function kp () {
 
 alias gd="git dsf | less"
 alias ts="tig status"
+alias gst="git status --short"
+alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias lg="lazygit"
 function retag () {
     git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
+}
+
+# history
+function h () {
+    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # JSON pretty print
