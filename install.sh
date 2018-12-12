@@ -65,6 +65,7 @@ brew install dasht
 brew install macvim --with-lua
 brew install vim --with-lua
 brew linkapps --local macvim
+pip install mdv
 
 colorEcho "Installing apps using brew cask..."
 brew cask install alfred
