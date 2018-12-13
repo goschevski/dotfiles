@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Files buffers navigation
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -40,8 +40,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Markdown
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 
 " Color schemes
 Plug 'chriskempson/base16-vim'
@@ -71,6 +71,7 @@ set hlsearch                    "highlight search results
 set incsearch                   "show matches in real time
 set clipboard+=unnamed          "use system clipboard
 set fileencoding=utf-8          "Set utf-8 encoding on write
+set encoding=utf-8              "for vim
 set laststatus=0
 set ruler                       "Show line/column number
 set hidden                      "Switch buffers when they are not saved"
