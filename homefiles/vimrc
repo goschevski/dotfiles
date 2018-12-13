@@ -17,7 +17,7 @@ Plug 'sickill/vim-pasta'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
-Plug 'whiteinge/diffconflicts'
+Plug 'christoomey/vim-conflicted'
 
 " Snippets and autocomplete
 Plug 'Shougo/neocomplete.vim'
