@@ -32,7 +32,6 @@ Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'pseewald/vim-anyfold'
 Plug 'Yggdroot/indentLine'
 
 " Code highlight
@@ -191,8 +190,6 @@ autocmd BufNewFile,BufReadPost *.njk set filetype=jinja
 " Goyo and Limelight sync
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-" Turn on folds for js files
-autocmd Filetype javascript let b:anyfold_activate=1
 
 " ================================================
 " Key mappings (bindings)
