@@ -34,6 +34,7 @@ brew install vifm
 brew install ranger
 brew install sc-im
 brew install sox
+brew install entr
 brew install archey
 brew install figlet
 brew install cmatrix
