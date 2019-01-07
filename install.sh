@@ -29,6 +29,7 @@ brew install ansible
 brew install ag
 brew install fd
 brew install tree
+brew install findutils
 brew install ripgrep
 brew install fzf
 brew install vifm
