@@ -9,7 +9,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " Search and movement
 Plug 'embear/vim-foldsearch'
 Plug 'dyng/ctrlsf.vim'
-Plug 'wsdjeg/FlyGrep.vim'
 Plug 'brooth/far.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'easymotion/vim-easymotion'
@@ -331,12 +330,14 @@ if isdirectory(".git")
 else
     nnoremap <Leader>p :Files!<CR>
 endif
+nnoremap <Leader><Leader>f :Rg<CR>
 nnoremap <Leader>o :Buffers!<CR>
 nnoremap <Leader>[ :Files!<CR>
 nnoremap <Leader>gf :Commits!<CR>
 nnoremap <Leader>gh :BCommits!<CR>
 nnoremap <Leader>m :Maps!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
+
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -361,9 +362,6 @@ let g:ctrlsf_auto_focus = {
 let g:ctrlsf_extra_backend_args = {
     \ 'rg': '-g !package-lock.json'
     \ }
-
-" FlyGrep
-nnoremap <Leader><Leader>f :FlyGrep<CR>
 
 " Fold searches
 let g:foldsearch_disable_mappings=1
