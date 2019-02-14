@@ -391,6 +391,7 @@ nmap N <Plug>(anzu-N-with-echo)
 
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
+nmap S <Plug>(easymotion-bd-w)
 let g:EasyMotion_smartcase = 1
 
 " Neosnippet
