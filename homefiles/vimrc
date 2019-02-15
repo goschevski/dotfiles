@@ -368,13 +368,8 @@ let g:foldsearch_disable_mappings=1
 nnoremap , :call ToggleFold()<CR>
 
 " Ale
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-let g:ale_fixers = {
-\   'javascript': [
-\       'eslint'
-\   ],
+autocmd FileType javascript let g:ale_linters = {
+\  'javascript': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
 \}
 
 " Neocomplete
