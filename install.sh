@@ -91,6 +91,7 @@ brew cask install font-fira-code
 
 colorEcho "Installing node global modules..."
 npm i -g gulp
+npm i -g npmf
 npm i -g eslint
 npm i -g n
 npm i -g how2
