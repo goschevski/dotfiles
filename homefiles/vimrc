@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Files buffers navigation
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -43,7 +44,7 @@ Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 
 " Color schemes
-Plug 'chriskempson/base16-vim'
+Plug 'danielwe/base16-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -92,6 +93,8 @@ highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
 highlight CursorLine ctermbg=19                  "Current line
 highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
 highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
+hi clear CursorLineNR
+hi clear CursorLine
 
 " ================================================
 " Cursor style in tmux
@@ -323,6 +326,7 @@ nnoremap <Leader>i :call FixFile()<CR>
 
 " NERDTree
 nnoremap - :call NERDTreeToggleInCurDir()<CR>
+let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
 
 " Fzf
