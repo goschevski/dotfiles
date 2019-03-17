@@ -2,8 +2,8 @@
     excludesfile = ~/.gitignore
     editor = vim
 [user]
-    name = Aleksandar Gosevski
-    email = gosevski@vast.com
+	name = Aleksandar Gosevski
+	email = gosevskibg@gmail.com
 [github]
     user = goschevski
 [diff]
