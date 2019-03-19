@@ -220,6 +220,7 @@ nnoremap = :only<CR>
 
 " Format json
 nnoremap <Leader><Leader>j :%!python -m json.tool<CR>
+vnoremap <Leader><Leader>j :!python -m json.tool<CR>
 
 " Disable Ex mode
 noremap Q <NOP>
