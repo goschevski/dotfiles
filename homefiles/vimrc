@@ -23,11 +23,12 @@ Plug 'christoomey/vim-conflicted'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
-Plug 'mattn/emmet-vim'
-Plug 'dhruvasagar/vim-table-mode'
 
 " Code edit
 Plug 'w0rp/ale'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'mattn/emmet-vim'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -215,6 +216,9 @@ nnoremap <Leader>v viwpyiw
 " Chords
 nnoremap <Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
 
+" Split line
+nnoremap <Leader>e ^:s/\%><C-r>=col('.')<CR>c /\r/<CR>
+
 " Close splits
 nnoremap = :only<CR>
 
@@ -394,6 +398,9 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap s <Plug>(easymotion-overwin-f2)
 nmap S <Plug>(easymotion-bd-w)
 let g:EasyMotion_smartcase = 1
+
+" Tagalong
+let g:tagalong_additional_filetypes = ['vue']
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
