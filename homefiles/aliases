@@ -15,6 +15,7 @@ alias re="source ~/.zshrc"
 
 # Edit hosts
 alias hos="sudo -E vim /etc/hosts"
+alias hoc="sudo sed -i '' '11,$d' /etc/hosts"
 
 # Set color scheme
 function color () {
