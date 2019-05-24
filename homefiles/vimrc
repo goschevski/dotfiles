@@ -325,6 +325,11 @@ nnoremap <s-tab> <<
 " Clear trailing whitespaces
 nnoremap <Leader>i :call FixFile()<CR>
 
+" Vue mappings
+nnoremap <Leader>1 :e %<.vue<CR>
+nnoremap <Leader>2 :e %<.js<CR>
+nnoremap <Leader>3 :e %<.css<CR>
+
 " ================================================
 " Plugin settings and mappings (bindings)
 " ================================================
