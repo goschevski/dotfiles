@@ -11,8 +11,7 @@ source ~/dotfiles/homefiles/variables
 source ~/dotfiles/homefiles/abbr
 
 # Color scheme
-# color material-palenight
-color monokai
+color material-palenight
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
@@ -31,5 +30,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global
 export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.gocode/bin" # Add go scripts
 
+# To hide warnings when entering vim
+export LC_ALL=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
