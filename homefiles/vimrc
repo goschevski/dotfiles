@@ -3,17 +3,13 @@ call plug#begin('~/.vim/plugged')
 " Files buffers navigation
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Search and movement
-Plug 'embear/vim-foldsearch'
-Plug 'dyng/ctrlsf.vim'
-Plug 'brooth/far.vim'
-Plug 'osyo-manga/vim-anzu'
+Plug 'mileszs/ack.vim'
+Plug 'embear/vim-foldsearch', { 'on': ['Fs'] }
 Plug 'easymotion/vim-easymotion'
-Plug 'sickill/vim-pasta'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
@@ -26,23 +22,15 @@ Plug 'Shougo/neosnippet'
 
 " Code edit
 Plug 'w0rp/ale'
-Plug 'AndrewRadev/tagalong.vim'
 Plug 'mattn/emmet-vim'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
 
 " Code highlight
 Plug 'sheerun/vim-polyglot'
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-" Markdown
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
-Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 
 " Color schemes
 Plug 'danielwe/base16-vim'
@@ -151,6 +139,7 @@ function! FixFile()
     " Replace tabs with spaces
     %s/\t/    /e
     call cursor(l, c)
+    set expandtab
 endfunction
 
 let $unrol=1
@@ -184,16 +173,6 @@ function! NERDTreeToggleInCurDir()
         endif
     endif
 endfunction
-
-" ================================================
-" Auto-Commands
-" ================================================
-" Show nunjucks as jinja
-autocmd BufNewFile,BufReadPost *.nunj set filetype=jinja
-autocmd BufNewFile,BufReadPost *.njk set filetype=jinja
-" Goyo and Limelight sync
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
 
 " ================================================
 " Key mappings (bindings)
@@ -241,12 +220,6 @@ vnoremap L $h
 nnoremap H ^
 vnoremap H ^
 
-" Fast navigation
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-l> <C-w>l
-
 " Quickfix and location lists
 map <Leader>co :copen<CR>
 map <Leader>cc :cclose<CR>
@@ -274,7 +247,7 @@ vnoremap ; :
 " Switch between buffers quickly
 map <Leader><Tab> <C-^>
 
-" Switch between buffers quickly
+" Delete buffer
 nnoremap <Leader>x :bdelete<CR>
 
 " Down is really the next line
@@ -300,7 +273,6 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 
 " Substitute
-nnoremap <Leader>sf :Far \V %<left><left>
 nnoremap <Leader>sr :%s///<left><left><C-f>i
 
 " Fast save
@@ -353,12 +325,6 @@ nnoremap <Leader>gh :BCommits!<CR>
 nnoremap <Leader>m :Maps!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
 
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
@@ -366,17 +332,10 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
-" CtrlSF Search
-let g:ctrlsf_ackprg = 'rg'
-nmap <Leader>f :CtrlSF -L ""<Left>
-nmap <Leader>a <plug>CtrlSFCwordPath
-let g:ctrlsf_auto_focus = {
-    \ "at": "done",
-    \ "duration_less_than": 1000
-    \ }
-let g:ctrlsf_extra_backend_args = {
-    \ 'rg': '-g !package-lock.json'
-    \ }
+" Rg Search
+let g:ackprg = 'rg -F -S --vimgrep'
+nmap <Leader>f :Ack! "" ./<Left><Left><Left><Left>
+nnoremap <Leader>a :Ack! <cword><CR>
 
 " Fold searches
 let g:foldsearch_disable_mappings=1
@@ -390,22 +349,14 @@ autocmd FileType javascript let g:ale_linters = {
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 
-" Indent lines
-nnoremap <Leader>= :IndentLinesToggle<CR>
- 
 " Center highlighted search and show n/N
-" nnoremap n nzz
-" nnoremap N Nzz
-nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
+nnoremap n nzz
+nnoremap N Nzz
 
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 nmap S <Plug>(easymotion-bd-w)
 let g:EasyMotion_smartcase = 1
-
-" Tagalong
-let g:tagalong_additional_filetypes = ['vue']
 
 " Neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
