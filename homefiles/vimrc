@@ -82,6 +82,11 @@ highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
 highlight CursorLine ctermbg=19                  "Current line
 highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
 highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
+highlight Comment cterm=italic
+highlight Keyword cterm=italic
+highlight Special cterm=italic
+highlight Statement cterm=italic
+highlight Exception cterm=italic
 hi clear CursorLineNR
 hi clear CursorLine
 
