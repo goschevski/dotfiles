@@ -88,6 +88,7 @@ brew cask install tunnelblick
 brew cask install virtualbox
 brew cask install font-iosevka
 brew cask install font-fira-code
+brew cask install font-victor-mono
 
 colorEcho "Installing node global modules..."
 npm i -g gulp
