@@ -362,8 +362,8 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " Easymotion
-nmap s <Plug>(easymotion-overwin-f2)
-nmap S <Plug>(easymotion-bd-w)
+nmap s <Plug>(easymotion-bd-w)
+nmap S <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
 " Neosnippet
