@@ -51,6 +51,7 @@ brew install imgur-screenshot
 brew install w3m
 brew install tmux
 brew install diff-so-fancy
+brew install icdiff
 brew install python3
 brew install httpie
 brew install siege
