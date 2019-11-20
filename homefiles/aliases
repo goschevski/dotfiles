@@ -162,3 +162,7 @@ alias json='python -m json.tool'
 # Url Encode/Decode
 alias decode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias encode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+
+# JSON to YAML and vice versa
+alias jty="python -c 'import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)' < $1"
+alias ytj="ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))' < $1"
