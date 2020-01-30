@@ -120,6 +120,12 @@ alias dli="docker images"
 alias dri="docker rmi"
 alias dci='docker rmi $(docker images -a -q)'
 
+# Vagrant
+alias vup="vagrant up"
+alias vdes="vagrant destroy"
+alias vres="vagrant destroy && vagrant up"
+alias vssh="vagrant ssh"
+
 # kill procces chooser
 function kp () {
     PRC=${1:-"[n]ode"}
@@ -127,6 +133,7 @@ function kp () {
 }
 
 alias gd="git dsf | less"
+alias grhh="git reset head --hard"
 alias gco="git checkout"
 alias gup="git pull --rebase"
 alias ts="tig status"
@@ -134,6 +141,7 @@ alias gst="git status --short"
 alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias lg="lazygit"
+alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 function ggp () {
     git push origin $(git branch --show-current)
 }
