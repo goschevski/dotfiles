@@ -11,7 +11,7 @@ function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
 # Reload
-alias re="source ~/.zshrc"
+alias re="source ~/.zpreztorc"
 
 # Edit hosts
 alias hos="sudo -E vim /etc/hosts"
