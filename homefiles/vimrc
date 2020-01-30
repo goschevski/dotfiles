@@ -183,6 +183,10 @@ function! NERDTreeToggleInCurDir()
     endif
 endfunction
 
+" Save cursor position when switching buffers
+au BufLeave * let b:winview = winsaveview()
+au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+
 " ================================================
 " Key mappings (bindings)
 " ================================================
