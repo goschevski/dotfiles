@@ -1,3 +1,0 @@
-bind generic f !@git fetch
-bind generic p !@git pull --rebase
-bind generic P !@git push

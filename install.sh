@@ -10,13 +10,10 @@ colorEcho "Cloning dotfiles..."
 git clone git@github.com:goschevski/dotfiles.git
 chmod +x ~/dotfiles/bin/*
 
-colorEcho "Setup some OSX settings..."
-sh ~/dotfiles/bin/osx.sh 2>&1 > /dev/null
-
 colorEcho "Installing home brew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/core
-brew tap caskroom/fonts 
+brew tap homebrew/cask-fonts 
 brew tap jesseduffield/lazygit
 
 colorEcho "Brew install..."
@@ -79,16 +76,19 @@ brew cask install font-fira-code
 brew cask install font-victor-mono
 
 colorEcho "Installing node global modules..."
-npm i -g eslint
 npm i -g n
-npm i -g nodemon
+sudo mkdir /usr/local/n
+sudo chown -R $(whoami) /usr/local/n
 
-colorEcho "Install and setup oh-my-zsh..."
+colorEcho "Install and setup zsh..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -s ~/dotfiles/templates/goschevski.zsh-theme ~/.oh-my-zsh/custom/themes/goschevski.zsh-theme
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+zsh
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+chsh -s /bin/zsh
 
 colorEcho "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
@@ -99,7 +99,6 @@ done
 
 colorEcho "Setup vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qall
 
 
 colorEcho "Install ansi"
@@ -116,12 +115,3 @@ colorEcho "Setup hosts files"
 sudo su -
 echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
 crontab /tmp/mycron
-
-# Tmux window on C-1, C-2, etc.
-# iTerm config -> Profiles -> Keys
-# ^1 -> Send Escape Sequence [27;5;49~
-# ^2 -> Send Escape Sequence [27;5;50~
-
-# Tmux cmd+K
-# iTerm config + Profiles -> Keys
-# ⌘ k -> Send Hex Codes 0x1d
