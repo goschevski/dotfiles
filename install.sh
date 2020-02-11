@@ -70,7 +70,8 @@ brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-json
 brew cask install transmission
-brew cask install tunnelblick
+brew cask install viscosity
+brew cask install numi
 brew cask install font-iosevka
 brew cask install font-fira-code
 brew cask install font-victor-mono
