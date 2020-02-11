@@ -60,7 +60,7 @@ brew install jq
 
 colorEcho "Installing apps using brew cask..."
 brew cask install alfred
-brew cask install firefox-nightly
+brew cask install homebrew/cask-versions/firefox-nightly
 brew cask install google-chrome
 brew cask install google-backup-and-sync
 brew cask install iterm2
