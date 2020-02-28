@@ -18,40 +18,41 @@ brew tap jesseduffield/lazygit
 
 colorEcho "Brew install..."
 brew install git
-brew install tig
+# brew install tig
 brew install lazygit
 brew install pick
-brew install ansible
+# brew install ansible
 brew install ag
 brew install fd
 brew install tree
 brew install findutils
 brew install ripgrep
 brew install fzf
-brew install vifm
+# brew install vifm
 brew install ranger
-brew install sc-im
-brew install sox
-brew install entr
-brew install archey
-brew install figlet
-brew install cmatrix
-brew install pipes-sh
+# brew install sc-im
+# brew install sox
+# brew install entr
+# brew install archey
+# brew install figlet
+# brew install cmatrix
+# brew install pipes-sh
 brew install coreutils
-brew install htop
+# brew install htop
 brew install noti
 brew install pidof
 brew install gnu-sed
 brew install wget
 brew install node
-brew install imgur-screenshot
-brew install w3m
+brew install go
+# brew install imgur-screenshot
+# brew install w3m
 brew install tmux
 brew install diff-so-fancy
 brew install icdiff
 brew install python3
 brew install httpie
-brew install siege
+# brew install siege
 brew install reattach-to-user-namespace
 brew install youtube-dl
 brew install ical-buddy
@@ -72,8 +73,9 @@ brew cask install quicklook-json
 brew cask install transmission
 brew cask install viscosity
 brew cask install numi
-brew cask install font-iosevka
-brew cask install font-fira-code
+brew cask install slack
+# brew cask install font-iosevka
+# brew cask install font-fira-code
 brew cask install font-victor-mono
 
 colorEcho "Installing node global modules..."
@@ -106,6 +108,9 @@ colorEcho "Install ansi"
 curl -OL git.io/ansi
 chmod 755 ansi
 sudo mv ansi /usr/local/bin/
+
+colorEcho "Install 2fa"
+go get -u rsc.io/2fa
 
 # Italic in iterm
 colorEcho "Setup italic"
