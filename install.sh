@@ -79,6 +79,8 @@ brew cask install slack
 brew cask install font-victor-mono
 
 colorEcho "Installing node global modules..."
+npm i -g vtop
+npm i -g @vue/cli
 npm i -g n
 sudo mkdir /usr/local/n
 sudo chown -R $(whoami) /usr/local/n
