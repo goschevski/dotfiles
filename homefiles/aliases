@@ -142,6 +142,7 @@ alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | so
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias lg="lazygit"
 alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
+alias gdm='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 function ggp () {
     git push origin $(git branch --show-current)
 }
