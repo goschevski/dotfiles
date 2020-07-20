@@ -143,6 +143,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(r
 alias lg="lazygit"
 alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 alias gdm='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gsquash='git reset HEAD~$(git rev-list --count develop..HEAD)'
 function ggp () {
     git push origin $(git branch --show-current)
 }
