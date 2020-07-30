@@ -30,6 +30,7 @@ brew install ripgrep
 brew install fzf
 # brew install vifm
 brew install ranger
+brew install lf
 # brew install sc-im
 # brew install sox
 # brew install entr
