@@ -81,6 +81,7 @@ highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
 highlight CursorLine ctermbg=19                  "Current line
 highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
 highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
+highlight SignColumn ctermbg=NONE                "Color of sign column (linter)
 highlight Comment cterm=italic
 highlight Keyword cterm=italic
 highlight Special cterm=italic
@@ -205,7 +206,7 @@ nnoremap <Leader>n :e ~/Google\ Drive/Notes/
 nnoremap <Leader>v viwpyiw
 
 " Chords
-nnoremap <Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
+nnoremap <Leader><Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
 
 " Split line
 nnoremap <Leader>e ^:s/\%><C-r>=col('.')<CR>c /\r/<CR>
@@ -335,6 +336,7 @@ nnoremap <Leader>[ :Files!<CR>
 nnoremap <Leader>gf :Commits!<CR>
 nnoremap <Leader>gh :BCommits!<CR>
 nnoremap <Leader>m :Maps!<CR>
+nnoremap <Leader>c :Commands!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
 
 " Fugitive commands
@@ -354,6 +356,11 @@ let g:foldsearch_disable_mappings=1
 nnoremap , :call ToggleFold()<CR>
 
 " Ale
+let g:ale_sign_column_always=1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 autocmd FileType javascript let g:ale_linters = {
 \  'javascript': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
 \}
