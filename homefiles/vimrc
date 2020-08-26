@@ -13,11 +13,9 @@ Plug 'easymotion/vim-easymotion'
 
 " Git and command line
 Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-conflicted'
 
 " Snippets and autocomplete
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neocomplete'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/neosnippet'
 
 " Code edit
@@ -149,6 +147,7 @@ function! FixFile()
     %s/\t/    /e
     call cursor(l, c)
     set expandtab
+    :ALEFix
 endfunction
 
 let $unrol=1
@@ -359,8 +358,9 @@ autocmd FileType javascript let g:ale_linters = {
 \  'javascript': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
 \}
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
+let g:ale_fixers = {
+\  'javascript': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
+\}
 
 " Center highlighted search and show n/N
 nnoremap n nzz
