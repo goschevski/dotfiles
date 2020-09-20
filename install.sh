@@ -14,12 +14,12 @@ colorEcho "Installing home brew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/core
 brew tap homebrew/cask-fonts 
-brew tap jesseduffield/lazygit
 
 colorEcho "Brew install..."
 brew install git
 # brew install tig
-brew install lazygit
+brew install jesseduffield/lazygit/lazygit
+brew install jesseduffield/lazydocker/lazydocker
 brew install pick
 # brew install ansible
 brew install ag
