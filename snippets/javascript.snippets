@@ -1,5 +1,5 @@
 snippet method
-$1: function ($2) {
+$1 ($2) {
   $3
 },
 endsnippet
@@ -20,4 +20,12 @@ endsnippet
 
 snippet cl
 console.log('MYLOG - ${1}', $1);
+endsnippet
+
+snippet vd 
+data: function () {
+  return {
+    $1 
+  };
+}${2:,}
 endsnippet
