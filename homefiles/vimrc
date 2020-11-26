@@ -85,6 +85,7 @@ highlight Exception cterm=italic
 highlight Function cterm=italic
 hi clear CursorLineNR
 hi clear CursorLine
+hi Normal ctermbg=NONE guibg=NONE
 
 " ================================================
 " Cursor style in tmux
