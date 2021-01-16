@@ -356,13 +356,6 @@ nmap s <Plug>(easymotion-bd-w)
 nmap S <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
-" Neosnippet
-let g:neosnippet#disable_runtime_snippets = {'_' : 1}
-let g:neosnippet#snippets_directory = '~/dotfiles/snippets'
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
-
 " Coc
 set nowritebackup
 set cmdheight=2
