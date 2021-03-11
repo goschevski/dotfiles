@@ -22,10 +22,46 @@ snippet cl
 console.log('MYLOG - ${1}', $1);
 endsnippet
 
-snippet vd 
+snippet vji
+import $1 from '@/components/$1/$1.vue';
+endsnippet
+
+snippet vje
+// @vue/component
+
+export default {
+  $1
+};
+endsnippet
+
+snippet vjp
+props: {
+  $2
+}${1:,}
+endsnippet
+
+snippet vjd 
 data: function () {
   return {
     $1 
   };
 }${2:,}
+endsnippet
+
+snippet vjm 
+methods: {
+  $2
+}${1:,}
+endsnippet
+
+snippet vjc 
+computed: {
+  $2
+}${1:,}
+endsnippet
+
+snippet vjcc 
+components: {
+  $2
+}${1:,}
 endsnippet
