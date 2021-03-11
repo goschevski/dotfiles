@@ -19,7 +19,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Code edit
 Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'cohama/lexima.vim'
+Plug 'deathlyfrantic/lexima-template-rules'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -420,6 +422,9 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Vue = HTML
+autocmd BufRead,BufNewFile *.vue setfiletype html
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
