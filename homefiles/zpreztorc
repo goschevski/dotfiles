@@ -1,4 +1,4 @@
-#
+
 # Sets Prezto options.
 #
 # Authors:
@@ -233,7 +233,9 @@ source ~/dotfiles/homefiles/variables
 source ~/dotfiles/homefiles/abbr
 
 # Color scheme
-color material-palenight
+# color material-palenight
+color material
+# color solarized-light
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max

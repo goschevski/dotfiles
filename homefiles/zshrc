@@ -1,3 +1,4 @@
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/Users/gosevski/.deta/bin:$PATH"
