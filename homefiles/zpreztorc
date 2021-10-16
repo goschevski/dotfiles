@@ -228,7 +228,7 @@ zstyle ':prezto:module:tmux:session' name 'Srbija'
 #
 #
 source ~/dotfiles/homefiles/aliases
-source ~/Google\ Drive/.private
+source /Volumes/GoogleDrive/My\ Drive/.private
 source ~/dotfiles/homefiles/variables
 source ~/dotfiles/homefiles/abbr
 

@@ -209,7 +209,7 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
 
 " Notes
-nnoremap <Leader>n :e ~/Google\ Drive/Notes/
+nnoremap <Leader>n :e /Volumes/GoogleDrive/My\ Drive/Notes/
 
 " Paste and copy pasted
 nnoremap <Leader>v viwpyiw

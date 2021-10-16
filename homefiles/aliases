@@ -77,10 +77,11 @@ alias ....="cd ../../../../"
 
 # Folders
 alias sites="cd ~/Sites"
-alias akordi="cd ~/Google\ Drive/Akordi && vim"
-alias a="cd ~/Google\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
+alias akordi="cd /Volumes/GoogleDrive/My\ Drive/Akordi && vim"
+alias a="cd /Volumes/GoogleDrive/My\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
+alias drive="cd /Volumes/GoogleDrive/My\ Drive"
 alias dotf="cd ~/dotfiles"
 
 # Folder sizes
@@ -88,7 +89,6 @@ alias sizes="du -xhd1 | sort -n"
 
 # Youtube Download
 alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
-
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update="softwareupdate -i -a; brew update; brew upgrade"
 
