@@ -1,0 +1,5 @@
+// @vue/component
+
+export default {
+    ${1:// body}
+};

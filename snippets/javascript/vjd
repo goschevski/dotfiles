@@ -1,0 +1,5 @@
+data: function () {
+    return {
+        ${1:// body} 
+    };
+}${2:,}

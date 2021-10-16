@@ -1,0 +1,1 @@
+import ${1:Component} from '@/components/$1/$1.vue';
