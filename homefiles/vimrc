@@ -347,7 +347,7 @@ nnoremap <Leader>\ :Filetypes!<CR>
 " Fugitive commands
 nnoremap <Leader>gst :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gb :Git blame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
