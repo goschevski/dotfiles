@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# where to store your cache file
+buffer=$HOME/.tmux.editbuffer
+
+# figure out where to put the cursor
+ypos=$(tmux display-message -p '#{cursor_y}'+1 | bc)
+xpos=$(tmux display-message -p '#{cursor_x}')
+
+editorcommand="vim"
+
+# use pbcopy on Mac; xclip or alternatives on linux
+autocmd='autocmd TextYankPost * if v:event.operator ==# "y" | let res=system("pbcopy", @") | endif'
+
+# modify your options as you see fit
+editoroptions="-c 'setlocal buftype=nowrite bufhidden=hide noswapfile | highlight CursorLine ctermfg=yellow ctermbg=none cterm=underline,bold | normal! "$ypos"G"$xpos"l'"
+editorbindings="-c 'nn<c-q> :q<cr> | $autocmd'"
+
+shellcommand="$editorcommand $editoroptions $editorbindings $buffer"
+
+tmux capture-pane -p > $buffer
+
+# https://askubuntu.com/questions/656817/remove-any-trailing-blank-lines-or-lines-with-whitespaces-from-end-of-file
+sed -i ':a;/^[ \n]*$/{$d;N;ba}' $buffer
+# sanitize buffer
+sed -i -e '/^~$/d' \
+       -e 's/[┌┐─━└┘├┤┬┴┼│\]//g' \
+       -e 's/\s\+$//' \
+       -e 's/^8∞ //' \
+       -e 's/^∞∞ //' \
+       -e 's/^Goto URL: //' \
+       $buffer
+
+# position the popup on top of the currently active pane
+tmux display-popup                                 \
+    -x $(tmux display-message -p '#{pane_left}')   \
+    -y $(tmux display-message -p '#{pane_bottom}') \
+    -w $(tmux display-message -p '#{pane_width}')  \
+    -h $(tmux display-message -p '#{pane_height}') \
+    -E "$shellcommand"
