@@ -13,7 +13,7 @@ chmod +x ~/dotfiles/bin/*
 colorEcho "Installing home brew..."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/core
-brew tap homebrew/cask-fonts 
+brew tap homebrew/cask-fonts
 
 colorEcho "Brew install..."
 brew install git
@@ -106,6 +106,8 @@ done
 colorEcho "Setup vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+colorEcho "Install git fuzzy"
+git clone https://github.com/bigH/git-fuzzy.git ~/.config/git-fuzzy
 
 colorEcho "Install ansi"
 curl -OL git.io/ansi
