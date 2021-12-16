@@ -227,15 +227,24 @@ zstyle ':prezto:module:tmux:session' name 'Srbija'
 # Custom
 #
 #
+# Color scheme
+# DEFAULT_THEME=material-palenight
+# DEFAULT_THEME=cupcake
+export DEFAULT_THEME=gruvbox-dark-pale
+export THEME_FILE=/tmp/currentTheme
+
+# If file doesn't exit create one with default theme, or set current theme
+if [ ! -f $THEME_FILE ]; then
+  source "$HOME/.config/base16-shell/scripts/base16-$DEFAULT_THEME.sh"
+else
+  THEME=$(cat $THEME_FILE)
+  source "$HOME/.config/base16-shell/scripts/base16-$THEME.sh"
+fi
+
 source ~/dotfiles/homefiles/aliases
 source /Volumes/GoogleDrive/My\ Drive/.private
 source ~/dotfiles/homefiles/variables
 source ~/dotfiles/homefiles/abbr
-
-# Color scheme
-color material-palenight
-# color material
-# color cupcake
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max

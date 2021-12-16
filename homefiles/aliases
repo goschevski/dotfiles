@@ -1,11 +1,11 @@
 
 alias tl="tmux ls"
 function ta () {
-    if [ -z "$1" ]; then
-        tmux attach
-    else
-        tmux attach -t $1
-    fi
+  if [ -z "$1" ]; then
+    tmux attach
+  else
+    tmux attach -t $1
+  fi
 }
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
@@ -19,38 +19,45 @@ alias hoc="sudo sed -i '' '11,\$d' /etc/hosts"
 
 # Set color scheme
 function color () {
-    export THEME=$1
-    BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-$1.sh"
-    source $BASE16_SHELL
+  echo $1 >! $THEME_FILE
+  source "$HOME/.config/base16-shell/scripts/base16-$1.sh"
+}
+
+function dark () {
+  color gruvbox-dark-pale
+}
+
+function light () {
+  color cupcake
 }
 
 # Set random color scheme
 function rndcolor () {
-    SELECTED=$(ls ~/.config/base16-shell/scripts/ | grep -v light | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
+  SELECTED=$(ls ~/.config/base16-shell/scripts/ | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
 
-    color $SELECTED
-    echo "Color scheme is $SELECTED"
+  color $SELECTED
+  echo "Color scheme is $SELECTED"
 }
 
 # List colors
 function lscolor () {
-    ls ~/.config/base16-shell/scripts/
+  ls ~/.config/base16-shell/scripts/
 }
 
 # Read markdown
 rmd () {
-    grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+  grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
 }
 
 # Calendar events
 function ev () {
-    if [ $1 ]; then
-        daysToAdd=$1
-    else
-        daysToAdd=0
-    fi
+  if [ $1 ]; then
+    daysToAdd=$1
+  else
+    daysToAdd=0
+  fi
 
-    icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday+$daysToAdd
+  icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday+$daysToAdd
 }
 
 # Weather
@@ -125,8 +132,8 @@ alias vssh="vagrant ssh"
 
 # kill procces chooser
 function kp () {
-    PRC=${1:-"[n]ode"}
-    ps -ef | grep $PRC | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill -9
+  PRC=${1:-"[n]ode"}
+  ps -ef | grep $PRC | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill -9
 }
 
 alias gd="git fuzzy status"
@@ -142,30 +149,28 @@ alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip c
 alias gdm='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias gsquash='git reset HEAD~$(git rev-list --count develop..HEAD)'
 function ggp () {
-    git push origin $(git branch --show-current)
+  git push origin $(git branch --show-current)
 }
 function retag () {
-    git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
+  git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
 }
 function git_prepare() {
-    if [ -n "$BUFFER" ];
-        then
-            BUFFER="git add -A && git commit -m \"$BUFFER\""
-    fi
+  if [ -n "$BUFFER" ]; then
+    BUFFER="git add -A && git commit -m \"$BUFFER\""
+  fi
 
-    if [ -z "$BUFFER" ];
-        then
-            BUFFER="git add -A && git commit -v"
-    fi
+  if [ -z "$BUFFER" ]; then
+    BUFFER="git add -A && git commit -v"
+  fi
 
-    zle accept-line
+  zle accept-line
 }
 zle -N git_prepare
 bindkey "^g" git_prepare
 
 # history
 function h () {
-    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # JSON pretty print
