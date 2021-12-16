@@ -19,6 +19,7 @@ alias hoc="sudo sed -i '' '11,\$d' /etc/hosts"
 
 # Set color scheme
 function color () {
+  export THEME=$1
   echo $1 >! $THEME_FILE
   source "$HOME/.config/base16-shell/scripts/base16-$1.sh"
 }

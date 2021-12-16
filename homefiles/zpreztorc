@@ -235,9 +235,10 @@ export THEME_FILE=/tmp/currentTheme
 
 # If file doesn't exit create one with default theme, or set current theme
 if [ ! -f $THEME_FILE ]; then
+  export THEME=$DEFAULT_THEME
   source "$HOME/.config/base16-shell/scripts/base16-$DEFAULT_THEME.sh"
 else
-  THEME=$(cat $THEME_FILE)
+  export THEME=$(cat $THEME_FILE)
   source "$HOME/.config/base16-shell/scripts/base16-$THEME.sh"
 fi
 
