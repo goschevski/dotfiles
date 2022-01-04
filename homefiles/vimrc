@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 
 " Autocomplete
+Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -196,6 +197,8 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 " ================================================
 iabbrev cl console.log();<Left><Left>
 inoremap cl<tab> console.log();<Left><Left>
+inoremap ,, <Esc>A,<Esc>
+inoremap ;; <Esc>A;<Esc>
 
 " ================================================
 " Key mappings (bindings)
@@ -369,6 +372,7 @@ nnoremap N Nzz
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always=1
 let g:ale_hover_to_floating_preview=1
+let g:ale_detail_to_floating_preview=1
 let g:ale_floating_preview=1
 " let g:ale_sign_error = '✘'
 let g:ale_sign_error = '❌'
@@ -385,15 +389,21 @@ let g:ale_fixers = {
 \  'typescript': [ 'eslint' ],
 \  '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
-nmap gd :ALEGoToDefinition<CR>
+nnoremap <silent>gd :ALEGoToDefinition<CR>
+nnoremap <silent>K :ALEHover<CR>
 nnoremap <silent>gr :ALEFindReferences<CR>
 nnoremap <Leader>gn :ALENext<CR>
 nnoremap <Leader>gp :ALEPrevious<CR>
 nnoremap <Leader>gr :ALERename<CR>
-nnoremap <Leader>, :ALECodeAction<CR>
-
+nnoremap <Leader>g, :ALECodeAction<CR>
 
 " Easymotion
 nmap s <Plug>(easymotion-bd-w)
 nmap S <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
+
+" Ultisnips
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/dotfiles/snippets']
+let g:UltiSnipsExpandTrigger="<tab>"
+" list all snippets for current filetype
+let g:UltiSnipsListSnippets="<c-l>"

@@ -1,5 +1,0 @@
-try {
-    ${1:// body}
-} catch (err) {
-    ${2:// handle error}
-}

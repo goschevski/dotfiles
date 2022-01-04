@@ -1,5 +1,0 @@
-<template>
-</template>
-
-<script src="./${1:FileName}.js"></script>
-<style src="./$1.css" scoped></style>

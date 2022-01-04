@@ -1,3 +1,6 @@
+# List files
+alias ls="lsd"
+alias la="ls -lAFh"
 
 alias tl="tmux ls"
 function ta () {
@@ -72,10 +75,6 @@ alias img="imgur-screenshot.sh -l true"
 
 # Unrar all .rar files in current folder
 alias unrarall='find ./ -name "*.rar" -execdir unrar e {} \;'
-
-# List files
-alias ls="ls -G"
-alias la="ls -lAFh"
 
 # Back folders
 alias .="cd ../"
