@@ -1,6 +1,7 @@
 # List files
 alias ls="lsd"
-alias la="ls -lAFh"
+alias la="ls -la"
+alias ll="ls -l"
 
 alias tl="tmux ls"
 function ta () {
@@ -84,11 +85,11 @@ alias ....="cd ../../../../"
 
 # Folders
 alias sites="cd ~/Sites"
-alias akordi="cd /Volumes/GoogleDrive/My\ Drive/Akordi && vim"
-alias a="cd /Volumes/GoogleDrive/My\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
+alias akordi="cd ~/My\ Drive/Akordi && vim"
+alias a="cd ~/My\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
-alias drive="cd /Volumes/GoogleDrive/My\ Drive"
+alias drive="cd ~/My\ Drive"
 alias dotf="cd ~/dotfiles"
 
 # Folder sizes
@@ -136,7 +137,7 @@ function kp () {
   ps -ef | grep $PRC | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill -9
 }
 
-alias gd="git fuzzy status"
+alias gd="git dsf"
 alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
 alias gco="git checkout"

@@ -1,2 +1,2 @@
-export NOTES_PATH="/Volumes/GoogleDrive/My\ Drive/Notes"
+export NOTES_PATH="~/My\ Drive/Notes"
 export EDITOR=vim

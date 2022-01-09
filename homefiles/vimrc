@@ -1,3 +1,9 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Files buffers navigation
@@ -213,7 +219,7 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
 
 " Notes
-nnoremap <Leader>n :e /Volumes/GoogleDrive/My\ Drive/Notes/
+nnoremap <Leader>n :e ~/My\ Drive/Notes/
 
 " Paste and copy pasted
 nnoremap <Leader>v viwpyiw
@@ -349,7 +355,7 @@ nnoremap <Leader>c :Commands!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
 
 " Fugitive commands
-nnoremap <Leader>gst :Gstatus<CR>
+nnoremap <Leader>gst :Git<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Git blame<CR>
 nnoremap <C-n> :echo fugitive#statusline()<CR>

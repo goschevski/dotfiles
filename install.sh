@@ -1,36 +1,54 @@
-# Define colors
-RED="$(tput setaf 1)"
-NORMAL="$(tput sgr0)"
+# Install ansi
+curl -OL git.io/ansi
+chmod 755 ansi
+sudo mv ansi /usr/local/bin/
 
-function colorEcho () {
-    printf "${RED} $1${NORMAL}\n"
-}
-
-colorEcho "Cloning dotfiles..."
-git clone git@github.com:goschevski/dotfiles.git
+ansi --green "Cloning dotfiles..."
+git clone git@github.com:goschevski/dotfiles.git ~/dotfiles
 chmod +x ~/dotfiles/bin/*
 
-colorEcho "Installing home brew..."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ansi --green "Installing home brew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap homebrew/core
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 
-colorEcho "Brew install..."
+ansi --green "Brew install..."
 brew install git
-# brew install tig
-brew install jesseduffield/lazygit/lazygit
-brew install jesseduffield/lazydocker/lazydocker
-brew install pick
-# brew install ansible
-brew install ag
+brew install fnm
 brew install fd
 brew install tree
 brew install findutils
 brew install ripgrep
 brew install fzf
+brew install gnu-sed
+brew install wget
+brew install node
+brew install go
+brew install coreutils
+brew install noti
+brew install tmux
+brew install diff-so-fancy
+brew install icdiff
+brew install python3
+brew install httpie
+brew install youtube-dl
+brew install ffmpeg
+brew install vim
+brew install jq
+brew install awscli
+brew install lsd
+brew install bat
+# brew install tig
+# brew install jesseduffield/lazygit/lazygit
+# brew install jesseduffield/lazydocker/lazydocker
+# brew install pick
+# brew install ansible
+# brew install ag
 # brew install vifm
-brew install ranger
-brew install lf
+# brew install ranger
+# brew install lf
 # brew install sc-im
 # brew install sox
 # brew install entr
@@ -38,91 +56,73 @@ brew install lf
 # brew install figlet
 # brew install cmatrix
 # brew install pipes-sh
-brew install coreutils
 # brew install htop
-brew install noti
-brew install pidof
-brew install gnu-sed
-brew install wget
-brew install node
-brew install go
+# brew install pidof
 # brew install imgur-screenshot
 # brew install w3m
-brew install tmux
-brew install diff-so-fancy
-brew install icdiff
-brew install python3
-brew install httpie
 # brew install siege
-brew install reattach-to-user-namespace
-brew install youtube-dl
-brew install ical-buddy
-brew install vim
-brew install jq
+# brew install reattach-to-user-namespace
+# brew install ical-buddy
 
-colorEcho "Installing apps using brew cask..."
-brew cask install alfred
-brew cask install homebrew/cask-versions/firefox-nightly
-brew cask install google-chrome
-brew cask install google-backup-and-sync
-brew cask install iterm2
-brew cask install mattr-slate
-brew cask install qlcolorcode
-brew cask install qlmarkdown
-brew cask install qlstephen
-brew cask install quicklook-json
-brew cask install transmission
-brew cask install viscosity
-brew cask install numi
-brew cask install slack
+ansi --green "Installing apps using brew cask..."
+brew install --cask raycast
+brew install --cask kitty
+brew install --cask google-drive
+brew install --cask viscosity
+brew install --cask slack
+brew install --cask microsoft-edge
+brew install --cask zoom
+brew install --cask docker
+brew install --cask sketch
+brew install --cask parallels
+brew install --cask monitorcontrol
+brew install --cask notion
+brew install --cask font-victor-mono
+# brew install --cask homebrew/cask-versions/firefox-nightly
+# brew install --cask google-chrome
+# brew install --cask iterm2
+# brew install --cask mattr-slate
+# brew install --cask qlcolorcode
+# brew install --cask qlmarkdown
+# brew install --cask qlstephen
+# brew install --cask quicklook-json
+# brew install --cask transmission
+# brew install --cask numi
 # brew cask install font-iosevka
 # brew cask install font-fira-code
-brew cask install font-victor-mono
 
-colorEcho "Installing node global modules..."
-npm i -g vtop
+ansi --green "Installing node global modules..."
+# npm i -g vtop
 npm i -g @vue/cli
-npm i -g n
-sudo mkdir /usr/local/n
-sudo chown -R $(whoami) /usr/local/n
 
-colorEcho "Install and setup zsh..."
+ansi --green "Install base16 colors..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-chsh -s /bin/zsh
 
-colorEcho "Setup homefiles..."
+ansi --green "Setup pure prompt..."
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+ansi --green "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
 do
     rm -rf ~/.$file
     ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
 
-colorEcho "Setup vim"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ansi --green "Setup kitty..."
+mkdir -p ~/.config/kitty
+ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
+# Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
-colorEcho "Install git fuzzy"
+ansi --green "Install git fuzzy..."
 git clone https://github.com/bigH/git-fuzzy.git ~/.config/git-fuzzy
 
-colorEcho "Install ansi"
-curl -OL git.io/ansi
-chmod 755 ansi
-sudo mv ansi /usr/local/bin/
-
-colorEcho "Install 2fa"
-go get -u rsc.io/2fa
-
 # Italic in iterm
-colorEcho "Setup italic"
+ansi --green "Setup italic..."
 tic -x ~/dotfiles/templates/xterm-256color-italic.terminfo
 tic -x ~/dotfiles/templates/tmux-256color.terminfo
 
-colorEcho "Setup hosts files"
-sudo su -
-echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
-crontab /tmp/mycron
+# ansi --green "Setup hosts files"
+# sudo su -
+# echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
+# crontab /tmp/mycron

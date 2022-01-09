@@ -1,4 +1,47 @@
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
+
+export DEFAULT_THEME=gruvbox-dark-pale
+export THEME_FILE=/tmp/currentTheme
+
+# If file doesn't exit create one with default theme, or set current theme
+if [ ! -f $THEME_FILE ]; then
+  export THEME=$DEFAULT_THEME
+  source "$HOME/.config/base16-shell/scripts/base16-$DEFAULT_THEME.sh"
+else
+  export THEME=$(cat $THEME_FILE)
+  source "$HOME/.config/base16-shell/scripts/base16-$THEME.sh"
+fi
+
+source ~/dotfiles/homefiles/aliases
+source ~/My\ Drive/.private
+source ~/dotfiles/homefiles/variables
+source ~/dotfiles/homefiles/abbr
+
+# Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
+export JOBS=max
+
+# FZF
+export FZF_DEFAULT_OPTS='--bind up:preview-up,down:preview-down'
+
+# Set go path
+export GOPATH=~/.gocode
+
+# PATH
+export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path
+export PATH="$PATH:$HOME/Sites/awstools" # add local scripts to path
+export PATH="/usr/local/bin:$PATH" # local before everything else
+export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global dependencies
+export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.gocode/bin" # Add go scripts
+export PATH="$PATH:$HOME/.config/git-fuzzy/bin" # Add git fuzzy
+
+# To hide warnings when entering vim
+export LC_ALL=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/Users/gosevski/.deta/bin:$PATH"
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# To disable warning when overriding files
+setopt clobber
