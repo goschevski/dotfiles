@@ -93,6 +93,7 @@ brew install --cask font-victor-mono
 
 ansi --green "Installing node global modules..."
 # npm i -g vtop
+# npm i -g surge
 npm i -g @vue/cli
 
 ansi --green "Install base16 colors..."

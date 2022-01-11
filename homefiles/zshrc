@@ -25,6 +25,9 @@ export JOBS=max
 # FZF
 export FZF_DEFAULT_OPTS='--bind up:preview-up,down:preview-down'
 
+# Node version manager fnm
+eval "$(fnm env --use-on-cd)"
+
 # Set go path
 export GOPATH=~/.gocode
 
