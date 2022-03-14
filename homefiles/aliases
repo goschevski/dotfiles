@@ -29,7 +29,7 @@ function color () {
 }
 
 function dark () {
-  color gruvbox-dark-pale
+  color material-palenight
 }
 
 function light () {

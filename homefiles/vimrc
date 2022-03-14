@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 " Files buffers navigation
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'ryanoasis/vim-devicons'
 Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -17,21 +18,17 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mileszs/ack.vim'
 Plug 'embear/vim-foldsearch', { 'on': ['Fs'] }
 Plug 'easymotion/vim-easymotion'
-
 " Git and command line
 Plug 'tpope/vim-fugitive'
 
 " Autocomplete
-Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 let g:deoplete#enable_at_startup = 1
 
 " Code edit
-Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
-Plug 'lpinilla/vim-codepainter'
 Plug 'dense-analysis/ale'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'cohama/lexima.vim'
@@ -116,9 +113,9 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 " Indentation
 " ================================================
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 set smartindent
 set autoindent
@@ -222,7 +219,7 @@ nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
 nnoremap <Leader>n :e ~/My\ Drive/Notes/
 
 " Paste and copy pasted
-nnoremap <Leader>v viwpyiw
+xnoremap <Leader>v "0p
 
 " Chords
 nnoremap <Leader><Leader>c magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a
@@ -362,7 +359,7 @@ nnoremap <C-n> :echo fugitive#statusline()<CR>
 nnoremap <Leader>gco :Gread<CR>:w<CR>
 
 " Rg Search
-let g:ackprg = 'rg -F -S --vimgrep -g !package-lock.json'
+let g:ackprg = 'rg -F -S --color=never --no-heading --with-filename --line-number --column -g !package-lock.json'
 nmap <Leader>f :Ack! "" ./<Left><Left><Left><Left>
 nnoremap <Leader>a :Ack! <cword><CR>
 
@@ -407,9 +404,3 @@ nnoremap <Leader>g, :ALECodeAction<CR>
 nmap s <Plug>(easymotion-bd-w)
 nmap S <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
-
-" Ultisnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/dotfiles/snippets']
-let g:UltiSnipsExpandTrigger="<tab>"
-" list all snippets for current filetype
-let g:UltiSnipsListSnippets="<c-l>"
