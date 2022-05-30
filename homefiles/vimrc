@@ -29,14 +29,20 @@ let g:deoplete#enable_at_startup = 1
 
 " Code edit
 Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'dense-analysis/ale'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 Plug 'cohama/lexima.vim'
 Plug 'deathlyfrantic/lexima-template-rules'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
+
+" Notes
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/goyo.vim'
 
 " Color schemes
 Plug 'danielwe/base16-vim'
@@ -78,6 +84,9 @@ set timeoutlen=1000             "Fast escape
 set ttimeoutlen=0               "Fast escape
 set foldcolumn=0                "Hide fold column
 set diffopt+=vertical           "Vertical diff
+" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+" set list
+" set cursorcolumn                "Highlight cursor column
 syntax on                       "Turn on syntax highlighting
 
 " ================================================
@@ -86,7 +95,9 @@ syntax on                       "Turn on syntax highlighting
 highlight clear FoldColumn                     "Use same color for padding as background
 highlight LineNr ctermfg=19 ctermbg=NONE         "Change color of line numbers
 highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
-highlight CursorLine ctermbg=19                  "Current line
+" highlight CursorLine ctermbg=18                 "Current line on
+" highlight CursorColumn ctermbg=18                 "Current line on
+highlight CursorLine ctermbg=NONE                 "Current line highlight off
 highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
 highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
 highlight SignColumn ctermbg=NONE                "Color of sign column (linter)
@@ -97,7 +108,7 @@ highlight Statement cterm=italic
 highlight Exception cterm=italic
 highlight Function cterm=italic
 hi clear CursorLineNR
-hi clear CursorLine
+" hi clear CursorLine
 hi Normal ctermbg=NONE guibg=NONE
 
 " ================================================
@@ -195,6 +206,21 @@ endfunction
 au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 
+" Autoread
+augroup checktime
+    au!
+    if !has("gui_running")
+        "silent! necessary otherwise throws errors when using command
+        "line window.
+        autocmd BufEnter        * silent! checktime
+        autocmd CursorHold      * silent! checktime
+        autocmd CursorHoldI     * silent! checktime
+        "these two _may_ slow things down. Remove if they do.
+        autocmd CursorMoved     * silent! checktime
+        autocmd CursorMovedI    * silent! checktime
+    endif
+augroup END
+
 " ================================================
 " Abbreviations and insert mode snippets
 " ================================================
@@ -209,14 +235,17 @@ inoremap ;; <Esc>A;<Esc>
 " Map leader
 let mapleader = "\<Space>"
 
+" Reload file
+nnoremap <Leader>r :e!<CR>
+
 " Reload vim config
 nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 
 " ToggleSyntax
 nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
 
-" Notes
-nnoremap <Leader>n :e ~/My\ Drive/Notes/
+" Create file with gf
+map gf :edit <cfile><CR>
 
 " Paste and copy pasted
 xnoremap <Leader>v "0p
@@ -273,8 +302,11 @@ vnoremap ; :
 " Switch between buffers quickly
 map <Leader><Tab> <C-^>
 
+" Delete all buffers
+nnoremap <Leader>Q :bufdo bdelete<CR>
+
 " Delete buffer
-nnoremap <Leader>x :bdelete<CR>
+nnoremap <Leader>x :bn<CR>:bd#<CR>
 
 " Down is really the next line
 nnoremap j gj
@@ -333,6 +365,7 @@ nnoremap <Leader>3 :e %<.css<CR>
 
 " NERDTree
 nnoremap - :call NERDTreeToggleInCurDir()<CR>
+let NERDTreeIgnore=['\.git$']
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden=1
 
@@ -342,7 +375,6 @@ if isdirectory(".git")
 else
     nnoremap <Leader>p :Files!<CR>
 endif
-nnoremap <Leader><Leader>f :Rg!<CR>
 nnoremap <Leader>o :Buffers!<CR>
 nnoremap <Leader><Leader>p :Files!<CR>
 nnoremap <Leader>gf :Commits!<CR>
@@ -350,6 +382,20 @@ nnoremap <Leader>gh :BCommits!<CR>
 nnoremap <Leader>m :Maps!<CR>
 nnoremap <Leader>c :Commands!<CR>
 nnoremap <Leader>\ :Filetypes!<CR>
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -g !package-lock.json -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+nnoremap <Leader><Leader>f :RG<CR>
+
+inoremap <expr> <c-p> fzf#vim#complete#path('rg --files')
+inoremap <expr> <c-k> fzf#vim#complete#word()
 
 " Fugitive commands
 nnoremap <Leader>gst :Git<CR>
@@ -373,14 +419,17 @@ nnoremap N Nzz
 
 " Ale
 let g:ale_fix_on_save = 1
-let g:ale_sign_column_always=1
-let g:ale_hover_to_floating_preview=1
-let g:ale_detail_to_floating_preview=1
-let g:ale_floating_preview=1
-" let g:ale_sign_error = '✘'
-let g:ale_sign_error = '❌'
-" let g:ale_sign_warning = '⚠'
-let g:ale_sign_warning = '⚠️'
+let g:ale_sign_column_always = 1
+let g:ale_hover_to_floating_preview = 1
+let g:ale_detail_to_floating_preview = 1
+let g:ale_set_highlights = 0
+let g:ale_floating_preview = 1
+let g:ale_virtualtext_cursor = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+" let g:ale_sign_error = '✘❌✖☠'
+" let g:ale_sign_warning = '⚠️'⚠
+let g:ale_sign_error = "◉"
+let g:ale_sign_warning = "◉"
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 autocmd FileType javascript let g:ale_linters = {
@@ -401,6 +450,21 @@ nnoremap <Leader>gr :ALERename<CR>
 nnoremap <Leader>g, :ALECodeAction<CR>
 
 " Easymotion
-nmap s <Plug>(easymotion-bd-w)
-nmap S <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-overwin-w)
+" nmap S <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
+
+" Split join
+let g:splitjoin_html_attributes_bracket_on_new_line = 1
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/My Drive/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_map_prefix = '<Leader>n'
+nnoremap <Leader><CR> <Plug>VimwikiToggleListItem
+nnoremap <F5> 0f]l"=strftime("(%d.%m.%y. %H:%M:%S) ")<CR>p
+let g:vimwiki_key_mappings =
+    \ {
+    \ 'headers': 0
+      \ }
+" Goyo
+" autocmd BufRead,BufNewFile *.md :Goyo
