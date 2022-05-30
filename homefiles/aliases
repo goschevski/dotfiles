@@ -110,11 +110,11 @@ alias cleanup="brew cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
 alias ni="rm -rf node_modules; npm i"
-alias nis="npm i --save --save-exact"
-alias nid="npm i --save-dev --save-exact"
-alias yi="rm -rf node_modules; yarn install"
-alias yis="yarn add --exact"
-alias yid="yarn add --dev --exact"
+alias nis="npm i --save"
+alias nid="npm i --save-dev"
+alias yi="yarn install"
+alias yis="yarn add"
+alias yid="yarn add --dev"
 
 # Docker
 alias dlc="docker ps -a"
@@ -142,13 +142,13 @@ alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
 alias gco="git checkout"
 alias gup="git pull --rebase"
-alias ts="tig status"
+# alias ts="tig status"
 alias gst="git status --short"
 alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
-alias gdm='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
-alias gsquash='git reset HEAD~$(git rev-list --count develop..HEAD)'
+alias gdm='git fetch -p && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gsquash='git reset HEAD~$(git rev-list --count main..HEAD)'
 function ggp () {
   git push origin $(git branch --show-current)
 }
