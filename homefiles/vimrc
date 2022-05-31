@@ -468,3 +468,8 @@ let g:vimwiki_key_mappings =
       \ }
 " Goyo
 " autocmd BufRead,BufNewFile *.md :Goyo
+
+" Devicons
+if exists("g:loaded_webdevicons")
+	call webdevicons#refresh()
+endif
