@@ -40,6 +40,7 @@ brew install jq
 brew install awscli
 brew install lsd
 brew install bat
+brew install starship
 # brew install tig
 # brew install jesseduffield/lazygit/lazygit
 # brew install jesseduffield/lazydocker/lazydocker
@@ -113,6 +114,10 @@ done
 ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
+# Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
+
+ansi --green "Setup starship prompt..."
+ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
 # Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
 ansi --green "Install git fuzzy..."
