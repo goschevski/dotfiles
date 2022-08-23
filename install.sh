@@ -34,6 +34,7 @@ brew install icdiff
 brew install python3
 brew install httpie
 brew install youtube-dl
+brew install yt-dlp
 brew install ffmpeg
 brew install vim
 brew install jq
