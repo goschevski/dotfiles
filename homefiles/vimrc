@@ -13,6 +13,8 @@ Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Search and movement
 Plug 'mileszs/ack.vim'
@@ -99,7 +101,7 @@ highlight CursorLineNr ctermfg=20 ctermbg=19     "Change color of line numbers
 " highlight CursorColumn ctermbg=18                 "Current line on
 highlight CursorLine ctermbg=NONE                 "Current line highlight off
 highlight VertSplit ctermbg=NONE ctermfg=NONE    "Remove border background
-highlight EndOfBuffer ctermfg=NONE ctermbg=NONE  "Color of ~ at end of the file
+highlight EndOfBuffer ctermfg=black ctermbg=black  "Color of ~ at end of the file
 highlight SignColumn ctermbg=NONE                "Color of sign column (linter)
 highlight Comment cterm=italic
 highlight Keyword cterm=italic
@@ -110,6 +112,7 @@ highlight Function cterm=italic
 hi clear CursorLineNR
 " hi clear CursorLine
 hi Normal ctermbg=NONE guibg=NONE
+set fillchars+=vert:\ |" remove split char
 
 " ================================================
 " Cursor style in tmux
@@ -243,9 +246,6 @@ nnoremap <Leader><Leader>r :source ~/.vimrc<CR>
 
 " ToggleSyntax
 nnoremap <Leader><Leader>s :call ToggleSyntax()<CR>
-
-" Create file with gf
-map gf :edit <cfile><CR>
 
 " Paste and copy pasted
 xnoremap <Leader>v "0p
@@ -473,3 +473,16 @@ let g:vimwiki_key_mappings =
 if exists("g:loaded_webdevicons")
 	call webdevicons#refresh()
 endif
+
+" Airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='base16'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.dirty=' ◉'
+let g:airline_symbols.branch = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_section_y=''
+let g:airline_skip_empty_sections = 1
