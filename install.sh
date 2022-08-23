@@ -112,6 +112,9 @@ do
     ln -s ~/dotfiles/homefiles/$file ~/.$file
 done
 
+ansi --green "Setup nvim..."
+ln -s ~/dotfiles/nvim/ ~/.config/
+
 ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf

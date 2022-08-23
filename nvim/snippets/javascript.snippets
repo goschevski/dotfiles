@@ -1,0 +1,56 @@
+snippet method "JavaScript Object method"
+  $1 ($2) {
+    $3
+  },
+
+snippet for "JavaScript foor loop"
+  for (var ${2:i} = ${1:Things.length} - 1; $2 >= 0; $2--) {
+    ${3}
+  }
+
+snippet try "JavaScript try/catch block"
+  try {
+    $1
+  } catch (err) {
+    $2
+  }
+
+snippet cl "JavaScript console.log"
+  console.log($1);
+
+snippet vji "Vue import component"
+  import $1 from '@/components/$1/$1.vue';
+
+snippet vje "Vue js file"
+  // @vue/component
+
+  export default {
+    $1
+  };
+
+snippet vjp "Vue props"
+  props: {
+    $2
+  }${1:,}
+
+snippet vjd  "Vue data"
+  data: function () {
+    return {
+    $1
+    };
+  }${2:,}
+
+snippet vjm  "Vue methods"
+  methods: {
+    $2
+  }${1:,}
+
+snippet vjc  "Vue computed"
+  computed: {
+    $2
+  }${1:,}
+
+snippet vjcc "Vue components"
+  components: {
+    $2
+  }${1:,}
