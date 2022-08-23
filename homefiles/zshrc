@@ -1,8 +1,8 @@
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-prompt pure
+# fpath+=$HOME/.zsh/pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
-export DEFAULT_THEME=gruvbox-dark-pale
+export DEFAULT_THEME=material-palenight
 export THEME_FILE=/tmp/currentTheme
 
 # If file doesn't exit create one with default theme, or set current theme
@@ -48,3 +48,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # To disable warning when overriding files
 setopt clobber
+
+eval "$(starship init zsh)"
