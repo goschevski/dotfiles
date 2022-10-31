@@ -1,6 +1,0 @@
-#navigator-toolbox {margin-top: -81px; transition: all 0.2s ease-in;}
-#navigator-toolbox:hover {margin-top: 0px; transition: all 0.2s ease;}
-#main-window #navigator-toolbox:focus-within {margin-top: 0px; transition: all 0.2s ease;}
-#titlebar {display: none !important;}
-
-/* Library/Application\ Support/Firefox/Profiles/PROFILE_NAME/chrome/userChrome.css */

@@ -12,8 +12,6 @@ fi
 
 source ~/dotfiles/homefiles/aliases
 source ~/My\ Drive/.private
-source ~/dotfiles/homefiles/variables
-source ~/dotfiles/homefiles/abbr
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max

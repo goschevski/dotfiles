@@ -101,10 +101,6 @@ npm i -g @vue/cli
 ansi --green "Install base16 colors..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
-ansi --green "Setup pure prompt..."
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
 ansi --green "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
 do
@@ -122,7 +118,6 @@ ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
 
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
-# Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
 ansi --green "Install git fuzzy..."
 git clone https://github.com/bigH/git-fuzzy.git ~/.config/git-fuzzy
@@ -131,8 +126,3 @@ git clone https://github.com/bigH/git-fuzzy.git ~/.config/git-fuzzy
 ansi --green "Setup italic..."
 tic -x ~/dotfiles/templates/xterm-256color-italic.terminfo
 tic -x ~/dotfiles/templates/tmux-256color.terminfo
-
-# ansi --green "Setup hosts files"
-# sudo su -
-# echo "0 15 * * * /Users/gosevski/dotfiles/bin/generateHosts" > /tmp/mycron
-# crontab /tmp/mycron

@@ -4,18 +4,12 @@ alias la="ls -la"
 alias ll="ls -l"
 
 alias tl="tmux ls"
-function ta () {
-  if [ -z "$1" ]; then
-    tmux attach
-  else
-    tmux attach -t $1
-  fi
-}
+alias ta="tmux attach"
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
 # Reload
-alias re="source ~/.zpreztorc"
+alias re="source ~/.zshrc"
 
 # Edit hosts
 alias hos="sudo -E vim /etc/hosts"
