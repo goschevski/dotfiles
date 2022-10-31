@@ -22,6 +22,23 @@ require('packer').startup(function()
   use { 'aserowy/tmux.nvim' }
   use { 'vimwiki/vimwiki' }
   use { 'voldikss/vim-floaterm' }
+  use { 'takac/vim-hardtime' }
+  use {
+    'ThePrimeagen/refactoring.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-treesitter/nvim-treesitter'}
+    },
+    config = function()
+      require('refactoring').setup({})
+    end
+  }
+  use {
+    'Pocco81/true-zen.nvim',
+    config = function()
+       require('true-zen').setup()
+    end
+  }
   use {
     'whatyouhide/vim-textobj-xmlattr',
     requires = {
