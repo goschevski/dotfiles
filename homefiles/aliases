@@ -141,13 +141,12 @@ alias gd="git dsf"
 alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
 alias gco="git checkout"
-alias gup="git pull --rebase"
+alias gup='git fetch -p && git pull --rebase && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 # alias ts="tig status"
 alias gst="git status --short"
 alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
-alias gdm='git fetch -p && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias gsquash='git reset HEAD~$(git rev-list --count main..HEAD)'
 function ggp () {
   git push origin $(git branch --show-current)
