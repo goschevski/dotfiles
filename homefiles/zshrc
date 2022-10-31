@@ -1,7 +1,3 @@
-# fpath+=$HOME/.zsh/pure
-# autoload -U promptinit; promptinit
-# prompt pure
-
 export DEFAULT_THEME=material-palenight
 export THEME_FILE=/tmp/currentTheme
 
