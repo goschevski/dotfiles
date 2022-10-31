@@ -94,12 +94,22 @@ vim.api.nvim_set_keymap('n', '<Leader>fb', ":Telescope buffers<CR>", { noremap =
 vim.api.nvim_set_keymap('n', '<Leader>fgl', ":Telescope git_commits<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fgf', ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fgb', ":Telescope git_branches<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fgs', ":Telescope git_status<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ft', ":Telescope filetypes<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fh', ":Telescope help_tags<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-_>', ":Telescope current_buffer_fuzzy_find prompt_position=top sorting_strategy=ascending<CR>", { noremap = true, silent = true })
 
 -- Nvim Tree
 vim.keymap.set('n', '+', ':NvimTreeFindFileToggle<CR>')
+
+-- True Zen
+vim.api.nvim_set_keymap('n', '<Leader>za', ":TZAtaraxis<CR>", { noremap = true, silent = true })
+
+-- Refactoring
+vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+-- Inline variable can also pick up the identifier currently under the cursor without visual mode
+vim.api.nvim_set_keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
 
 -- Ack.vim (ripgrep)
 vim.g.ackprg = 'rg -F -S --color=never --no-heading --with-filename --line-number --column -g !package-lock.json'
