@@ -1,19 +1,24 @@
-local _impatient, impatient = pcall(require, "impatient")
-if _impatient then
-    impatient.enable_profile()
-end
-
-require "settings"
-require "plugins"
-require "mappings"
-
--- plugins settings
-require "plugins/lsp"
-require "plugins/telescope"
-require "plugins/cmp"
-require "plugins/blankline"
-require "plugins/treesitter"
-require "plugins/tmux"
-require "plugins/vimwiki"
-require "plugins/floaterm"
-require "plugins/truezen"
+require("goschevski.plugins-setup")
+require("goschevski.core.utils")
+require("goschevski.core.options")
+require("goschevski.core.colorscheme")
+require("goschevski.core.mappings")
+require("goschevski.plugins.nvim-tree")
+-- require("goschevski.plugins.lualine")
+require("goschevski.plugins.telescope")
+require("goschevski.plugins.autopairs")
+require("goschevski.plugins.treesitter")
+require("goschevski.plugins.comment")
+require("goschevski.plugins.neoscroll")
+require("goschevski.plugins.hop")
+require("goschevski.plugins.cmp")
+require("goschevski.plugins.snippy")
+require("goschevski.plugins.lsp.mason")
+require("goschevski.plugins.lsp.lspsaga")
+require("goschevski.plugins.lsp.lspconfig")
+require("goschevski.plugins.lsp.null-ls")
+require("goschevski.plugins.blankline")
+require("goschevski.plugins.gitsigns")
+require("goschevski.plugins.ack")
+require("goschevski.plugins.foldsearch")
+require("goschevski.plugins.feline")

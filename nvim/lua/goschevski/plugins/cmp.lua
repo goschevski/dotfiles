@@ -1,34 +1,20 @@
-local cmp = require'cmp'
+local cmp_setup, cmp = pcall(require, 'cmp')
+if not cmp_setup then
+  return
+end
 
-local kinds = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "ﰕ",
-  Field = "ﰠ",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "塞",
-  Value = "",
-  Enum = "",
-  Keyword = "廓",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "פּ",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
+local snippy_setup, snippy = pcall(require, 'snippy')
+if not snippy_setup then
+  return
+end
+
+local lspkind_status, lspkind = pcall(require, 'lspkind')
+if not lspkind_status then
+  return
+end
+
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-local snippy = require('snippy')
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -36,13 +22,7 @@ cmp.setup({
     end,
   },
   formatting = {
-    fields = { 'kind', 'abbr', 'menu' },
-    format = function(_, vim_item)
-      vim_item.menu = vim_item.kind
-      vim_item.kind = kinds[vim_item.kind]
-
-      return vim_item
-    end
+    format = lspkind.cmp_format({ maxwidth = 50, ellipsis_char = '...' })
   },
   experimental = {
     ghost_text = true,

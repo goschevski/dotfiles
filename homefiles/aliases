@@ -5,6 +5,7 @@ alias ll="ls -l"
 
 alias tl="tmux ls"
 alias ta="tmux attach"
+alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux kill-server && tc Srbija"
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
@@ -14,34 +15,6 @@ alias re="source ~/.zshrc"
 # Edit hosts
 alias hos="sudo -E vim /etc/hosts"
 alias hoc="sudo sed -i '' '11,\$d' /etc/hosts"
-
-# Set color scheme
-function color () {
-  export THEME=$1
-  echo $1 >! $THEME_FILE
-  source "$HOME/.config/base16-shell/scripts/base16-$1.sh"
-}
-
-function dark () {
-  color material-palenight
-}
-
-function light () {
-  color cupcake
-}
-
-# Set random color scheme
-function rndcolor () {
-  SELECTED=$(ls ~/.config/base16-shell/scripts/ | gshuf -n 1 | cut -d . -f 1 | awk -F "base16-" '{print $2}')
-
-  color $SELECTED
-  echo "Color scheme is $SELECTED"
-}
-
-# List colors
-function lscolor () {
-  ls ~/.config/base16-shell/scripts/
-}
 
 # Read markdown
 rmd () {

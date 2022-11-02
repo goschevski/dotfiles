@@ -98,9 +98,6 @@ ansi --green "Installing node global modules..."
 # npm i -g surge
 npm i -g @vue/cli
 
-ansi --green "Install base16 colors..."
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-
 ansi --green "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
 do

@@ -1,0 +1,5 @@
+snippet pcall ""
+  local $1_status, $1 = pcall(require, '$1')
+  if not $1_status then
+    return
+  end
