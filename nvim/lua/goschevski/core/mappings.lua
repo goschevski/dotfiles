@@ -88,7 +88,7 @@ keymap.set('n', '<Leader>3', ':e %<.css<CR>')
 -- plugins keymaps
 
 -- NvimTree
-keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>')
+keymap.set('n', '<Leader>e', ':NvimTreeFindFileToggle<CR>')
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<Leader>ff', ":Telescope find_files<CR>", { noremap = true })
