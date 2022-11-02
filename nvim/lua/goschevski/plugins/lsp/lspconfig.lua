@@ -40,18 +40,39 @@ local servers = { "tsserver", "html", "cssls", "eslint", "gopls", "volar" }
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
+  require('lspconfig')[lsp].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     init_options = {
       preferences = { disableSuggestions = true }
     }
-  }
+  })
 end
 
 typescript.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
+    init_options = {
+      preferences = { disableSuggestions = true }
+    }
 	},
+})
+
+require('lspconfig')['sumneko_lua'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. "/lua"] = true,
+        }
+      }
+    }
+  }
 })

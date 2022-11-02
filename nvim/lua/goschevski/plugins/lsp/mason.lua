@@ -21,7 +21,8 @@ mason_lspconfig.setup({
     "cssls",
     "eslint",
     "gopls",
-    "volar"
+    "volar",
+    "sumneko_lua"
   }
 })
 
