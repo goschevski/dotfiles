@@ -1,5 +1,5 @@
 snippet pcall ""
-  local $1_status, $1 = pcall(require, '$1')
-  if not $1_status then
+  local _${1/-/_/g}, ${1/-/_/g} = pcall(require, '$1')
+  if not _${1/-/_/g} then
     return
   end
