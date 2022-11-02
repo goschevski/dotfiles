@@ -42,7 +42,6 @@ return packer.startup(function(use)
   use('kyazdani42/nvim-web-devicons')
 
   -- status line
-  -- use('nvim-lualine/lualine.nvim')
   use('feline-nvim/feline.nvim')
 
   -- telescope 
