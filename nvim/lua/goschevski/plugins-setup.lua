@@ -58,7 +58,7 @@ return packer.startup(function(use)
   -- git
   use('tpope/vim-fugitive')
   use('sindrets/diffview.nvim')
-  
+
   -- essentials
   use('numToStr/Comment.nvim')
   use('tpope/vim-surround')
