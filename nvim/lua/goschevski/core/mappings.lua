@@ -94,7 +94,7 @@ keymap.set('n', '<Leader>e', ':NvimTreeFindFileToggle<CR>')
 vim.api.nvim_set_keymap('n', '<Leader>ff', ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>fs', ":Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fa', ":Telescope grep_string<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>fb', ":Telescope buffers<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fo', ":Telescope buffers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fgl', ":Telescope git_commits<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fgf', ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fgb', ":Telescope git_branches<CR>", { noremap = true, silent = true })
@@ -105,23 +105,25 @@ vim.api.nvim_set_keymap('n', '<C-_>', ":Telescope current_buffer_fuzzy_find prom
 vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, silent = true })
 
 -- Hop (easymotion)
-vim.keymap.set('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.keymap.set('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.keymap.set('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-vim.keymap.set('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-vim.keymap.set('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.keymap.set('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.keymap.set('n', 's', "<cmd> HopWord<CR>", {})
+keymap.set('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+keymap.set('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+keymap.set('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+keymap.set('n', 's', "<cmd> HopWord<CR>", {})
 
--- fugitive
-vim.keymap.set('n', '<Leader>gst', ':Git<CR>')
-vim.keymap.set('n', '<Leader>gdo', ':DiffviewOpen<CR>')
-vim.keymap.set('n', '<Leader>gdc', ':DiffviewClose<CR>')
-vim.keymap.set('n', '<Leader>gb', ':Git blame<CR>')
-vim.keymap.set('n', '<Leader>gco', ':Gread<CR>:w<CR>')
+-- Git
+keymap.set('n', '<Leader>gst', ':Git<CR>')
+keymap.set('n', '<Leader>gdo', ':DiffviewOpen<CR>')
+keymap.set('n', '<Leader>gdc', ':DiffviewClose<CR>')
+keymap.set('n', '<Leader>gb', ':Git blame<CR>')
+keymap.set('n', '<Leader>gco', ':Gread<CR>:w<CR>')
+keymap.set('n', ']c', ':Gitsigns next_hunk<CR>')
+keymap.set('n', '[c', ':Gitsigns prev_hunk<CR>')
 
 -- ack
-vim.keymap.set('n', '<leader>fr', ':Ack! "" ./<Left><Left><Left><Left>')
+keymap.set('n', '<leader>fr', ':Ack! "" ./<Left><Left><Left><Left>')
 
 -- fold search
 local folded = 0
@@ -134,5 +136,5 @@ function toggle_fold ()
     folded = 1
   end
 end
-vim.keymap.set('n', ',', ':lua toggle_fold()<CR>')
+keymap.set('n', ',', ':lua toggle_fold()<CR>')
 
