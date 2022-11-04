@@ -47,6 +47,7 @@ return packer.startup(function(use)
   -- telescope 
   use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0' })
   use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use('nvim-telescope/telescope-file-browser.nvim')
 
   -- ui improvements
   use('lukas-reineke/indent-blankline.nvim')

@@ -102,6 +102,7 @@ vim.api.nvim_set_keymap('n', '<Leader>fgs', ":Telescope git_status<CR>", { norem
 vim.api.nvim_set_keymap('n', '<Leader>ft', ":Telescope filetypes<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fh', ":Telescope help_tags<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-_>', ":Telescope current_buffer_fuzzy_find prompt_position=top sorting_strategy=ascending<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, silent = true })
 
 -- Hop (easymotion)
 vim.keymap.set('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
