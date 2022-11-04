@@ -7,13 +7,13 @@ buffer=$HOME/.tmux.editbuffer
 ypos=$(tmux display-message -p '#{cursor_y}'+1 | bc)
 xpos=$(tmux display-message -p '#{cursor_x}')
 
-editorcommand="vim"
+editorcommand="nvim"
 
 # use pbcopy on Mac; xclip or alternatives on linux
 autocmd='autocmd TextYankPost * if v:event.operator ==# "y" | let res=system("pbcopy", @") | endif'
 
 # modify your options as you see fit
-editoroptions="-c 'setlocal buftype=nowrite bufhidden=hide noswapfile | highlight CursorLine ctermfg=yellow ctermbg=none cterm=underline,bold | normal! "$ypos"G"$xpos"l'"
+editoroptions="-c 'setlocal buftype=nowrite bufhidden=hide noswapfile | normal! "$ypos"G"$xpos"l'"
 editorbindings="-c 'nn<c-q> :q<cr> | $autocmd'"
 
 shellcommand="$editorcommand $editoroptions $editorbindings $buffer"
