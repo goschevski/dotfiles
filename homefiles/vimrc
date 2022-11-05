@@ -47,7 +47,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
 
 " Color schemes
-Plug 'danielwe/base16-vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -55,9 +55,8 @@ call plug#end()
 " ================================================
 " Color scheme
 " ================================================
-let base16colorspace=256
 set background=dark
-execute "colorscheme base16-".$THEME
+colorscheme catppuccin_mocha
 
 " ================================================
 " General config
