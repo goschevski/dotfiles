@@ -105,6 +105,9 @@ function kp () {
 }
 
 alias gd="git dsf"
+function gcm () {
+  git commit -m $1
+}
 alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
 alias gco="git checkout"
