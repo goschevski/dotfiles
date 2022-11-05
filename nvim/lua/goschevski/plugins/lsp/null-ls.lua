@@ -12,7 +12,7 @@ null_ls.setup({
   sources = {
     formatting.eslint_d,
     diagnostics.eslint_d,
-    null_ls.builtins.code_actions.gitsigns,
+    -- null_ls.builtins.code_actions.gitsigns,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
