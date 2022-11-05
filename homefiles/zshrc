@@ -43,4 +43,10 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # To disable warning when overriding files
 setopt clobber
 
+# completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
+zstyle ':completion:*' list-suffixes
+zstyle ':completion:*' expand prefix suffix 
+autoload -U compinit; compinit
+
 eval "$(starship init zsh)"
