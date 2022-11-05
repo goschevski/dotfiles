@@ -68,11 +68,11 @@ brew install starship
 
 ansi --green "Installing apps using brew cask..."
 brew install --cask raycast
-brew install --cask kitty
+brew install --cask iterm2
 brew install --cask google-drive
-brew install --cask viscosity
 brew install --cask slack
-brew install --cask microsoft-edge
+brew install --cask arc
+brew install --cask cron
 brew install --cask zoom
 brew install --cask docker
 brew install --cask sketch
@@ -80,9 +80,11 @@ brew install --cask parallels
 brew install --cask monitorcontrol
 brew install --cask notion
 brew install --cask font-victor-mono
+# brew install --cask viscosity
+# brew install --cask kitty
+# brew install --cask microsoft-edge
 # brew install --cask homebrew/cask-versions/firefox-nightly
 # brew install --cask google-chrome
-# brew install --cask iterm2
 # brew install --cask mattr-slate
 # brew install --cask qlcolorcode
 # brew install --cask qlmarkdown
