@@ -105,6 +105,7 @@ function kp () {
 }
 
 alias gd="git dsf"
+alias ga="git add ."
 function gcm () {
   git commit -m $1
 }
@@ -120,6 +121,9 @@ alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip c
 alias gsquash='git reset HEAD~$(git rev-list --count main..HEAD)'
 function ggp () {
   git push origin $(git branch --show-current)
+}
+function ggpf () {
+  git push origin $(git branch --show-current) --force
 }
 function retag () {
   git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
