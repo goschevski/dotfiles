@@ -85,6 +85,11 @@ keymap.set('n', '<Leader>1', ':e %<.vue<CR>')
 keymap.set('n', '<Leader>2', ':e %<.js<CR>')
 keymap.set('n', '<Leader>3', ':e %<.css<CR>')
 
+keymap.set('x', 'il', 'g_o^')
+keymap.set('o', 'il', ':normal vil<CR>')
+keymap.set('x', 'al', '$o^')
+keymap.set('o', 'al', ':normal val<CR>')
+
 -- plugins keymaps
 
 -- NvimTree
