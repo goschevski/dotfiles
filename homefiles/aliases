@@ -52,7 +52,7 @@ alias ....="cd ../../../../"
 
 # Folders
 alias sites="cd ~/Sites"
-alias akordi="cd ~/My\ Drive/Akordi && vim"
+alias akordi="cd ~/My\ Drive/Akordi && nvim"
 alias a="cd ~/My\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
