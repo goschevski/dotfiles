@@ -3,8 +3,10 @@ if not _catppuccin then
     return
 end
 
+local theme = "macchiato"
+
 catppuccin.setup({
-  flavour = "mocha",
+  flavour = theme,
   styles = {
     comments = { "italic" },
     conditionals = { "italic" },
@@ -21,4 +23,4 @@ catppuccin.setup({
   }
 })
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme catppuccin-" .. theme)

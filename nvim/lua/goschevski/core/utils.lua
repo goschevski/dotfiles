@@ -7,3 +7,12 @@ function ReloadConfig()
 
   dofile(vim.env.MYVIMRC)
 end
+
+function Todos()
+  local todos = '/Users/gosevski/My Drive/Notes/index.todo'
+  if vim.fn.expand('%') == todos then
+    vim.cmd('bdelete')
+  else
+    vim.cmd('e' .. todos)
+  end
+end

@@ -4,6 +4,7 @@ vim.g.maplocalleader=" "
 local keymap = vim.keymap
 
 keymap.set('n', '<leader><leader>r', ':lua ReloadConfig()<CR>')
+keymap.set('n', '<leader><leader>n', ':lua Todos()<CR>')
 keymap.set('x', '<Leader>v', '"0p')
 keymap.set('n', '<Leader><Leader>c', 'magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a')
 keymap.set('n', '=', ':only<CR>')
@@ -106,6 +107,7 @@ vim.api.nvim_set_keymap('n', '<Leader>fgb', ":Telescope git_branches<CR>", { nor
 vim.api.nvim_set_keymap('n', '<Leader>fgs', ":Telescope git_status<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ft', ":Telescope filetypes<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fh', ":Telescope help_tags<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fc', ":Telescope colorscheme<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-_>', ":Telescope current_buffer_fuzzy_find prompt_position=top sorting_strategy=ascending<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, silent = true })
 
