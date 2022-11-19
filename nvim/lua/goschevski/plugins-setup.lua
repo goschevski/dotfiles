@@ -71,6 +71,8 @@ return packer.startup(function(use)
   use('windwp/nvim-ts-autotag')
   use('mileszs/ack.vim')
   use('embear/vim-foldsearch')
+  use('kana/vim-textobj-user')
+  use('whatyouhide/vim-textobj-xmlattr')
 
   -- autocomplete and snippets
   use('hrsh7th/nvim-cmp')

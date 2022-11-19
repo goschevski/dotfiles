@@ -279,6 +279,16 @@ _G.packer_plugins = {
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-tasks",
     url = "https://github.com/CrispyDrone/vim-tasks"
   },
+  ["vim-textobj-user"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
+    url = "https://github.com/kana/vim-textobj-user"
+  },
+  ["vim-textobj-xmlattr"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-textobj-xmlattr",
+    url = "https://github.com/whatyouhide/vim-textobj-xmlattr"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
