@@ -4,18 +4,18 @@ add_newline = true
 # success_symbol = "[ﬦ](bold green)"
 # error_symbol = "[ﬦ](bold red)"
 
-[package]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
+# [package]
+# symbol = " "
+#
+# [nodejs]
+# symbol = " "
+#
 [git_branch]
-symbol = "🌱 "
-# symbol= " "
-
+symbol= " "
+# symbol = "🌱 "
+#
 [golang]
 symbol = "ﳑ "
-
-[aws]
-format = ''
+#
+# [aws]
+# format = ''
