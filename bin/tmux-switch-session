@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+selected=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0 --preview='tmux capture-pane -ep -t {}')
+tmux switch-client -t "$selected"

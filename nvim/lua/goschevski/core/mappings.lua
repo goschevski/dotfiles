@@ -4,7 +4,6 @@ vim.g.maplocalleader=" "
 local keymap = vim.keymap
 
 keymap.set('n', '<leader><leader>r', ':lua ReloadConfig()<CR>')
-keymap.set('n', '<leader><leader>n', ':lua Todos()<CR>')
 keymap.set('x', '<Leader>v', '"0p')
 keymap.set('n', '<Leader><Leader>c', 'magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a')
 keymap.set('n', '=', ':only<CR>')
@@ -91,7 +90,9 @@ keymap.set('o', 'il', ':normal vil<CR>')
 keymap.set('x', 'al', '$o^')
 keymap.set('o', 'al', ':normal val<CR>')
 
--- plugins keymaps
+-- Notes
+keymap.set('n', '<leader>nn', ':lua Todos()<CR>')
+keymap.set('n', '<leader>nl', ':lua Notes()<CR>')
 
 -- NvimTree
 keymap.set('n', '<Leader>e', ':NvimTreeFindFileToggle<CR>')
@@ -112,12 +113,6 @@ vim.api.nvim_set_keymap('n', '<C-_>', ":Telescope current_buffer_fuzzy_find prom
 vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, silent = true })
 
 -- Hop (easymotion)
-keymap.set('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-keymap.set('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-keymap.set('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-keymap.set('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-keymap.set('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-keymap.set('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
 keymap.set('n', 's', "<cmd> HopWord<CR>", {})
 
 -- Git
