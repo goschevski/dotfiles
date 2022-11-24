@@ -112,7 +112,7 @@ function gcm () {
 alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
 alias gco="git checkout"
-alias gup='git fetch -p && git pull --rebase && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gup='git fetch -p && git pull --rebase && git branch --merged | egrep -v "(^\*|master|dev|main)" | xargs git branch -d'
 # alias ts="tig status"
 alias gst="git status --short"
 alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
