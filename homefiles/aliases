@@ -105,7 +105,7 @@ alias vssh="vagrant ssh"
 # kill procces chooser
 function kp () {
   PRC=${1:-"[n]ode"}
-  ps -ef | grep $PRC | pick | sed -r 's/\s+/\|/g' | cut -d '|' -f 3 | xargs kill -9
+  ps | grep $PRC | fzf | cut -d" " -f 1 | xargs kill -9
 }
 
 alias gd="git dsf"
