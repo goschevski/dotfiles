@@ -9,6 +9,10 @@ alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux 
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
+# Nvim
+alias vim="TERM='' nvim"
+alias nvim="TERM='' nvim"
+
 # Reload
 alias re="source ~/.zshrc"
 
