@@ -1,4 +1,4 @@
-local lspconfig_status, mason = pcall(require, 'lspconfig')
+local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
 if not lspconfig_status then
   return
 end
@@ -36,11 +36,11 @@ local on_attach = function (client, bufnr)
   end
 end
 
-local servers = { "tsserver", "html", "cssls", "eslint", "gopls", "volar" }
+local servers = { "tsserver", "html", "cssls", "eslint", "gopls", "volar", "bash-language-server" }
 local capabilities = cmp_nvim_lsp.default_capabilities()
-
+lspconfig.bashls.setup({})
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup({
+  lspconfig[lsp].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     init_options = {
@@ -59,7 +59,7 @@ typescript.setup({
 	},
 })
 
-require('lspconfig')['sumneko_lua'].setup({
+lspconfig['sumneko_lua'].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
