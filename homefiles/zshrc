@@ -11,7 +11,7 @@ export THEME_FILE=/tmp/currentTheme
 # fi
 
 source ~/dotfiles/homefiles/aliases
-source ~/My\ Drive/.private
+source ~/My\ Drive/dotprivate/.private
 
 # Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
 export JOBS=max
