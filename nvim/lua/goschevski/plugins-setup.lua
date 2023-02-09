@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use({ 'nvim-telescope/telescope.nvim', tag = '0.1.0' })
   use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use('nvim-telescope/telescope-file-browser.nvim')
+  use('nvim-telescope/telescope-live-grep-args.nvim')
 
   -- ui improvements
   use('lukas-reineke/indent-blankline.nvim')
@@ -55,6 +56,9 @@ return packer.startup(function(use)
 
   -- tasks
   use('CrispyDrone/vim-tasks')
+
+  -- markdown
+  use('dhruvasagar/vim-table-mode')
 
   -- git
   use('tpope/vim-fugitive')
@@ -73,6 +77,7 @@ return packer.startup(function(use)
   use('embear/vim-foldsearch')
   use('kana/vim-textobj-user')
   use('whatyouhide/vim-textobj-xmlattr')
+  use("johmsalas/text-case.nvim")
 
   -- autocomplete and snippets
   use('hrsh7th/nvim-cmp')
@@ -81,12 +86,21 @@ return packer.startup(function(use)
   use('hrsh7th/cmp-path')
   use('dcampos/nvim-snippy')
   use('dcampos/cmp-snippy')
+  use('gaelph/logsitter.nvim')
 
   -- jumping (easymotion)
   use({ 'phaazon/hop.nvim', branch = 'v2' })
 
   -- smooth scroll
   use('karb94/neoscroll.nvim')
+
+  -- treesitter
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      require('nvim-treesitter.install').update({ with_sync = true })
+    end
+  })
 
   -- lsp
   use('williamboman/mason.nvim')
@@ -97,13 +111,20 @@ return packer.startup(function(use)
   use('onsails/lspkind.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
   use('jayp0521/mason-null-ls.nvim')
+  use('stevearc/aerial.nvim')
 
-  -- treesitter
   use({
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      require('nvim-treesitter.install').update({ with_sync = true })
-    end
+    "jackMort/ChatGPT.nvim",
+      config = function()
+        require("chatgpt").setup({
+          -- optional configuration
+        })
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
   })
 
   if packer_bootstrap then

@@ -36,7 +36,7 @@ local on_attach = function (client, bufnr)
   end
 end
 
-local servers = { "tsserver", "html", "cssls", "eslint", "gopls", "volar", "bash-language-server" }
+local servers = { "tsserver", "html", "eslint", "gopls", "volar" }
 local capabilities = cmp_nvim_lsp.default_capabilities()
 lspconfig.bashls.setup({})
 for _, lsp in pairs(servers) do

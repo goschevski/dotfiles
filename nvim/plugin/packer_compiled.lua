@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fchatgpt\frequire\0" },
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -83,6 +89,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/ack.vim",
     url = "https://github.com/mileszs/ack.vim"
+  },
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
   },
   catppuccin = {
     loaded = true,
@@ -144,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["logsitter.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/logsitter.nvim",
+    url = "https://github.com/gaelph/logsitter.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -173,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -244,10 +265,20 @@ _G.packer_plugins = {
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
+  ["telescope-live-grep-args.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
+    url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["text-case.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/text-case.nvim",
+    url = "https://github.com/johmsalas/text-case.nvim"
   },
   ["typescript.nvim"] = {
     loaded = true,
@@ -274,6 +305,11 @@ _G.packer_plugins = {
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-table-mode"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
+  },
   ["vim-tasks"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-tasks",
@@ -297,6 +333,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: ChatGPT.nvim
+time([[Config for ChatGPT.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
+time([[Config for ChatGPT.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
