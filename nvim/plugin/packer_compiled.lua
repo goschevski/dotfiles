@@ -255,6 +255,11 @@ _G.packer_plugins = {
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
     url = "https://github.com/AndrewRadev/splitjoin.vim"
   },
+  ["tabout.nvim"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/tabout.nvim",
+    url = "https://github.com/abecodes/tabout.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -329,6 +334,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/Users/gosevski/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 

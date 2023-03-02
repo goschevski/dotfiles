@@ -21,7 +21,7 @@ mason_lspconfig.setup({
     "eslint",
     "gopls",
     "volar",
-    "sumneko_lua"
+    "lua_ls"
   }
 })
 
