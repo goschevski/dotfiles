@@ -1,26 +1,21 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader=" "
-
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 
 -- reload vim config
-keymap.set('n', '<leader><leader>r', ':lua ReloadConfig()<CR>')
+keymap.set('n', '<leader><leader>r', ':lua ReloadConfig()<CR>', opts)
 -- paste from 0 register
 keymap.set('x', '<Leader>v', '"0p')
 -- chords
-keymap.set('n', '<Leader><Leader>c', 'magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a')
+keymap.set('n', '<Leader><Leader>c', 'magg:vsplit<CR>:set noscrollbind<CR><C-w>l<C-f>:set scrollbind<CR><C-w>h:set scrollbind<CR>`a', opts)
 -- close all splits except from the focused one
 keymap.set('n', '=', ':only<CR>')
 
 -- format json
-keymap.set('n', '<Leader><Leader>j', ':%!python3 -m json.tool<CR>')
-keymap.set('v', '<Leader><Leader>j', ':!python3 -m json.tool<CR>')
-
--- execute q macro
-keymap.set('n', 'Q', '@q')
+keymap.set('n', '<Leader><Leader>j', ':%!python3 -m json.tool<CR>', opts)
+keymap.set('v', '<Leader><Leader>j', ':!python3 -m json.tool<CR>', opts)
 
 -- copy file path
-keymap.set('n', '<Leader>y', ':let @* = expand("%")<CR>')
+keymap.set('n', '<Leader>y', ':let @* = expand("%")<CR>', opts)
 -- paste instead of line
 keymap.set('n', '<Leader>p', '^v$p')
 
@@ -32,27 +27,27 @@ keymap.set('n', 'H', '^')
 keymap.set('v', 'H', '^')
 
 -- quick list and location list
-keymap.set('n', '<Leader>co', ':copen<CR>')
-keymap.set('n', '<Leader>cc', ':cclose<CR>')
-keymap.set('n', '<Leader>cn', ':cn<CR>')
-keymap.set('n', '<Leader>cp', ':cp<CR>')
-keymap.set('n', '<Leader>lo', ':lopen<CR>')
-keymap.set('n', '<Leader>lc', ':lclose<CR>')
-keymap.set('n', '<Leader>ln', ':ln<CR>')
-keymap.set('n', '<Leader>lp', ':lp<CR>')
+keymap.set('n', '<Leader>co', ':copen<CR>', opts)
+keymap.set('n', '<Leader>cc', ':cclose<CR>', opts)
+keymap.set('n', '<Leader>cn', ':cn<CR>', opts)
+keymap.set('n', '<Leader>cp', ':cp<CR>', opts)
+keymap.set('n', '<Leader>lo', ':lopen<CR>', opts)
+keymap.set('n', '<Leader>lc', ':lclose<CR>', opts)
+keymap.set('n', '<Leader>ln', ':ln<CR>', opts)
+keymap.set('n', '<Leader>lp', ':lp<CR>', opts)
 
 -- search selection
 keymap.set('v', '//', 'y/<C-R>"<CR>N')
 
 -- move selection
-keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
-keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
+keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', opts)
+keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', opts)
 
 -- search things
-keymap.set('n', '\\', '*N')
-keymap.set('n', '\'', '*Ncgn')
-keymap.set('n', 'n', 'nzz')
-keymap.set('n', 'N', 'Nzz')
+keymap.set('n', '\\', '*N', opts)
+keymap.set('n', '\'', '*Ncgn', opts)
+keymap.set('n', 'n', 'nzz', opts)
+keymap.set('n', 'N', 'Nzz', opts)
 
 -- command mode shortcut
 keymap.set('n', ';', ':')
@@ -62,9 +57,9 @@ keymap.set('v', ';', ':')
 keymap.set('n', '<Leader><Tab>', '<C-^>')
 
 -- delete all buffers
-keymap.set('n', '<Leader>Q', ':bufdo bdelete<CR>')
+keymap.set('n', '<Leader>Q', ':bufdo bdelete<CR>', opts)
 -- delete current buffer
-keymap.set('n', '<Leader>x', ':bn<CR>:bd#<CR>')
+keymap.set('n', '<Leader>x', ':bn<CR>:bd#<CR>', opts)
 
 -- true line up/down
 keymap.set('n', 'j', 'gj')
@@ -88,19 +83,19 @@ keymap.set('i', 'jj', '<Esc>')
 keymap.set('i', 'jk', '<Esc>')
 
 -- search and replace shortcut
-keymap.set('n', '<Leader>sr', ':%s///<left><left><C-f>i')
+keymap.set('n', '<Leader>sr', ':%s///<left><left><C-f>i', opts)
 
 -- fast save
-keymap.set('n', '<Leader>w', ':w<CR>')
+keymap.set('n', '<Leader>w', ':w<CR>', opts)
 -- fast quit
-keymap.set('n', '<Leader>q', ':q<CR>')
+keymap.set('n', '<Leader>q', ':q<CR>', opts)
 
 -- resize splits
 keymap.set('n', '<Leader>,', '<C-w>10<')
 keymap.set('n', '<Leader>.', '<C-w>10>')
 
 -- delete highlight
-keymap.set('n', '<BS>', ':noh<CR>')
+keymap.set('n', '<BS>', ':noh<CR>', opts)
 
 -- indentation
 keymap.set('x', '<s-tab>', '<gv')
@@ -109,58 +104,32 @@ keymap.set('n', '<tab>', '>>')
 keymap.set('n', '<s-tab>', '<<')
 
 -- fast switch between vue component files
-keymap.set('n', '<Leader>1', ':e %<.vue<CR>')
-keymap.set('n', '<Leader>2', ':e %<.js<CR>')
-keymap.set('n', '<Leader>3', ':e %<.css<CR>')
+keymap.set('n', '<Leader>1', ':e %<.vue<CR>', opts)
+keymap.set('n', '<Leader>2', ':e %<.js<CR>', opts)
+keymap.set('n', '<Leader>3', ':e %<.css<CR>', opts)
 
 -- line object
 keymap.set('x', 'il', 'g_o^')
-keymap.set('o', 'il', ':normal vil<CR>')
+keymap.set('o', 'il', ':normal vil<CR>', opts)
 keymap.set('x', 'al', '$o^')
-keymap.set('o', 'al', ':normal val<CR>')
-
--- Notes
-keymap.set('n', '<leader>nn', ':lua Todos()<CR>')
-keymap.set('n', '<leader>nl', ':lua Notes()<CR>')
+keymap.set('o', 'al', ':normal val<CR>', opts)
 
 -- NvimTree
-keymap.set('n', '<Leader>e', ':NvimTreeFindFileToggle<CR>')
+keymap.set('n', '<Leader>e', ':NvimTreeFindFileToggle<CR>', opts)
 
 -- Telescope
-keymap.set('n', '<Leader>ff', ":Telescope find_files<CR>", { noremap = true })
-keymap.set("n", "<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-keymap.set('n', '<Leader>fa', ":Telescope grep_string<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fo', ":Telescope buffers<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fgl', ":Telescope git_commits<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fgf', ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fgb', ":Telescope git_branches<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fgs', ":Telescope git_status<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>ft', ":Telescope filetypes<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fh', ":Telescope help_tags<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fc', ":Telescope colorscheme<CR>", { noremap = true, silent = true })
-keymap.set('n', '<Leader>fm', ":Telescope commands<CR>", { noremap = true, silent = true })
-keymap.set('v', 'ga.', "<cmd>TextCaseOpenTelescopeLSPChange<CR>", { desc = "Telescope" })
-keymap.set('n', 'gaa', "<cmd>TextCaseOpenTelescopeLSPChange<CR>", { desc = "Telescope LSP Change" })
-keymap.set('n', '<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, silent = true })
-
--- Hop (easymotion)
-keymap.set('n', 's', "<cmd> HopWord<CR>", {})
-
--- Logsitter
-vim.keymap.set("n", "<localleader>lg", ':lua require("logsitter").log()<CR>')
-
--- Git
-keymap.set('n', '<Leader>gst', ':Git<CR>')
-keymap.set('n', '<Leader>gdo', ':DiffviewOpen<CR>')
-keymap.set('n', '<Leader>gdc', ':DiffviewClose<CR>')
-keymap.set('n', '<Leader>gb', ':Git blame<CR>')
-keymap.set('n', '<Leader>gco', ':Gread<CR>:w<CR>')
-keymap.set('n', '<Leader>gso', ':Gitsigns preview_hunk<CR>')
-keymap.set('n', ']c', ':Gitsigns next_hunk<CR>')
-keymap.set('n', '[c', ':Gitsigns prev_hunk<CR>')
-
--- ack
-keymap.set('n', '<leader>fr', ':Ack! "" ./<Left><Left><Left><Left>')
+keymap.set('n', '<Leader>ff', ":Telescope find_files<CR>", opts)
+keymap.set("n", "<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+keymap.set('n', '<Leader>fa', ":Telescope grep_string<CR>", opts)
+keymap.set('n', '<Leader>fo', ":Telescope buffers<CR>", opts)
+keymap.set('n', '<Leader>fgl', ":Telescope git_commits<CR>", opts)
+keymap.set('n', '<Leader>fgf', ":Telescope git_bcommits<CR>", opts)
+keymap.set('n', '<Leader>fgb', ":Telescope git_branches<CR>", opts)
+keymap.set('n', '<Leader>fgs', ":Telescope git_status<CR>", opts)
+keymap.set('n', '<Leader>ft', ":Telescope filetypes<CR>", opts)
+keymap.set('n', '<Leader>fh', ":Telescope help_tags<CR>", opts)
+keymap.set('n', '<Leader>fc', ":Telescope colorscheme<CR>", opts)
+keymap.set('n', '<Leader>fm', ":Telescope commands<CR>", opts)
 
 -- fold search
 local folded = 0
@@ -173,5 +142,5 @@ function toggle_fold ()
     folded = 1
   end
 end
-keymap.set('n', ',', ':lua toggle_fold()<CR>')
+keymap.set('n', ',', ':lua toggle_fold()<CR>', { noremap = true, silent = true })
 

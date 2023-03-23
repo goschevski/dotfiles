@@ -1,25 +1,20 @@
-require("goschevski.plugins-setup")
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup('goschevski.plugins')
 require("goschevski.core.utils")
 require("goschevski.core.options")
-require("goschevski.core.colorscheme")
 require("goschevski.core.mappings")
-require("goschevski.plugins.nvim-tree")
-require("goschevski.plugins.telescope")
-require("goschevski.plugins.autopairs")
-require("goschevski.plugins.treesitter")
-require("goschevski.plugins.comment")
-require("goschevski.plugins.tabout")
-require("goschevski.plugins.neoscroll")
-require("goschevski.plugins.hop")
-require("goschevski.plugins.cmp")
-require("goschevski.plugins.snippy")
-require("goschevski.plugins.lsp.mason")
-require("goschevski.plugins.lsp.lspsaga")
-require("goschevski.plugins.lsp.lspconfig")
-require("goschevski.plugins.lsp.null-ls")
-require("goschevski.plugins.blankline")
-require("goschevski.plugins.gitsigns")
-require("goschevski.plugins.ack")
-require("goschevski.plugins.foldsearch")
-require("goschevski.plugins.feline")
-require("goschevski.plugins.textcase")
