@@ -163,6 +163,19 @@ return {
 		},
 	},
 
+	{
+		"folke/trouble.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		keys = {
+			{ "<leader>xx", "<cmd>TroubleToggle<cr>" },
+		},
+		config = function()
+			require("trouble").setup({})
+		end,
+	},
+
 	-- not sure if I should keep
 	{
 		"mg979/vim-visual-multi",

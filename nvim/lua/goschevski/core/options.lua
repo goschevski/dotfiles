@@ -35,6 +35,16 @@ opt.splitright = true
 -- split horizontal window to the bottom
 opt.splitbelow = true
 
+-- disable inline diagnostics
+vim.diagnostic.config({
+	virtual_text = false,
+})
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("yank_highlight", {}),
