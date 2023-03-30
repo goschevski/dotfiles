@@ -5,19 +5,34 @@ alias ll="ls -l"
 
 alias tl="tmux ls"
 alias ta="tmux attach"
-alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux kill-server && tc Srbija"
+alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux kill-server && tc dotfiles"
 function tk () { tmux kill-session -t $1 }
 function tc () { tmux new -s $1 }
 
 # Nvim
-alias vim="TERM='' nvim"
 alias nvim="TERM='' nvim"
+alias v='nvim'
+alias vim="nvim"
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim" "LunarVim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^a "nvims\n"
 
 # Reload
 alias re="source ~/.zshrc"
 
 # Edit hosts
-alias hos="sudo -E vim /etc/hosts"
+alias hos="sudo -E nvim /etc/hosts"
 alias hoc="sudo sed -i '' '11,\$d' /etc/hosts"
 
 # Read markdown
@@ -81,6 +96,7 @@ alias cleanup="brew cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
 alias ni="rm -rf node_modules; npm i"
+alias nrd="pkill node && npm run dev"
 alias nis="npm i --save"
 alias nid="npm i --save-dev"
 alias yi="yarn install"
