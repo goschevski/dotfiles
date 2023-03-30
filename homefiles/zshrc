@@ -50,3 +50,8 @@ zstyle ':completion:*' expand prefix suffix 
 autoload -U compinit; compinit
 
 eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
+
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
