@@ -18,6 +18,9 @@ opt.tabstop = 2
 opt.expandtab = true
 opt.smartindent = true
 
+-- hide status line
+-- opt.laststatus = 0
+
 -- Enable break indent
 opt.breakindent = true
 

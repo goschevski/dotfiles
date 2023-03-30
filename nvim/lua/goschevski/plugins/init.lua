@@ -130,6 +130,9 @@ return {
 		branch = "main",
 		config = {
 			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
+			symbol_in_winbar = {
+				enable = false,
+			},
 			finder_action_keys = {
 				open = "<CR>",
 			},
