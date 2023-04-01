@@ -42,8 +42,11 @@ brew install awscli
 brew install lsd
 brew install bat
 brew install starship
+brew install jesseduffield/lazygit/lazygit
+brew install zoxide
+brew install pgrep
+brew install pkill
 # brew install tig
-# brew install jesseduffield/lazygit/lazygit
 # brew install jesseduffield/lazydocker/lazydocker
 # brew install pick
 # brew install ansible
@@ -68,7 +71,7 @@ brew install starship
 
 ansi --green "Installing apps using brew cask..."
 brew install --cask raycast
-brew install --cask iterm2
+brew install --cask kitty
 brew install --cask google-drive
 brew install --cask slack
 brew install --cask arc
@@ -81,7 +84,7 @@ brew install --cask monitorcontrol
 brew install --cask notion
 brew install --cask font-victor-mono
 # brew install --cask viscosity
-# brew install --cask kitty
+# brew install --cask iterm2
 # brew install --cask microsoft-edge
 # brew install --cask homebrew/cask-versions/firefox-nightly
 # brew install --cask google-chrome
