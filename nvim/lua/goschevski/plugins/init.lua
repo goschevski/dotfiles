@@ -2,6 +2,17 @@ return {
 	-- bunch of plugins need this
 	"nvim-lua/plenary.nvim",
 
+	{
+		"crispydrone/vim-tasks",
+		ft = {
+			"TODO",
+			"todo",
+			"todolist",
+			"taskpaper",
+			"tasks",
+		},
+	},
+
 	-- vim -> tmux integration
 	{
 		"christoomey/vim-tmux-navigator",
