@@ -3,11 +3,12 @@ alias ls="lsd"
 alias la="ls -la"
 alias ll="ls -l"
 
+# Tmux
 alias tl="tmux ls"
 alias ta="tmux attach"
 alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux kill-server && tc dotfiles"
-function tk () { tmux kill-session -t $1 }
-function tc () { tmux new -s $1 }
+alias tk="tmux kill-session -t"
+alias tc="tmux new -s"
 
 # Nvim
 alias nvim="TERM='' nvim"
@@ -34,22 +35,6 @@ alias re="source ~/.zshrc"
 # Edit hosts
 alias hos="sudo -E nvim /etc/hosts"
 alias hoc="sudo sed -i '' '11,\$d' /etc/hosts"
-
-# Read markdown
-rmd () {
-  grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
-}
-
-# Calendar events
-function ev () {
-  if [ $1 ]; then
-    daysToAdd=$1
-  else
-    daysToAdd=0
-  fi
-
-  icalBuddy -f -npn -iep 'title,datetime' -ps '| : |' -po 'datetime,title' -eed eventsToday+$daysToAdd
-}
 
 # Weather
 alias we="curl http://wttr.in/\?m"
@@ -124,47 +109,23 @@ function kp () {
   ps | grep $PRC | fzf | cut -d" " -f 1 | xargs kill -9
 }
 
-alias gd="git dsf"
+alias gd="git diff"
+alias gco="git checkout"
 alias ga="git add ."
-function gcm () {
-  git commit -m $1
-}
+alias gcm="git commit -m"
 alias lg="git fuzzy status"
 alias grhh="git reset head --hard"
-alias gco="git checkout"
+alias grhs="git reset head --soft"
 alias gup='git fetch -p && git pull --rebase && git branch --merged | egrep -v "(^\*|master|dev|main)" | xargs git branch -d'
-# alias ts="tig status"
 alias gst="git status --short"
 alias gcom="git log --no-merges --pretty=%an | head -n 100 | sort | uniq -c | sort -nr"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gwip='git add -A; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 alias gsquash='git reset HEAD~$(git rev-list --count main..HEAD)'
-function ggp () {
-  git push origin $(git branch --show-current)
-}
-function ggpf () {
-  git push origin $(git branch --show-current) --force
-}
+alias ggp="git push origin $(git branch --show-current)"
+alias ggpf="git push origin $(git branch --show-current) --force"
 function retag () {
   git tag -d $1 && git push origin :refs/tags/$1 && git tag $1
-}
-function git_prepare() {
-  if [ -n "$BUFFER" ]; then
-    BUFFER="git add -A && git commit -m \"$BUFFER\""
-  fi
-
-  if [ -z "$BUFFER" ]; then
-    BUFFER="git add -A && git commit -v"
-  fi
-
-  zle accept-line
-}
-zle -N git_prepare
-bindkey "^g" git_prepare
-
-# history
-function h () {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # JSON pretty print
