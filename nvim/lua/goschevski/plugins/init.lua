@@ -56,7 +56,8 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = { "BufWrite" },
 		keys = {
-			{ "<Leader>gso", "<cmd>Gitsigns preview_hunk<CR>" },
+			{ "<Leader>gsh", "<cmd>Gitsigns preview_hunk<CR>" },
+			{ "<Leader>grh", "<cmd>Gitsigns reset_hunk<CR>" },
 			{ "]c", "<cmd>Gitsigns next_hunk<CR>" },
 			{ "[c", "<cmd>Gitsigns prev_hunk<CR>" },
 		},
@@ -183,7 +184,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<leader>xx", "<cmd>TroubleToggle<cr>" },
+			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>" },
 		},
 		config = function()
 			require("trouble").setup({})
@@ -246,6 +247,21 @@ return {
 				"<cmd>lua _lazygit_toggle()<CR>",
 				{ noremap = true, silent = true }
 			)
+		end,
+	},
+	"mbbill/undotree",
+	{
+		"folke/todo-comments.nvim",
+		keys = {
+			{ "<leader>xt", "<cmd>TodoTrouble<cr>" },
+			{ "<leader>fx", "<cmd>TodoTelescope<cr>" },
+		},
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
 		end,
 	},
 	{
