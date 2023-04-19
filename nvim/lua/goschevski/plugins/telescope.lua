@@ -5,9 +5,8 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-live-grep-args.nvim",
 	},
+	lazy = false,
 	keys = {
-
-		-- Telescope
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
 		{ "<Leader>fr", "<cmd>Telescope resume<CR>" },
 		{ "<Leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<CR>" },
