@@ -1,29 +1,27 @@
-export DEFAULT_THEME=material-palenight
-export THEME_FILE=/tmp/currentTheme
-
-# If file doesn't exit create one with default theme, or set current theme
-# if [ ! -f $THEME_FILE ]; then
-#   export THEME=$DEFAULT_THEME
-#   source "$HOME/.config/base16-shell/scripts/base16-$DEFAULT_THEME.sh"
-# else
-#   export THEME=$(cat $THEME_FILE)
-#   source "$HOME/.config/base16-shell/scripts/base16-$THEME.sh"
-# fi
-
 source ~/dotfiles/homefiles/aliases
 source ~/My\ Drive/dotprivate/.private
 
-# Tells npm to compile and install all your native addons in parallel and not sequentially. This greatly increases installation times.
-export JOBS=max
-
 # FZF
-export FZF_DEFAULT_OPTS='--bind up:preview-up,down:preview-down'
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'CTRL-Y copy command , CTRL-/ toggle preview'"
 
 # Node version manager fnm
 eval "$(fnm env --use-on-cd)"
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Set go path
 export GOPATH=~/.gocode
+
+source /Users/gosevski/.config/broot/launcher/bash/br
 
 # PATH
 export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path
@@ -32,26 +30,6 @@ export PATH="/usr/local/bin:$PATH" # local before everything else
 export PATH="$PATH:$HOME/.composer/vendor/bin" # add composer in path for global dependencies
 export PATH="$PATH:$HOME/.rvm/bin" # add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.gocode/bin" # Add go scripts
-export PATH="$PATH:$HOME/.config/git-fuzzy/bin" # Add git fuzzy
-
-# To hide warnings when entering vim
-export LC_ALL=en_US.UTF-8
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# To disable warning when overriding files
-setopt clobber
-
-# completion
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
-zstyle ':completion:*' list-suffixes
-zstyle ':completion:*' expand prefix suffix 
-autoload -U compinit; compinit
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH #~/.tmux/plugins
 
 eval "$(starship init zsh)"
-
-eval "$(zoxide init zsh)"
-
-# ~/.tmux/plugins
-export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
