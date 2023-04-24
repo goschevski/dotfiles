@@ -22,6 +22,8 @@ brew install tree
 brew install findutils
 brew install ripgrep
 brew install fzf
+# install additional fzf features
+$(brew --prefix)/opt/fzf/install
 brew install gnu-sed
 brew install wget
 brew install node
@@ -33,7 +35,6 @@ brew install diff-so-fancy
 brew install icdiff
 brew install python3
 brew install httpie
-brew install youtube-dl
 brew install yt-dlp
 brew install ffmpeg
 brew install vim
@@ -46,6 +47,7 @@ brew install jesseduffield/lazygit/lazygit
 brew install zoxide
 brew install pgrep
 brew install pkill
+# brew install youtube-dl
 # brew install tig
 # brew install jesseduffield/lazydocker/lazydocker
 # brew install pick
@@ -81,9 +83,13 @@ brew install --cask docker
 brew install --cask sketch
 brew install --cask parallels
 brew install --cask monitorcontrol
-brew install --cask notion
-brew install --cask font-victor-mono
+# brew install --cask figma
+# brew install --cask discord
+# brew install --cask hammerspoon
+# brew install --cask font-victor-mono
+# brew install --cask notion
 # brew install --cask viscosity
+# brew install --cask fork
 # brew install --cask iterm2
 # brew install --cask microsoft-edge
 # brew install --cask homebrew/cask-versions/firefox-nightly
@@ -98,10 +104,14 @@ brew install --cask font-victor-mono
 # brew cask install font-iosevka
 # brew cask install font-fira-code
 
+# App Store
+# Keyboard Pilot
+
 ansi --green "Installing node global modules..."
 # npm i -g vtop
 # npm i -g surge
-npm i -g @vue/cli
+# npm i -g serve
+# npm i -g loadtest
 
 ansi --green "Setup homefiles..."
 for file in $(ls ~/dotfiles/homefiles/)
@@ -113,16 +123,13 @@ done
 ansi --green "Setup nvim..."
 ln -s ~/dotfiles/nvim/ ~/.config/
 
-# ansi --green "Setup kitty..."
-# mkdir -p ~/.config/kitty
-# ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
-# Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
+ansi --green "Setup kitty..."
+mkdir -p ~/.config/kitty
+ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
+Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
-
-ansi --green "Install git fuzzy..."
-git clone https://github.com/bigH/git-fuzzy.git ~/.config/git-fuzzy
 
 # Italic in iterm
 ansi --green "Setup italic..."
