@@ -126,7 +126,7 @@ ln -s ~/dotfiles/nvim/ ~/.config/
 ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
-Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
+# Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
