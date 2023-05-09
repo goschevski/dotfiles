@@ -21,7 +21,10 @@ eval "$(zoxide init zsh)"
 # Set go path
 export GOPATH=~/.gocode
 
-source /Users/gosevski/.config/broot/launcher/bash/br
+# Editor
+export EDITOR=nvim
+# Pager
+export PAGER=bat
 
 # PATH
 export PATH="$PATH:$HOME/dotfiles/bin" # add local scripts to path

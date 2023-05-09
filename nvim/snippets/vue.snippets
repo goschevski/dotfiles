@@ -18,6 +18,19 @@ snippet ss "Vue 3 script setup"
 
 	$2
 
+snippet vp "Vue 3 props"
+	const props = defineProps({
+		$1
+	})
+
+snippet ref "Vue 3 ref"
+	const $1 = ref($2)
+
+snippet method "Vue 3 method"
+	const $1 = () => {
+		$2
+	}
+
 snippet componentVue2 "Boilerplate code for vue component" b
   <template>
     $1
