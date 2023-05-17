@@ -17,6 +17,7 @@ brew tap homebrew/cask-fonts
 ansi --green "Brew install..."
 brew install git
 brew install fnm
+brew install lf
 brew install fd
 brew install tree
 brew install findutils
@@ -55,7 +56,6 @@ brew install pkill
 # brew install ag
 # brew install vifm
 # brew install ranger
-# brew install lf
 # brew install sc-im
 # brew install sox
 # brew install entr
@@ -127,6 +127,12 @@ ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
 # Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
+#
+ansi --green "Setup lf..."
+mkdir -p ~/.config/lf
+ln -s ~/dotfiles/lf/lfrc ~/.config/lf
+ln -s ~/dotfiles/lf/lf_kitty_preview ~/.config/lf
+ln -s ~/dotfiles/lf/lf_kitty_clean ~/.config/lf
 
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
