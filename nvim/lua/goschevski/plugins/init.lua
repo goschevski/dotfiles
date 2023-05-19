@@ -24,18 +24,6 @@ return {
 		},
 	},
 
-	-- ui
-	{
-		"karb94/neoscroll.nvim",
-		keys = {
-			"<C-d>",
-			"<C-u>",
-		},
-		config = function()
-			require("neoscroll").setup()
-		end,
-	},
-
 	-- git
 	{
 		"tpope/vim-fugitive",
@@ -43,13 +31,6 @@ return {
 			{ "<leader>gst", "<cmd>Git<cr>" },
 			{ "<leader>gb", "<cmd>Git blame<cr>" },
 			{ "<leader>gco", "<cmd>Gread<cr>:w<CR>" },
-		},
-	},
-	{
-		"sindrets/diffview.nvim",
-		keys = {
-			{ "<leader>gdo", "<cmd>DiffviewOpen<cr>" },
-			{ "<leader>gdc", "<cmd>DiffviewClose<cr>" },
 		},
 	},
 	{
