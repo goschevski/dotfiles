@@ -166,79 +166,6 @@ return {
 		end,
 	},
 
-	-- not sure if I should keep
-	{
-		"mg979/vim-visual-multi",
-		keys = {
-			"<C-n>",
-		},
-	},
-	{
-		"stevearc/qf_helper.nvim",
-		config = function()
-			require("qf_helper").setup()
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-	},
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		config = function()
-			local Terminal = require("toggleterm.terminal").Terminal
-			local lazygit = Terminal:new({
-				cmd = "lazygit",
-				dir = "git_dir",
-				direction = "float",
-				float_opts = {
-					border = "double",
-				},
-				-- function to run on opening the terminal
-				on_open = function(term)
-					vim.cmd("startinsert!")
-					vim.api.nvim_buf_set_keymap(
-						term.bufnr,
-						"n",
-						"q",
-						"<cmd>close<CR>",
-						{ noremap = true, silent = true }
-					)
-				end,
-				-- function to run on closing the terminal
-				on_close = function(term)
-					vim.cmd("startinsert!")
-				end,
-			})
-
-			function _lazygit_toggle()
-				lazygit:toggle()
-			end
-
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gg",
-				"<cmd>lua _lazygit_toggle()<CR>",
-				{ noremap = true, silent = true }
-			)
-		end,
-	},
-	"mbbill/undotree",
-	{
-		"folke/todo-comments.nvim",
-		keys = {
-			{ "<leader>xt", "<cmd>TodoTrouble<cr>" },
-			{ "<leader>fx", "<cmd>TodoTelescope<cr>" },
-		},
-		config = function()
-			require("todo-comments").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
-	},
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = {
@@ -277,6 +204,19 @@ return {
 					return { "treesitter", "indent" }
 				end,
 			})
+		end,
+	},
+	-- not sure if I should keep
+	{
+		"mg979/vim-visual-multi",
+		keys = {
+			"<C-n>",
+		},
+	},
+	{
+		"stevearc/qf_helper.nvim",
+		config = function()
+			require("qf_helper").setup()
 		end,
 	},
 }
