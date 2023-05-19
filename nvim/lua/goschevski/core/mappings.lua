@@ -121,15 +121,17 @@ keymap.set("o", "il", ":normal vil<CR>", opts)
 keymap.set("x", "al", "$o^")
 keymap.set("o", "al", ":normal val<CR>", opts)
 
--- fold search
 local folded = 0
 function toggle_fold()
 	if folded == 1 then
 		vim.cmd("normal! zR")
+		vim.cmd("UfoDetach")
+		vim.cmd("UfoAttach")
 		folded = 0
 	else
-		vim.cmd("Fs")
+		vim.cmd("setlocal foldexpr=(getline(v:lnum)=~@/)?0:1 foldmethod=expr foldlevel=0 foldcolumn=2 foldminlines=0")
 		folded = 1
 	end
 end
+
 keymap.set("n", ",", ":lua toggle_fold()<CR>", opts)

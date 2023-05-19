@@ -105,12 +105,6 @@ return {
 		},
 	},
 	{
-		"embear/vim-foldsearch",
-		config = function()
-			vim.g.foldsearch_disable_mappings = 1
-		end,
-	},
-	{
 		"phaazon/hop.nvim",
 		branch = "v2",
 		keys = {
