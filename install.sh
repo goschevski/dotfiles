@@ -39,6 +39,7 @@ brew install httpie
 brew install yt-dlp
 brew install ffmpeg
 brew install vim
+brew install neovim
 brew install jq
 brew install awscli
 brew install lsd
@@ -78,10 +79,9 @@ brew install --cask google-drive
 brew install --cask slack
 brew install --cask arc
 brew install --cask cron
-brew install --cask zoom
-brew install --cask docker
-brew install --cask sketch
-brew install --cask parallels
+# brew install --cask docker
+# brew install --cask sketch
+# brew install --cask parallels
 brew install --cask monitorcontrol
 # brew install --cask figma
 # brew install --cask discord
@@ -127,7 +127,7 @@ ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
 # Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
-#
+
 ansi --green "Setup lf..."
 mkdir -p ~/.config/lf
 ln -s ~/dotfiles/lf/lfrc ~/.config/lf
@@ -136,6 +136,9 @@ ln -s ~/dotfiles/lf/lf_kitty_clean ~/.config/lf
 
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
+
+ansi --green "Setup tmux tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Italic in iterm
 ansi --green "Setup italic..."
