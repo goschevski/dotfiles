@@ -1,5 +1,5 @@
 source ~/dotfiles/homefiles/aliases
-source ~/My\ Drive/dotprivate/.private
+source ~/Google\ Drive/My\ Drive/dotprivate/.private
 
 # FZF
 # CTRL-/ to toggle small preview window to see the full command
