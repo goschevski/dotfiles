@@ -6,7 +6,7 @@ alias ll="ls -l"
 # Tmux
 alias tl="tmux ls"
 alias ta="tmux attach"
-alias trestart="rm ~/.tmux/resurrect/*.txt && rm ~/.tmux/resurrect/last && tmux kill-server && tc dotfiles"
+alias trestart="tmux kill-server && tc dotfiles"
 alias tk="tmux kill-session -t"
 alias tc="tmux new -s"
 
