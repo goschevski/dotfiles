@@ -16,6 +16,7 @@ brew tap homebrew/cask-fonts
 
 ansi --green "Brew install..."
 brew install git
+brew install git-delta
 brew install fnm
 brew install lf
 brew install fd
@@ -127,6 +128,9 @@ ansi --green "Setup kitty..."
 mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
 # Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
+
+ansi --gren "Setup lazygit..."
+ln -s ~/dotfiles/templates/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
 
 ansi --green "Setup lf..."
 mkdir -p ~/.config/lf

@@ -1,0 +1,17 @@
+gui:
+  showIcons: true
+  theme:
+    activeBorderColor:
+      - black
+      - bold
+    inactiveBorderColor:
+      - black
+    selectedLineBgColor:
+      - black
+    selectedRangeBgColor:
+      - black
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
