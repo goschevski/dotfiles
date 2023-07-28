@@ -31,8 +31,6 @@ return {
 		local servers = { "tsserver", "html", "eslint", "gopls", "volar" }
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		lspconfig.bashls.setup({})
-
 		for _, lsp in pairs(servers) do
 			lspconfig[lsp].setup({
 				capabilities = capabilities,
