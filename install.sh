@@ -45,6 +45,7 @@ brew install jq
 brew install awscli
 brew install lsd
 brew install bat
+brew install gum
 brew install starship
 brew install jesseduffield/lazygit/lazygit
 brew install zoxide
