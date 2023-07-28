@@ -2,10 +2,10 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-		"jose-elias-alvarez/typescript.nvim",
+		"pmizio/typescript-tools.nvim",
 	},
 	config = function()
-		local typescript = require("typescript")
+		local typescript = require("typescript-tools")
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -45,9 +45,6 @@ return {
 			server = {
 				capabilities = capabilities,
 				on_attach = on_attach,
-				init_options = {
-					preferences = { disableSuggestions = true },
-				},
 			},
 		})
 
