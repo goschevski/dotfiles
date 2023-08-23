@@ -4,7 +4,7 @@ alias la="ls -la"
 alias ll="ls -l"
 
 # rg override
-alias rg="rg --type-add 'vue:*.vue"
+alias rg="rg --type-add 'vue:*.vue'"
 
 # Tmux
 alias tkill="tmux kill-server"
