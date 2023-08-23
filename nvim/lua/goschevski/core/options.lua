@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- scroll
+opt.scrolloff = 7
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true

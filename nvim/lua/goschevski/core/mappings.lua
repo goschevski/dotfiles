@@ -75,8 +75,8 @@ keymap.set("n", "<Leader>d", "ggdG")
 keymap.set("n", "<Leader><Leader>y", "mpggVGy`p")
 
 -- add line up/down
-keymap.set("n", "<Leader>j", "o<Esc>k")
-keymap.set("n", "<Leader>k", "O<Esc>j")
+keymap.set("n", "<Leader>j", "mpo<Esc>k`p")
+keymap.set("n", "<Leader>k", "mpO<Esc>j`p")
 
 -- add marks when moving
 keymap.set("n", "gg", "mpgg")
@@ -86,6 +86,7 @@ keymap.set("n", "/", "mp/")
 -- fast escape from insert mode
 keymap.set("i", "jj", "<Esc>")
 keymap.set("i", "jk", "<Esc>")
+keymap.set("i", ",,", "<Esc>mpA,<Esc>`p")
 
 -- search and replace shortcut
 keymap.set("n", "<Leader>sr", ":%s///<left><left><C-f>i", opts)

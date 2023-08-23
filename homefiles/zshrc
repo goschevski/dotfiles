@@ -18,6 +18,9 @@ eval "$(fnm env --use-on-cd)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# exit vim mode with jj
+bindkey -M viins 'jj' vi-cmd-mode
+
 # Set go path
 export GOPATH=~/.gocode
 

@@ -35,7 +35,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = { "BufWrite" },
+		event = { "BufAdd" },
 		keys = {
 			{ "<Leader>gsh", "<cmd>Gitsigns preview_hunk<CR>" },
 			{ "<Leader>grh", "<cmd>Gitsigns reset_hunk<CR>" },
@@ -64,11 +64,6 @@ return {
 		},
 	},
 	{
-		-- remove when update neovim to 0.9 because it supports editoconfig by default
-		"gpanders/editorconfig.nvim",
-		event = { "BufReadPost", "BufNewFile" },
-	},
-	{
 		"Wansmer/treesj",
 		keys = { "<space>m" },
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -84,16 +79,6 @@ return {
 			"vue",
 			"html",
 		},
-	},
-	{
-		"phaazon/hop.nvim",
-		branch = "v2",
-		keys = {
-			{ "s", "<cmd>HopWord<CR>" },
-		},
-		config = function()
-			require("hop").setup({})
-		end,
 	},
 	{ "whatyouhide/vim-textobj-xmlattr", dependencies = { "kana/vim-textobj-user" } },
 
@@ -115,7 +100,7 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
-		config = {
+		opts = {
 			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 			symbol_in_winbar = {
 				enable = false,
@@ -130,7 +115,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = {
+		opts = {
 			ensure_installed = {
 				"tsserver",
 				"html",
@@ -143,7 +128,7 @@ return {
 	},
 	{
 		"jayp0521/mason-null-ls.nvim",
-		config = {
+		opts = {
 			automatic_installation = true,
 			automatic_setup = true,
 			ensure_installed = {
@@ -212,6 +197,69 @@ return {
 		keys = {
 			"<C-n>",
 		},
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			search = {
+				mode = function(str)
+					return "\\<" .. str
+				end,
+			},
+			label = {
+				-- allow uppercase labels
+				uppercase = false,
+				style = "overlay",
+			},
+		},
+		keys = {
+			{
+				"s",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "o", "x" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+			{
+				"r",
+				mode = "o",
+				function()
+					require("flash").remote()
+				end,
+				desc = "Remote Flash",
+			},
+			{
+				"R",
+				mode = { "o", "x" },
+				function()
+					require("flash").treesitter_search()
+				end,
+				desc = "Treesitter Search",
+			},
+			{
+				"<c-s>",
+				mode = { "c" },
+				function()
+					require("flash").toggle()
+				end,
+				desc = "Toggle Flash Search",
+			},
+		},
+	},
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {},
 	},
 	{
 		"stevearc/qf_helper.nvim",

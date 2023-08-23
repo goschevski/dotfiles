@@ -3,17 +3,22 @@ alias ls="lsd"
 alias la="ls -la"
 alias ll="ls -l"
 
+# rg override
+alias rg="rg --type-add 'vue:*.vue"
+
 # Tmux
-alias tl="tmux ls"
-alias ta="tmux attach"
-alias trestart="tmux kill-server && tc dotfiles"
-alias tk="tmux kill-session -t"
-alias tc="tmux new -s"
+alias tkill="tmux kill-server"
 
 # Nvim
-alias nvim="TERM='' nvim +GoToFile"
-alias v='nvim'
-alias vim="nvim"
+alias nvim="TERM='' nvim"
+function v() {
+  if [ -n "$1" ]; then
+    nvim $1
+  else
+    nvim $(fd | fzf)
+  fi
+}
+alias vim="v"
 
 function nvims() {
   items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim" "LunarVim")

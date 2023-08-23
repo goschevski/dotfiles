@@ -15,6 +15,7 @@ brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 
 ansi --green "Brew install..."
+brew install bash
 brew install git
 brew install git-delta
 brew install fnm
@@ -42,6 +43,7 @@ brew install ffmpeg
 brew install vim
 brew install neovim
 brew install jq
+brew install yq
 brew install awscli
 brew install lsd
 brew install bat
