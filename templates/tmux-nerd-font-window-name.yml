@@ -1,0 +1,2 @@
+config:
+  show-name: true # show the window name with the icon

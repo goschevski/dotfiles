@@ -144,8 +144,10 @@ ln -s ~/dotfiles/lf/lf_kitty_clean ~/.config/lf
 ansi --green "Setup starship prompt..."
 ln -s ~/dotfiles/templates/starship.toml ~/.config/starship.toml
 
-ansi --green "Setup tmux tpm..."
+ansi --green "Setup tmux..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+mkdir -p ~/.config/tmux
+ln -s ~/dotfiles/templates/tmux-nerd-font-window-name.yml ~/.config/tmux/tmux-nerd-font-window-name.yml
 
 # Italic in iterm
 ansi --green "Setup italic..."
