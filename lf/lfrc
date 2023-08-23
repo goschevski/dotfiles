@@ -74,6 +74,15 @@ cmd zip ${{
   rm -rf $1
 }}
 
+cmd copy_name %{{
+  filename=$(basename $fx)
+  echo "${filename%.*}" | pbcopy
+}}
+
+cmd rename_with_clipboard %{{
+  mv $fx "${1%.*}$(pbpaste)${1##*.}"
+}}
+
 cmd zoxide %{{
   printf "Zoxide ref: "
   read ans
@@ -86,6 +95,8 @@ cmd trash %set -f; mv $fx ~/.trash
 # unbind
 map m
 
+map Y copy_name
+map P rename_with_clipboard
 # trash file(s)
 map <delete> trash
 map D trash
