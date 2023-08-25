@@ -26,6 +26,7 @@ opt.smartindent = true
 
 -- Enable break indent
 opt.breakindent = true
+opt.linebreak = true
 
 -- use system clipboard
 opt.clipboard:append("unnamedplus")
