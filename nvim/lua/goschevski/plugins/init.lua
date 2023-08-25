@@ -126,17 +126,6 @@ return {
 			},
 		},
 	},
-	{
-		"jayp0521/mason-null-ls.nvim",
-		opts = {
-			automatic_installation = true,
-			automatic_setup = true,
-			ensure_installed = {
-				"stylua",
-				"eslint_d",
-			},
-		},
-	},
 
 	{
 		"folke/trouble.nvim",
