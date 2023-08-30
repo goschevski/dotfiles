@@ -15,7 +15,7 @@ function v() {
   if [ -n "$1" ]; then
     nvim $1
   else
-    nvim $(fd | fzf)
+    nvim $(fd --type f | fzf)
   fi
 }
 alias vim="v"
