@@ -42,17 +42,14 @@ return {
 			{ "]c", "<cmd>Gitsigns next_hunk<CR>" },
 			{ "[c", "<cmd>Gitsigns prev_hunk<CR>" },
 		},
-		config = function()
-			require("gitsigns").setup()
-		end,
+		config = true,
 	},
 
 	-- essentials
 	{
 		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
+		event = { "BufReadPre", "BufNewFile" },
+		config = true,
 	},
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
@@ -67,11 +64,10 @@ return {
 		"Wansmer/treesj",
 		keys = { "<space>m" },
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		config = function()
-			require("treesj").setup({
-				max_join_length = 1200,
-			})
-		end,
+		opts = {
+			max_join_length = 1200,
+		},
+		config = true,
 	},
 	{
 		"windwp/nvim-ts-autotag",
@@ -93,9 +89,7 @@ return {
 	-- lsp
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({})
-		end,
+		config = true,
 	},
 	{
 		"glepnir/lspsaga.nvim",
@@ -135,9 +129,7 @@ return {
 		keys = {
 			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>" },
 		},
-		config = function()
-			require("trouble").setup({})
-		end,
+		config = true,
 	},
 
 	{
@@ -252,8 +244,6 @@ return {
 	},
 	{
 		"stevearc/qf_helper.nvim",
-		config = function()
-			require("qf_helper").setup()
-		end,
+		config = true,
 	},
 }
