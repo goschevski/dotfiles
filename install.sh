@@ -28,6 +28,7 @@ brew install fzf
 # install additional fzf features
 $(brew --prefix)/opt/fzf/install
 brew install gnu-sed
+brew install sad
 brew install wget
 brew install node
 brew install go
