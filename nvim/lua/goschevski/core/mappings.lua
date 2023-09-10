@@ -112,9 +112,9 @@ keymap.set("n", "<tab>", ">>")
 keymap.set("n", "<s-tab>", "<<")
 
 -- fast switch between vue component files
-keymap.set("n", "<Leader>1", ":e %<.vue<CR>", opts)
-keymap.set("n", "<Leader>2", ":e %<.js<CR>", opts)
-keymap.set("n", "<Leader>3", ":e %<.css<CR>", opts)
+-- keymap.set("n", "<Leader>1", ":e %<.vue<CR>", opts)
+-- keymap.set("n", "<Leader>2", ":e %<.js<CR>", opts)
+-- keymap.set("n", "<Leader>3", ":e %<.css<CR>", opts)
 
 -- line object
 keymap.set("x", "il", "g_o^")
