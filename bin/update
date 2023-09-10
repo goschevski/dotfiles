@@ -1,0 +1,11 @@
+# brew update/upgrade/clean/doctor
+~/dotfiles/bin/b
+
+# neovim Lazy update
+nvim --headless "+Lazy! sync" +qa
+
+# tmux tpm update
+~/.tmux/plugins/tpm/bin/update_plugins all
+
+# Get OS X Software Updates
+softwareupdate -i -a

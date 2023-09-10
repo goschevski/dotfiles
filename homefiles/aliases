@@ -68,8 +68,6 @@ alias sizes="du -xhd1 | sort -n"
 
 # Youtube Download
 alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update="softwareupdate -i -a; brew update; brew upgrade"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
