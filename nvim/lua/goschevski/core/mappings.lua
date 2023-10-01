@@ -49,7 +49,7 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- search things
-keymap.set("n", "\\", "*N", opts)
+keymap.set("n", "*", "*N", opts)
 keymap.set("n", "'", "*Ncgn", opts)
 keymap.set("n", "n", "nzz", opts)
 keymap.set("n", "N", "Nzz", opts)
