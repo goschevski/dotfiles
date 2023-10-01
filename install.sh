@@ -44,6 +44,7 @@ brew install ffmpeg
 brew install vim
 brew install neovim
 brew install jq
+brew install jless
 brew install yq
 brew install awscli
 brew install lsd
