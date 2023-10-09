@@ -10,7 +10,7 @@ alias rg="rg --type-add 'vue:*.vue'"
 alias tkill="tmux kill-server"
 
 # Nvim
-alias nvim="TERM='' nvim"
+alias nvim="TERM='' nvim --listen /tmp/nvim-listener.pipe"
 function v() {
   if [ -n "$1" ]; then
     nvim $1

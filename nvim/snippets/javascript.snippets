@@ -16,7 +16,10 @@ snippet try "JavaScript try/catch block"
   }
 
 snippet cl "JavaScript console.log"
-  console.log($1);
+  console.log('----------------------------------------------------------', { $1 }, typeof $1);
+
+snippet cs "JavaScript console.log mark"
+	console.log('---------- stigao ovde $1 ----------')
 
 snippet vji "Vue import component"
   import $1 from '@/components/$1/$1.vue';
