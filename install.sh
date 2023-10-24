@@ -55,6 +55,9 @@ brew install jesseduffield/lazygit/lazygit
 brew install zoxide
 brew install pgrep
 brew install pkill
+brew install zsh-eutosuggestions
+brew install zsh-syntax-highlighting
+brew install zsh-history-substring-search
 # brew install youtube-dl
 # brew install tig
 # brew install jesseduffield/lazydocker/lazydocker
