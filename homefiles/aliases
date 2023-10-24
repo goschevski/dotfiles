@@ -101,6 +101,10 @@ alias vdes="vagrant destroy"
 alias vres="vagrant destroy && vagrant up"
 alias vssh="vagrant ssh"
 
+function onport () {
+  lsof -p $(lsof -i :$1 | awk 'NR==2{print $2}') | awk 'NR==2{print $9}'
+}
+
 # kill procces chooser
 function kp () {
   PRC=${1:-"[n]ode"}
