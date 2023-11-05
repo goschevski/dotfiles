@@ -94,7 +94,7 @@ brew install --cask cron
 brew install --cask monitorcontrol
 # brew install --cask figma
 # brew install --cask discord
-# brew install --cask hammerspoon
+brew install --cask hammerspoon
 # brew install --cask font-victor-mono
 # brew install --cask notion
 # brew install --cask viscosity
@@ -137,8 +137,11 @@ mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/templates/kitty.conf ~/.config/kitty/kitty.conf
 # Download icon: https://github.com/k0nserv/kitty-icon/raw/main/kitty.icns
 
-ansi --gren "Setup lazygit..."
+ansi --green "Setup lazygit..."
 ln -s ~/dotfiles/templates/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
+
+ansi --green "Setup hammerspoon..."
+lns -s ~/dotfiles/templates/hammerspoon.lua ~/.hammerspoon/init.lua
 
 ansi --green "Setup lf..."
 mkdir -p ~/.config/lf
