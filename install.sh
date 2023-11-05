@@ -95,6 +95,7 @@ brew install --cask monitorcontrol
 # brew install --cask figma
 # brew install --cask discord
 brew install --cask hammerspoon
+brew install --cask font-jetbrains-mono-nerd-font
 # brew install --cask font-victor-mono
 # brew install --cask notion
 # brew install --cask viscosity
