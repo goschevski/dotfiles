@@ -2,6 +2,8 @@ return {
 	-- bunch of plugins need this
 	"nvim-lua/plenary.nvim",
 
+  "xiyaowong/transparent.nvim",
+
 	{
 		"crispydrone/vim-tasks",
 		ft = {
