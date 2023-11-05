@@ -7,7 +7,6 @@ source ~/Google\ Drive/My\ Drive/dotprivate/private
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="
 --reverse
---border rounded
 --no-info
 --pointer=' ' \
 --marker=' ' \
