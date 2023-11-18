@@ -23,12 +23,12 @@ return {
 			vim.keymap.set("n", "<Leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 			vim.keymap.set("n", "<Leader>gs", vim.lsp.buf.signature_help, opts)
 
-			if client.name == "eslint" then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "EslintFixAll",
-				})
-			end
+			-- if client.name == "eslint" then
+			-- 	vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 		buffer = bufnr,
+			-- 		command = "EslintFixAll",
+			-- 	})
+			-- end
 		end
 
 		local servers = { "html", "eslint", "gopls", "volar" }

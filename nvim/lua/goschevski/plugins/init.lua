@@ -2,7 +2,7 @@ return {
 	-- bunch of plugins need this
 	"nvim-lua/plenary.nvim",
 
-  "xiyaowong/transparent.nvim",
+	"xiyaowong/transparent.nvim",
 
 	{
 		"crispydrone/vim-tasks",
@@ -248,16 +248,59 @@ return {
 		"stevearc/qf_helper.nvim",
 		config = true,
 	},
-  {
-    "ThePrimeagen/harpoon",
-    config = function()
-      vim.keymap.set("n", "<leader>o", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
-      vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
-      for pos = 0, 9 do
-        vim.keymap.set("n", "<leader>" .. pos, function()
-          require("harpoon.ui").nav_file(pos)
-        end, { desc = "Move to harpoon mark #" .. pos })
-      end
-    end
-  }
+	{
+		"ThePrimeagen/harpoon",
+		config = function()
+			vim.keymap.set("n", "<leader>o", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
+			vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
+			for pos = 0, 9 do
+				vim.keymap.set("n", "<leader>" .. pos, function()
+					require("harpoon.ui").nav_file(pos)
+				end, { desc = "Move to harpoon mark #" .. pos })
+			end
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local lint = require("lint")
+
+			lint.linters_by_ft = {
+				javascript = { "eslint_d", "standardjs" },
+				typescript = { "eslint_d", "standardjs" },
+				vue = { "eslint_d", "standardjs" },
+				css = { "stylelint" },
+			}
+
+			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = lint_augroup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local conform = require("conform")
+			conform.setup({
+				formatters_by_ft = {
+					javascript = { "eslint_d", "standardjs" },
+					typescript = { "eslint_d", "standardjs" },
+					vue = { "eslint_d", "standardjs" },
+					css = { "stylelint" },
+					lua = { "stylua" },
+				},
+				format_on_save = {
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 500,
+				},
+			})
+		end,
+	},
 }
