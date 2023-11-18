@@ -97,6 +97,7 @@ return {
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 		opts = {
+			code_action_prompt = { enable = false },
 			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 			symbol_in_winbar = {
 				enable = false,
@@ -259,9 +260,9 @@ return {
 			local lint = require("lint")
 
 			lint.linters_by_ft = {
-				javascript = { "eslint_d", "standardjs" },
-				typescript = { "eslint_d", "standardjs" },
-				vue = { "eslint_d", "standardjs" },
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				vue = { "eslint_d" },
 				css = { "stylelint" },
 			}
 
@@ -281,9 +282,9 @@ return {
 			local conform = require("conform")
 			conform.setup({
 				formatters_by_ft = {
-					javascript = { "eslint_d", "standardjs" },
-					typescript = { "eslint_d", "standardjs" },
-					vue = { "eslint_d", "standardjs" },
+					javascript = { "eslint_d" },
+					typescript = { "eslint_d" },
+					vue = { "eslint_d" },
 					css = { "stylelint" },
 					lua = { "stylua" },
 				},
