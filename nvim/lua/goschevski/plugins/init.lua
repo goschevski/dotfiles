@@ -94,23 +94,6 @@ return {
 		config = true,
 	},
 	{
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		opts = {
-			code_action_prompt = { enable = false },
-			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
-			symbol_in_winbar = {
-				enable = false,
-			},
-			finder_action_keys = {
-				open = "<CR>",
-			},
-			definition_action_keys = {
-				edit = "<CR>",
-			},
-		},
-	},
-	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
