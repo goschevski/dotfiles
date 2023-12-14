@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$1" = "dark" ]; then
+  # tmux theme
+  awk '/# --> Catppuccin \(Latte\)/ {p=NR} p&&NR-p>=1&&NR-p<=13 {gsub(/^/, "# ")} 1' ~/dotfiles/homefiles/tmux.conf > tmp && mv tmp ~/dotfiles/homefiles/tmux.conf # comment latte
+  awk '/# --> Catppuccin \(Mocha\)/ {p=NR} p&&NR-p>=1&&NR-p<=13 {gsub(/^# /, "")} 1' ~/dotfiles/homefiles/tmux.conf > tmp && mv tmp ~/dotfiles/homefiles/tmux.conf # uncomment mocha
+  # tmux <C-a>r
+  kitten @ send-text '\x01\x72'
+  # kitty theme
+  kitty +kitten themes --reload-in=all Catppuccin-Macchiato
+  # git-delta theme
+  sed -i '' 's/features = hoopoe/features = colibri/' ~/dotfiles/homefiles/gitconfig
+  # vim color-scheme
+  nvim --server ~/.cache/nvim/server.pipe --remote-send ':colorscheme catppuccin-macchiato<CR>'
+fi
+
+if [ "$1" = "light" ]; then
+  # tmux theme
+  awk '/# --> Catppuccin \(Mocha\)/ {p=NR} p&&NR-p>=1&&NR-p<=13 {gsub(/^/, "# ")} 1' ~/dotfiles/homefiles/tmux.conf > tmp && mv tmp ~/dotfiles/homefiles/tmux.conf # comment mocha
+  awk '/# --> Catppuccin \(Latte\)/ {p=NR} p&&NR-p>=1&&NR-p<=13 {gsub(/^# /, "")} 1' ~/dotfiles/homefiles/tmux.conf > tmp && mv tmp ~/dotfiles/homefiles/tmux.conf # uncomment latte
+  # tmux <C-a>r
+  kitten @ send-text '\x01\x72'
+  # kitty theme
+  kitty +kitten themes --reload-in=all Catppuccin-Latte
+  # git-delta theme
+  sed -i '' 's/features = colibri/features = hoopoe/' ~/dotfiles/homefiles/gitconfig
+  # vim color-scheme
+  nvim --server ~/.cache/nvim/server.pipe --remote-send ':colorscheme catppuccin-latte<CR>'
+fi
