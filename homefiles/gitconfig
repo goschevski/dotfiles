@@ -38,11 +38,9 @@
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [delta]
-  features = decorations
-
+  features = colibri
 [delta "interactive"]
   keep-plus-minus-markers = false
-
 [delta "decorations"]
   commit-decoration-style = blue ol
   commit-style = raw
