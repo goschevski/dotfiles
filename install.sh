@@ -144,6 +144,10 @@ ln -s ~/dotfiles/templates/lazygit.yml ~/Library/Application\ Support/lazygit/co
 ansi --green "Setup hammerspoon..."
 lns -s ~/dotfiles/templates/hammerspoon.lua ~/.hammerspoon/init.lua
 
+ansi --green "Git delta themes..."
+mkdir -p ~/.config/git-delta
+http --download https://raw.githubusercontent.com/dandavison/delta/main/themes.gitconfig -o ~/.config/git-delta/themes.gitconfig
+
 ansi --green "Setup lf..."
 mkdir -p ~/.config/lf
 ln -s ~/dotfiles/lf/lfrc ~/.config/lf

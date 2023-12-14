@@ -37,6 +37,8 @@
   prune = true
 [interactive]
   diffFilter = delta --color-only --features=interactive
+[include]
+  path = ~/.config/git-delta/themes.gitconfig
 [delta]
   features = colibri
 [delta "interactive"]
