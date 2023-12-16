@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		"windwp/nvim-ts-autotag",
 	},
 	build = function()
 		require("nvim-treesitter.install").update({ with_sync = true })
