@@ -4,6 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-live-grep-args.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	keys = {
 		{ "<Leader>ff", "<cmd>Telescope find_files<CR>" },
@@ -44,6 +45,9 @@ return {
 				},
 			},
 			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
 				live_grep_args = {
 					auto_quoting = true, -- enable/disable auto-quoting
 					-- define mappings, e.g.
@@ -70,5 +74,6 @@ return {
 
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("live_grep_args")
+		require("telescope").load_extension("ui-select")
 	end,
 }
