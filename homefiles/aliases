@@ -13,9 +13,9 @@ alias tkill="tmux kill-server"
 alias nvim="TERM='' nvim --listen /tmp/nvim-listener.pipe"
 function v() {
   if [ -n "$1" ]; then
-    nvim $1
+    nvim "$1"
   else
-    nvim $(fd --type f | fzf)
+    nvim "$(fd --type f | fzf)"
   fi
 }
 alias vim="v"
