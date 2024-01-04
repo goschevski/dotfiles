@@ -10,6 +10,9 @@ return {
 	--   "BufReadPre path/to/my-vault/**.md",
 	--   "BufNewFile path/to/my-vault/**.md",
 	-- },
+	config = function()
+		vim.opt.conceallevel = 1
+	end,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
