@@ -1,8 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- reload vim config
-keymap.set("n", "<leader><leader>r", ":lua ReloadConfig()<CR>", opts)
 -- paste from 0 register
 keymap.set("x", "<Leader>v", '"0p')
 -- chords
