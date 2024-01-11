@@ -144,6 +144,13 @@ ln -s ~/dotfiles/templates/lazygit.yml ~/Library/Application\ Support/lazygit/co
 ansi --green "Setup hammerspoon..."
 ln -s ~/dotfiles/templates/hammerspoon.lua ~/.hammerspoon/init.lua
 
+ansi --green "Setup sketchybar..."
+brew tap FelixKratz/formulae
+brew install sketchybar
+brew install font-hack-nerd-font
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.16/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+ln -s ~/dotfiles/sketchybar ~/.config/sketchybar
+
 ansi --green "Git delta themes..."
 mkdir -p ~/.config/git-delta
 http --download https://raw.githubusercontent.com/dandavison/delta/main/themes.gitconfig -o ~/.config/git-delta/themes.gitconfig
