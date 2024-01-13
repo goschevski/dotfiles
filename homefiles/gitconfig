@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = nvim
   pager = delta
 [user]
   name = Aleksandar Goševski
@@ -8,7 +8,7 @@
 [github]
   user = goschevski
 [diff]
-  tool = vimdiff
+  tool = nvimdiff
 [difftool]
   prompt = false
 [alias]
@@ -17,7 +17,7 @@
 [color]
   ui = true
 [merge]
-  tool = vimdiff
+  tool = nvimdiff
 [mergetool "diffconflicts"]
   trustExitCode = true
 [mergetool]
