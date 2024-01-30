@@ -30,7 +30,7 @@ return {
 			-- end
 		end
 
-		local servers = { "html", "eslint", "gopls", "volar" }
+		local servers = { "html", "eslint", "gopls", "volar", "astro" }
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		for _, lsp in pairs(servers) do
