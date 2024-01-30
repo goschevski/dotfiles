@@ -2,11 +2,6 @@ return {
 	"folke/flash.nvim",
 	event = "VeryLazy",
 	opts = {
-		search = {
-			mode = function(str)
-				return "\\<" .. str
-			end,
-		},
 		label = {
 			-- allow uppercase labels
 			uppercase = false,
