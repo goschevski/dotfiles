@@ -3,6 +3,8 @@ local opts = { noremap = true, silent = true }
 
 -- paste from 0 register
 keymap.set("x", "<Leader>v", '"0p')
+-- indent pasted
+keymap.set("n", "p", "]p")
 -- chords
 keymap.set(
 	"n",
