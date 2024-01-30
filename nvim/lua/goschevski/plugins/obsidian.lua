@@ -11,8 +11,12 @@ return {
 	--   "BufNewFile path/to/my-vault/**.md",
 	-- },
 	config = function()
-		require("obsidian").setup({})
+		require("obsidian").setup({
+			disable_frontmatter = true,
+		})
+
 		vim.opt.conceallevel = 1
+
 		vim.keymap.set("n", "gf", function()
 			if require("obsidian").util.cursor_on_markdown_link() then
 				return "<cmd>ObsidianFollowLink<CR>"
@@ -20,6 +24,10 @@ return {
 				return "gf"
 			end
 		end, { noremap = false, expr = true })
+
+		vim.keymap.set("n", "<leader>d", function()
+			return require("obsidian").util.toggle_checkbox()
+		end, { noremap = true, buffer = true })
 	end,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
