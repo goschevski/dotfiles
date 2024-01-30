@@ -58,3 +58,10 @@ bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/aleksandar/.bun/_bun" ] && source "/Users/aleksandar/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
