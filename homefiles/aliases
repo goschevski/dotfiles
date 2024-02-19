@@ -78,13 +78,20 @@ alias cleanup="brew cleanup; dscacheutil -flushcache; killall -HUP mDNSResponder
 
 # Clean install of node modules
 alias mylog="nodemon server.js | grep --line-buffered 'MYLOG'"
-alias ni="rm -rf node_modules; npm i"
 alias nrd="pkill node && npm run dev"
-alias nis="npm i --save"
-alias nid="npm i --save-dev"
-alias yi="yarn install"
-alias yis="yarn add"
-alias yid="yarn add --dev"
+n () {
+  if [[ -f bun.lockb ]]; then
+    bun "$@"
+  elif [[ -f pnpm-lock.yaml ]]; then
+    pnpm "$@"
+  elif [[ -f yarn.lock ]]; then
+    yarn "$@"
+  elif [[ -f package-lock.json ]]; then
+    npm "$@"
+  else
+    npm "$@"
+  fi
+}
 
 # Docker
 alias dlc="docker ps -a"
