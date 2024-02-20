@@ -35,8 +35,11 @@
 	rebase = true
 [fetch]
   prune = true
+  writeCommitGraph = true
 [interactive]
   diffFilter = delta --color-only --features=interactive
+[rerere]
+  enabled = true
 [include]
   path = ~/.config/git-delta/themes.gitconfig
 [delta]
