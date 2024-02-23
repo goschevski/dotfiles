@@ -13,6 +13,9 @@ return {
 	config = function()
 		require("obsidian").setup({
 			disable_frontmatter = true,
+			follow_url_func = function(url)
+				vim.fn.jobstart({ "open", url })
+			end,
 		})
 
 		vim.opt.conceallevel = 1
