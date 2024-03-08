@@ -9,6 +9,8 @@ alias rg="rg --type-add 'vue:*.vue'"
 # Tmux
 alias tkill="tmux kill-server"
 
+alias t='sesh connect $(sesh list | fzf)'
+
 # Nvim
 alias nvim="TERM='' nvim --listen /tmp/nvim-listener.pipe"
 function v() {

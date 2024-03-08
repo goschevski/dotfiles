@@ -17,6 +17,7 @@ brew tap homebrew/cask-fonts
 ansi --green "Brew install..."
 brew install bash
 brew install git
+brew install joshmedeski/sesh/sesh
 brew install git-delta
 brew install fnm
 brew install lf
