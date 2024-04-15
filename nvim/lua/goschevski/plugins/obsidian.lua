@@ -3,6 +3,9 @@ return {
 	version = "*",
 	lazy = true,
 	ft = "markdown",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 	-- event = {
 	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -16,6 +19,12 @@ return {
 			follow_url_func = function(url)
 				vim.fn.jobstart({ "open", url })
 			end,
+			workspaces = {
+				{
+					name = "personal",
+					path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
+				},
+			},
 		})
 
 		vim.opt.conceallevel = 1
@@ -32,15 +41,4 @@ return {
 			return require("obsidian").util.toggle_checkbox()
 		end, { noremap = true, buffer = true })
 	end,
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-	},
-	opts = {
-		workspaces = {
-			{
-				name = "personal",
-				path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
-			},
-		},
-	},
 }
