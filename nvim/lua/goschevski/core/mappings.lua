@@ -31,6 +31,10 @@ keymap.set("v", "L", "$h")
 keymap.set("n", "H", "^")
 keymap.set("v", "H", "^")
 
+-- increase and decrease number
+keymap.set("n", "<leader>-", "<C-x>")
+keymap.set("n", "<leader>=", "<C-a>")
+
 -- quick list and location list
 keymap.set("n", "<Leader>co", ":copen<CR>", opts)
 keymap.set("n", "<Leader>cc", ":cclose<CR>", opts)
