@@ -10,6 +10,7 @@ return {
 				vue = { "eslint_d" },
 				css = { "stylelint" },
 				lua = { "stylua" },
+				markdown = { "prettierd" },
 				["*"] = { "trim_whitespace" },
 			},
 			format_on_save = {
