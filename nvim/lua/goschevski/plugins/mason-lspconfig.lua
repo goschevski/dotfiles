@@ -2,7 +2,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	opts = {
 		ensure_installed = {
-			"astro-ls",
+			"astro",
 			"tsserver",
 			"html",
 			"eslint",
