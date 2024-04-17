@@ -1,7 +1,7 @@
 # List files
-alias ls="lsd"
-alias la="ls -la"
-alias ll="ls -l"
+alias ls="lsd -l --git"
+alias la="ls -la --git"
+alias ll="ls"
 
 # rg override
 alias rg="rg --type-add 'vue:*.vue'"
