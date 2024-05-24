@@ -57,6 +57,16 @@ source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-se
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 
+# history
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 eval "$(starship init zsh)"
 
 # bun completions
