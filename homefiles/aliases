@@ -59,7 +59,7 @@ alias ....="cd ../../../../"
 # Folders
 alias sites="cd ~/Sites"
 alias akordi="cd ~/My\ Drive/Akordi && nvim"
-alias a="cd ~/My\ Drive/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store| fzf"
+alias a="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/Akordi && gfind . -type f -printf '%T@ %p\n' | sort -k 1 -n -r | sed 's/^[^ ]* //' | grep -v .DS_Store | fzf --print0 | xargs -0 nvim"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
 alias drive="cd ~/My\ Drive"
