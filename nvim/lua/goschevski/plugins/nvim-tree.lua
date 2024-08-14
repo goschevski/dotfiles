@@ -3,9 +3,9 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
-	keys = {
-		{ "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>" },
-	},
+	-- keys = {
+	-- 	{ "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>" },
+	-- },
 	config = function()
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
