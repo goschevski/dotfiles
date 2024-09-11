@@ -50,6 +50,7 @@ brew install yq
 brew install awscli
 brew install lsd
 brew install bat
+brew install glow
 brew install gum
 brew install starship
 brew install jesseduffield/lazygit/lazygit
