@@ -13,7 +13,6 @@ return {
 		{ "<leader>fs", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>" },
 		{ "<Leader>fa", "<cmd>Telescope grep_string<CR>" },
 		{ "<Leader>fk", "<cmd>Telescope keymaps<CR>" },
-		{ "<Leader>fo", "<cmd>Telescope buffers<CR>" },
 		{ "<Leader>fgl", "<cmd>Telescope git_commits<CR>" },
 		{ "<Leader>fgf", "<cmd>Telescope git_bcommits<CR>" },
 		{ "<Leader>fgb", "<cmd>Telescope git_branches<CR>" },
@@ -25,7 +24,43 @@ return {
 	},
 	config = function()
 		local actions = require("telescope.actions")
+		local builtin = require("telescope.builtin")
+		local action_state = require("telescope.actions.state")
 		local lga_actions = require("telescope-live-grep-args.actions")
+
+		local buffer_searcher
+		buffer_searcher = function()
+			builtin.buffers({
+				sort_mru = true,
+				ignore_current_buffer = true,
+				show_all_buffers = false,
+				attach_mappings = function(prompt_bufnr, map)
+					local refresh_buffer_searcher = function()
+						actions.close(prompt_bufnr)
+						vim.schedule(buffer_searcher)
+					end
+					local delete_buf = function()
+						local selection = action_state.get_selected_entry()
+						vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+						refresh_buffer_searcher()
+					end
+					local delete_multiple_buf = function()
+						local picker = action_state.get_current_picker(prompt_bufnr)
+						local selection = picker:get_multi_selection()
+						for _, entry in ipairs(selection) do
+							vim.api.nvim_buf_delete(entry.bufnr, { force = true })
+						end
+						refresh_buffer_searcher()
+					end
+					map("n", "dd", delete_buf)
+					map("n", "<C-d>", delete_multiple_buf)
+					map("i", "<C-d>", delete_multiple_buf)
+					return true
+				end,
+			})
+		end
+
+		vim.keymap.set("n", "<leader>fo", buffer_searcher, {})
 
 		require("telescope").setup({
 			defaults = {
@@ -66,8 +101,8 @@ return {
 			pickers = {
 				buffers = {
 					sort_lastused = true,
+					sort_mru = true,
 					ignore_current_buffer = true,
-					sorter = require("telescope.sorters").get_substr_matcher(),
 				},
 			},
 		})
