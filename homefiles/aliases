@@ -69,7 +69,7 @@ alias dotf="cd ~/dotfiles"
 alias sizes="du -xhd1 | sort -n"
 
 # Youtube Download
-alias mp3="youtube-dl -x --audio-format mp3 --audio-quality 0"
+alias mp3="yt-dlp -x --audio-format mp3 --audio-quality 0"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
