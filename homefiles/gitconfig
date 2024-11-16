@@ -33,6 +33,8 @@
   defaultBranch = main
 [pull]
 	rebase = true
+[rebase]
+  autoStash = true
 [fetch]
   prune = true
   writeCommitGraph = true
